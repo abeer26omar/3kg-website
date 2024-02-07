@@ -1,8 +1,9 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
 const heroContent = {
-  title: "Moonex",
-  subTitle1: " Crafting Digital",
+  title: "AudioTech",
+  subTitle1: "Crafting Digital",
   subTitle2: "Agency",
   subTitleDescription1: "Good design mean that",
   subTitleDescription2: "good business",
@@ -114,28 +115,24 @@ const HeroDefault = () => {
                 data-aos-delay="0"
               >
                 {/* <!--Button--> */}
-                <a
+                <Link
                   className="ptf-btn ptf-btn--primary ptf-btn--inversed"
-                  href="about-us.html"
-                  target="_self"
+                  to="/about-us"
                 >
                   Learn More
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="col-xl-3 d-none d-xl-block">
-        {/* <!--Spacer--> */}
+      {/* <div className="col-xl-3 d-none d-xl-block">
         <div className="ptf-spacer" style={{ "--ptf-xxl": "3.75rem" }}></div>
-        {/* <!--Animated Block--> */}
         <div
           className="ptf-animated-block"
           data-aos="fade"
           data-aos-delay="200"
         >
-          {/* <!--Mask Image--> */}
           <div className="ptf-mask-image" style={{ maxWidth: "18.25rem" }}>
             <img
               className="spin"
@@ -150,7 +147,7 @@ const HeroDefault = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -44,10 +44,10 @@ const ServiceOne = () => {
         >
           {/* <!--Services Box--> */}
           <div className="ptf-service-box">
-            <Link
+            {/* <Link
               to="/service-details"
               className="ptf-service-box__link"
-            ></Link>
+            ></Link> */}
             <div className="ptf-service-box__icon">
               <i className={val.icon}></i>
             </div>
@@ -58,9 +58,9 @@ const ServiceOne = () => {
             <div className="ptf-service-box__content">
               <p>{val.descriptions}</p>
             </div>
-            <div className="ptf-service-box__arrow">
+            {/* <div className="ptf-service-box__arrow">
               <i className="lnil lnil-chevron-right"></i>
-            </div>
+            </div> */}
           </div>
         </div>
       ))}

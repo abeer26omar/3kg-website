@@ -23,20 +23,13 @@ const counterUpContent = [
     metaText1: "EMPLOYEES ON",
     metaText2: "WORLDWIDE",
     animationDelay: "200",
-  },
-  {
-    startCount: "0",
-    endCount: "18750",
-    metaText1: "PROJECTS COMPLETED",
-    metaText2: "ON 60 COUNTRIES",
-    animationDelay: "300",
-  },
+  }
 ];
 
 const Counter = () => {
   const [focus, setFocus] = React.useState(false);
   return (
-    <div className="row" style={{ "--bs-gutter-y": "2rem" }}>
+    <div className="row justify-content-center" style={{ "--bs-gutter-y": "2rem" }}>
       {counterUpContent.map((val, i) => (
         <div className="col-6 col-lg-3" key={i}>
           {/* <!--Animated Block--> */}

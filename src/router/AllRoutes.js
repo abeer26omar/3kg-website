@@ -2,13 +2,6 @@ import React from "react";
 import Preview from "../views/Preview";
 // Homepage Demo
 import HomeDefault from "../views/all-home-version/HomeDefault";
-import HomeStudio from "../views/all-home-version/HomeStudio";
-import HomeAgency from "../views/all-home-version/HomeAgency";
-import HomeMinimal from "../views/all-home-version/HomeMinimal";
-import HomeTrending from "../views/all-home-version/HomeTrending";
-import HomeFreelancer from "../views/all-home-version/HomeFreelancer";
-import HomeDark from "../views/all-home-version/HomeDark";
-import HomeModern from "../views/all-home-version/HomeModern";
 // Service
 import Service from "../views/inner-pages/service/Service";
 import ServiceDetails from "../views/inner-pages/service/ServiceDetails";
@@ -40,24 +33,13 @@ import Faq from "../views/inner-pages/Faq";
 import NotFound from "../views/NotFound";
 import { Routes, Route } from "react-router-dom";
 import ScrollTopBehaviour from "../components/ScrollTopBehaviour";
-import SelectedHome from "../views/all-home-version/SelectedHome";
 
 const AllRoutes = () => {
   return (
     <>
       <ScrollTopBehaviour />
       <Routes>
-        <Route path="/" element={<SelectedHome />} />
-        {/*  Homepage Demo */}
-        <Route path="/home-default" element={<HomeDefault />} />
-        <Route path="/home-studio" element={<HomeStudio />} />
-        <Route path="/home-agency" element={<HomeAgency />} />
-        <Route path="/home-minimal" element={<HomeMinimal />} />
-        <Route path="/home-trending" element={<HomeTrending />} />
-        <Route path="/home-freelancer" element={<HomeFreelancer />} />
-        <Route path="/home-dark" element={<HomeDark />} />
-        <Route path="/home-modern" element={<HomeModern />} />
-
+        <Route path="/" element={<HomeDefault />} />
         {/* Service */}
         <Route path="/service" element={<Service />} />
         <Route path="/service-details" element={<ServiceDetails />} />

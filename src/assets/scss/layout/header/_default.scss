@@ -8,6 +8,10 @@
   .ptf-navbar-inner {
     display: flex;
     align-items: center;
+
+    @include mq("mdlarge") {
+     justify-content: space-between;
+    }
   }
 
   .ptf-navbar-logo,
@@ -19,7 +23,7 @@
     margin-right: auto;
     margin-left: px2rem(140px);
 
-    @include mq("large") {
+    @include mq("mdlarge") {
       display: none;
     }
   }
@@ -276,6 +280,10 @@
       position: relative;
       min-height: calc(100% - #{px2rem(24px)});
       padding: 0 px2rem(25px);
+
+      @include mq("xlarge") {
+        padding: 0 px2rem(15px);
+      }
 
       &:first-of-type {
         padding-left: 0;

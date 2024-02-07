@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { useQuery } from '@tanstack/react-query';
 import Award from "../../components/award/Award";
 import Blog from "../../components/blog/Blog";
 import Brand from "../../components/brand/Brand";
@@ -13,12 +14,19 @@ import Portfolio from "../../components/portfolio/Portfolio";
 import Approach from "../../components/service/Approach";
 import ServiceOne from "../../components/service/ServiceOne";
 import Testimonial from "../../components/testimonial/Testimonial";
+import { getLangingData } from '../../Util/http';
 
 const HomeDefault = () => {
+
+  const { isPending, error, data } = useQuery({
+    queryKey: ['KnowledgeHome'],
+    queryFn: () => getLangingData()
+  });
+
   return (
     <div className="ptf-site-wrapper animsition  ptf-is--home-default">
       <Helmet>
-        <title>Moonex - Home Default</title>
+        <title>Audio Technology - home</title>
       </Helmet>
       {/* End Page SEO Content */}
 
@@ -115,7 +123,7 @@ const HomeDefault = () => {
                       data-aos-delay="0"
                     >
                       <h2 className="h1 large-heading d-inline-flex">
-                        Latest Works
+                          Case Studies
                       </h2>
                     </div>
                   </div>
@@ -138,7 +146,7 @@ const HomeDefault = () => {
                       to="/works-grid"
                       style={{ marginLeft: "5.625rem" }}
                     >
-                      All Projects <i className="lnil lnil-chevron-right"></i>
+                      All Case studies <i className="lnil lnil-chevron-right"></i>
                     </Link>
                   </div>
                 </div>
@@ -184,13 +192,41 @@ const HomeDefault = () => {
               ></div>
               <div className="container-xxl">
                 {/* <!--Animated Block--> */}
-                <div
-                  className="ptf-animated-block"
-                  data-aos="fade"
-                  data-aos-delay="0"
-                >
-                  <h2 className="h1 large-heading">Our Approach</h2>
+                <div className="row align-items-center">
+                  <div className="col-12 col-md-9">
+                    {/* <!--Animated Block--> */}
+                    <div
+                      className="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="0"
+                    >
+                      <h2 className="h1 large-heading">News</h2>
+                    </div>
+                  </div>
+                  <div className="col-12 col-md-3 text-md-end">
+                    {/* <!--Spacer--> */}
+                    <div
+                      className="ptf-spacer"
+                      style={{ "--ptf-md": "1.875rem" }}
+                    ></div>
+                    {/* <!--Animated Block--> */}
+                    <Link
+                      className="
+                          ptf-link-with-arrow
+                          fz-18
+                          text-uppercase
+                          fw-semibold
+                          has-black-color
+                          d-none d-lg-inline-flex
+                        "
+                      to="/works-grid"
+                      style={{ marginLeft: "5.625rem" }}
+                    >
+                      All News <i className="lnil lnil-chevron-right"></i>
+                    </Link>
+                  </div>
                 </div>
+                
                 {/* <!--Spacer--> */}
                 <div
                   className="ptf-spacer"
@@ -223,7 +259,7 @@ const HomeDefault = () => {
                       data-aos="fade"
                       data-aos-delay="0"
                     >
-                      <h2 className="h1 large-heading">Moonex’s Partners</h2>
+                      <h2 className="h1 large-heading">Partners</h2>
                     </div>
                     {/* <!--Spacer--> */}
                     <div
@@ -243,6 +279,17 @@ const HomeDefault = () => {
                     ></div>
                     {/* <!--Divider--> */}
                     <div className="ptf-divider"></div>
+                    <div
+                      className="ptf-spacer"
+                      style={{ "--ptf-xxl": "6.25rem", "--ptf-md": "3.125rem" }}
+                    ></div>
+                    <div
+                      className="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="0"
+                    >
+                      <h2 className="h1 large-heading">Audio Tech in Numbers</h2>
+                    </div>
                     {/* <!--Spacer--> */}
                     <div
                       className="ptf-spacer"
@@ -340,6 +387,28 @@ const HomeDefault = () => {
                       className="ptf-spacer"
                       style={{ "--ptf-lg": "3.75rem" }}
                     ></div>
+                    <div
+                      className="ptf-spacer"
+                      style={{ "--ptf-xxl": "6.25rem", "--ptf-md": "3.125rem" }}
+                    ></div>
+                    <div className="fz-90 has-black-color">
+                      {/* <!--Animated Block--> */}
+                      <Link
+                        className="ptf-animated-block"
+                        data-aos="fade"
+                        data-aos-delay="300"
+                        to="/contact"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          style={{ height: "1em" }}
+                          viewBox="0 0 17 17"
+                        >
+                          <path d="M16 .997V10h-1V2.703L4.683 13l-.707-.708L14.291 1.997H6.975v-1H16z" />
+                        </svg>
+                      </Link>
+                    </div>
                   </div>
                   <div className="col-lg-8">
                     <Award />
@@ -353,21 +422,18 @@ const HomeDefault = () => {
               ></div>
             </section>
 
-            <section>
+            {/* <section>
               <div className="container-xxl">
-                {/* <!--Divider--> */}
                 <div className="ptf-divider"></div>
               </div>
             </section>
 
             <section>
-              {/* <!--Spacer--> */}
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
               ></div>
               <div className="container-xxl">
-                {/* <!--Animated Block--> */}
                 <div
                   className="ptf-animated-block"
                   data-aos="fade"
@@ -384,12 +450,11 @@ const HomeDefault = () => {
                   </div>
                 </div>
               </div>
-              {/* <!--Spacer--> */}
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
               ></div>
-            </section>
+            </section> */}
 
             {/*=============================================
                 End Blog Section

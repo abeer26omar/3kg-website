@@ -5,6 +5,7 @@ import DropdownMenu from "./menu/DropdownMenu";
 import MobileMenu from "./menu/MobileMenu";
 
 const HeaderHomeDefault = () => {
+
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
@@ -38,48 +39,46 @@ const HeaderHomeDefault = () => {
               {/* <!--Logo--> */}
               <Link className="ptf-navbar-logo" to="/">
                 <img
-                  className="black"
-                  src="assets/img/root/logo-dark.png"
-                  alt=""
+                  className="black w-100"
+                  src="assets/img/root/Logos/logo_orignalSize2.svg"
+                  alt="Logo-audio Tech"
                   loading="lazy"
                 />
                 <img
                   className="white"
-                  src="assets/img/root/logo-white.png"
-                  alt=""
+                  src="assets/img/root/Logos/logo_orignalSizeWhite.svg"
+                  alt="Logo-audio Tech"
                   loading="lazy"
                 />
               </Link>
               {/* <!--Navigation--> */}
-              <nav className="ptf-nav ptf-nav--default">
+              <nav className="ptf-nav ptf-nav--default mx-auto">
                 {/* <!--Menu--> */}
                 <DropdownMenu />
               </nav>
               {/* <!--Buttons--> */}
-
-              {/* <!--Navbar Search--> */}
-              <div
-                className={
-                  click ? "ptf-navbar-search is-open" : "ptf-navbar-search"
-                }
-              >
-                <div className="ptf-navbar-search__wrapper">
-                  <Search />
-                </div>
-
-                <div
-                  className="ptf-navbar-search__toggle"
-                  onClick={handleClick}
-                >
-                  <i className="lnir lnir-search-alt"></i>
-                  <i className="lnir lnir-close"></i>
-                </div>
+              <div className="d-flex align-items-center">
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="py-3 px-4 ptf-btn ptf-btn--primary"
+                    style={{
+                      backgroundColor: 'black'
+                    }}
+                  >
+                    Retail
+                  </a>
+                
               </div>
               {/* <!--Offcanvas Menu Toggle--> */}
 
               <div
                 className="ptf-offcanvas-menu-icon js-offcanvas-menu-toggle bar right"
                 onClick={handleClick1}
+                style={{
+                  position: 'relative'
+                }}
               >
                 <i className="lnir lnir-menu-alt-5"></i>
               </div>
@@ -95,14 +94,7 @@ const HeaderHomeDefault = () => {
           click1 ? "ptf-offcanvas-menu is-open" : "ptf-offcanvas-menu "
         }
       >
-        <div className="ptf-offcanvas-menu__header">
-          <div className="ptf-language-switcher">
-            <a className="is-active" href="#">
-              Eng
-            </a>
-            <a href="#">Fra</a>
-            <a href="#">Ger</a>
-          </div>
+        <div className="ptf-offcanvas-menu__header justify-content-end">
           <span
             className="ptf-offcanvas-menu-icon js-offcanvas-menu-toggle"
             onClick={handleClick1}

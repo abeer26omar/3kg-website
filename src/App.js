@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "photoswipe/dist/photoswipe.css";
 import "aos/dist/aos.css";
 import { Helmet } from "react-helmet";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import AnimatedCursor from "react-animated-cursor";
 
 const App = () => {
@@ -15,33 +16,38 @@ const App = () => {
       duration: 1200,
     });
   }, []);
+  const queryClient = new QueryClient();
+
   return (
     <>
-      <Helmet>
-        <title>Moonex - Portfolio & Agency React Template</title>
-        <meta name="description" content="Portfolio & Agency React Template" />
-        <meta
-          name="keywords"
-          content="agency, bootstrap 5, business, clean, corporate, creative, fullpage, minimal, modern, multipurpose, parallax, personal, photography, portfolio, showcase"
-        />
-      </Helmet>
-      {/* End React Helmet for SEO */}
+      <QueryClientProvider client={queryClient}>
 
-      <AnimatedCursor
-        innerSize={8}
-        outerSize={44}
-        color="220, 53, 69"
-        outerAlpha={0.3}
-        innerScale={0.7}
-        outerScale={1.2}
-      />
-      {/* End Animated Cursor */}
+        <Helmet>
+          <title>Audio Technology</title>
+          <meta name="description" content="Portfolio & Agency React Template" />
+          <meta
+            name="keywords"
+            content="agency, bootstrap 5, business, clean, corporate, creative, fullpage, minimal, modern, multipurpose, parallax, personal, photography, portfolio, showcase"
+          />
+        </Helmet>
+        {/* End React Helmet for SEO */}
 
-      <ScrollToTop />
-      {/* End Scroll To Top */}
+        {/* <AnimatedCursor
+          innerSize={8}
+          outerSize={44}
+          color="220, 53, 69"
+          outerAlpha={0.3}
+          innerScale={0.7}
+          outerScale={1.2}
+        /> */}
+        {/* End Animated Cursor */}
 
-      <AllRoutes />
-      {/* End All Routes */}
+        <ScrollToTop />
+        {/* End Scroll To Top */}
+
+        <AllRoutes />
+        {/* End All Routes */}
+      </QueryClientProvider>
     </>
   );
 };

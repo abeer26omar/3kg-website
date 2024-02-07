@@ -3,49 +3,33 @@ import { Link } from "react-router-dom";
 
 const linkList = [
   {
-    itemName: "Faqs",
+    itemName: "About us",
     link: "/",
   },
   {
-    itemName: "Term & Conditions",
+    itemName: "Contact us",
     link: "/",
-  },
-  {
-    itemName: "Privacy Policy",
-    link: "/",
-  },
-  {
-    itemName: "Help",
-    link: "/",
-  },
-  {
-    itemName: "Affiliate",
-    link: "/",
-  },
-  {
-    itemName: "Services",
-    link: "/",
-  },
+  }
 ];
 
-const Product = [
-  {
-    itemName: "Works",
-    link: "/",
-  },
-  {
-    itemName: "About",
-    link: "/",
-  },
-  {
-    itemName: "News",
-    link: "/",
-  },
-  {
-    itemName: "Contact",
-    link: "/",
-  },
-];
+// const Product = [
+//   {
+//     itemName: "Works",
+//     link: "/",
+//   },
+//   {
+//     itemName: "About",
+//     link: "/",
+//   },
+//   {
+//     itemName: "News",
+//     link: "/",
+//   },
+//   {
+//     itemName: "Contact",
+//     link: "/",
+//   },
+// ];
 
 const Footer = () => {
   return (
@@ -70,10 +54,10 @@ const Footer = () => {
             </Link>
           </div>
 
-          <p className="fz-24">90 Fairground Rd, FL 3290, United States</p>
+          {/* <p className="fz-24">90 Fairground Rd, FL 3290, United States</p>
           <a className="fz-40 has-black-color" href="mailto:hello@moonex.co">
             hello@moonex.co
-          </a>
+          </a> */}
         </div>
       </div>
       <div className="col-12 col-md-6 col-xl-3">
@@ -95,8 +79,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="col-12 col-md-6 col-xl-3">
-        {/* <!--Animated Block--> */}
+      {/* <div className="col-12 col-md-6 col-xl-3">
         <div
           className="ptf-animated-block"
           data-aos="fade"
@@ -115,7 +98,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
