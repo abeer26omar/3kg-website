@@ -96,7 +96,7 @@ const HeaderDefault = () => {
           click1 ? "ptf-offcanvas-menu is-open" : "ptf-offcanvas-menu "
         }
       >
-        <div className="ptf-offcanvas-menu__header">
+        <div className="ptf-offcanvas-menu__header justify-content-end">
           {/* <div className="ptf-language-switcher">
             <a className="is-active" href="#">
               Eng
