@@ -152,7 +152,7 @@ const BlogMasonryGrid = () => {
                     {/* <span className="date">{item.date}</span> */}
                   </div>
                   <h3 className="ptf-post__title">
-                    <Link to="/blog-details">{item.title}</Link>
+                    <Link>{item.title}</Link>
                   </h3>
                 </header>
                 {/* <div className="ptf-post__excerpt">
