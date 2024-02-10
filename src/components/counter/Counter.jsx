@@ -2,39 +2,38 @@ import React from "react";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 
-const counterUpContent = [
-  {
-    startCount: "0",
-    endCount: "120",
-    metaText1: "YEARS OF",
-    metaText2: "EXPERIENCE",
-    animationDelay: "0",
-  },
-  {
-    startCount: "0",
-    endCount: "8200",
-    metaText1: "SATISFACTION",
-    metaText2: "CLIENTS",
-    animationDelay: "100",
-  },
-  {
-    startCount: "0",
-    endCount: "6430",
-    metaText1: "EMPLOYEES ON",
-    metaText2: "WORLDWIDE",
-    animationDelay: "200",
-  }
-];
 
-const Counter = () => {
+const Counter = ({statistics}) => {
+
+  const counterUpContent = [
+    {
+      startCount: "0",
+      endCount: statistics?.employees,
+      metaText1: "Employees",
+      animationDelay: "0",
+    },
+    {
+      startCount: "0",
+      endCount: statistics?.projects,
+      metaText1: "Projects",
+      animationDelay: "100",
+    },
+    {
+      startCount: "0",
+      endCount: statistics?.brands,
+      metaText1: "Brands",
+      animationDelay: "200",
+    }
+  ];
+
   const [focus, setFocus] = React.useState(false);
   return (
     <div className="row justify-content-center" style={{ "--bs-gutter-y": "2rem" }}>
       {counterUpContent.map((val, i) => (
-        <div className="col-6 col-lg-3" key={i}>
+        <div className="col-6 col-lg-3 d-flex justify-content-center" key={i}>
           {/* <!--Animated Block--> */}
           <div
-            className="ptf-animated-block"
+            className="ptf-animated-block text-center"
             data-aos="fade"
             data-aos-delay={val.animationDelay}
           >
@@ -62,7 +61,6 @@ const Counter = () => {
               </div>
               <h5 className="ptf-counter-up__title">
                 {val.metaText1} <br />
-                {val.metaText2}
               </h5>
             </div>
           </div>

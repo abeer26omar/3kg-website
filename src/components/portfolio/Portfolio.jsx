@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
+import { useQuery } from '@tanstack/react-query';
+import { getCaseStudies } from '../../Util/http';
 
 const portfolioContent = [
   {
@@ -31,6 +33,12 @@ const portfolioContent = [
 ];
 
 const Portfolio = () => {
+
+  const { data: caseStudies } = useQuery({
+    queryKey: ['caseStudies'],
+    queryFn: () => getCaseStudies(true, 1)
+  });
+
   const settings = {
     dots: false,
     arrow: true,
@@ -65,20 +73,20 @@ const Portfolio = () => {
       <div className="swiper-wrapper">
         <Slider {...settings}>
           {/* <!--Portfolio Item--> */}
-          {portfolioContent.map((item, i) => (
+          {caseStudies && caseStudies?.items.map((item, i) => (
             <article className="ptf-work ptf-work--style-3" key={i}>
               <div className="ptf-work__media">
-                <Link to="/works-showcase" className="ptf-work__link"></Link>
+                <Link to={`/case-details/${item.id}`} className="ptf-work__link"></Link>
                 <img
-                  src={`assets/img/portfolio/${item.img}.png`}
+                  src={item.main_image}
                   alt=""
                   loading="lazy"
                 />
               </div>
               <div className="ptf-work__meta">
-                <div className="ptf-work__category">{item.categorie}</div>
+                <div className="ptf-work__category">{item.category}</div>
                 <h4 className="ptf-work__title">
-                  <Link to="/works-showcase">{item.title}</Link>
+                  <Link to={`/case-details/${item.id}`}>{item.title}</Link>
                 </h4>
               </div>
             </article>

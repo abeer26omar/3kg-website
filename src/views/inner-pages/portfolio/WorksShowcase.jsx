@@ -1,17 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
+import { useParams } from 'react-router-dom';
 import HeaderDefault from "../../../components/header/HeaderDefault";
+import { useQuery } from '@tanstack/react-query';
 import CopyRight from "../../../components/footer/copyright/CopyRight";
 import Footer from "../../../components/footer/Footer";
 import Social from "../../../components/social/Social";
 import WorksCaseStudy from "./WorksCaseStudy";
 import ImageGridThree from "../../../components/image-grid/ImageGridThree";
+import { getCaseDetails } from "../../../Util/http";
+import ModalVideo from "react-modal-video";
 
 const WorksShowcase = () => {
+
+  const { id } = useParams();
+  const [isOpen, setOpen] = useState(false);
+
+  const { data: caseDetilas } = useQuery({
+    queryKey: ['caseDetails', id],
+    queryFn: () => getCaseDetails(id)
+  });
+
   return (
-    <div className="ptf-site-wrapper animsition ptf-is--work-showcase-1">
+    <>
+      <div className="ptf-site-wrapper animsition ptf-is--work-showcase-1">
       <Helmet>
-        <title>Audio Technology - Works Showcase</title>
+        <title>Audio Technology - case details</title>
       </Helmet>
       {/* End Page SEO Content */}
       <div className="ptf-site-wrapper__inner">
@@ -36,15 +50,14 @@ const WorksShowcase = () => {
                       data-aos-delay="0"
                     >
                       <h1 className="large-heading">
-                        Lewis Studio <br />
-                        Website
+                        {caseDetilas && caseDetilas?.title}
                       </h1>
                       {/* <!--Spacer--> */}
                       <div
                         className="ptf-spacer"
                         style={{ "--ptf-xxl": "4rem", "--ptf-md": "2.5rem" }}
                       ></div>
-                      <Social />
+                      <Social social={caseDetilas?.social_media} />
                     </div>
                     {/* <!--Spacer--> */}
                     <div
@@ -56,7 +69,14 @@ const WorksShowcase = () => {
                     ></div>
                   </div>
                   {/* End .col */}
-                  <WorksCaseStudy />
+                  <div className="col-xl-6">
+                    <WorksCaseStudy 
+                      date={''} 
+                      client_name={caseDetilas?.client_name}
+                      team={caseDetilas?.teams}
+                      services={caseDetilas?.services}
+                    />
+                  </div>
                 </div>
               </div>
               {/* <!--Spacer--> */}
@@ -81,7 +101,7 @@ const WorksShowcase = () => {
                       rel="nofollow"
                     >
                       <img
-                        src="assets/img/portfolio/single-work/content-image-1.png"
+                        src={caseDetilas?.main_image}
                         alt="work"
                         loading="lazy"
                       />
@@ -106,11 +126,7 @@ const WorksShowcase = () => {
                   data-aos-delay="0"
                 >
                   <p className="fz-30 has-black-color">
-                    Lewis Studio Website is a startup that aims to supply energy
-                    (starting with gas) to domestic household acrossthe UK.
-                    Create a very simple yet stunning logotype and promo site
-                    that sets the brand of Entice Energy apart from the
-                    competitors like a fresh take on an already saturated area.
+                    {caseDetilas?.description}
                   </p>
                 </div>
 
@@ -142,6 +158,25 @@ const WorksShowcase = () => {
                   data-aos-delay="0"
                 >
                   <h2>Challenge</h2>
+                  <div
+                      className="ptf-spacer"
+                      style={{ "--ptf-xxl": "6.25rem", "--ptf-md": "3.125rem" }}
+                    ></div>
+                  <div
+                  className="ptf-video-button"
+                  onClick={() => setOpen(true)}
+                  style={{
+                    "--ptf-title-color": "var(--ptf-color-black)",
+                    marginLeft: "2rem",
+                  }}
+                >
+                  <a href="#" rel="nofollow">
+                    <i className="lnil lnil-play"></i>
+                  </a>
+                  <div className="ptf-video-button__title">
+                    View case story
+                  </div>
+                </div>
                 </div>
 
                 {/* <!--Spacer--> */}
@@ -149,9 +184,9 @@ const WorksShowcase = () => {
                   className="ptf-spacer"
                   style={{ "--ptf-xxl": "1.5625rem" }}
                 ></div>
-
+                
                 {/* <!--Animated Block--> */}
-                <div
+                {/* <div
                   className="ptf-animated-block"
                   data-aos="fade"
                   data-aos-delay="0"
@@ -162,16 +197,16 @@ const WorksShowcase = () => {
                     brand values and showcases multi-media content. Site that
                     spreads the message: "Islamic stories your child will love"
                   </p>
-                </div>
+                </div> */}
 
                 {/* <!--Spacer--> */}
-                <div
+                {/* <div
                   className="ptf-spacer"
                   style={{ "--ptf-xxl": "1.5625rem" }}
-                ></div>
+                ></div> */}
 
                 {/* <!--Animated Block--> */}
-                <div
+                {/* <div
                   className="ptf-animated-block"
                   data-aos="fade"
                   data-aos-delay="0"
@@ -188,22 +223,22 @@ const WorksShowcase = () => {
                     </li>
                     <li>Persuade to download app and subscribe</li>
                   </ul>
-                </div>
+                </div> */}
 
                 {/* <!--Spacer--> */}
-                <div
+                {/* <div
                   className="ptf-spacer"
                   style={{ "--ptf-xxl": "4.375rem", "--ptf-md": "2.1875rem" }}
-                ></div>
+                ></div> */}
 
                 {/* <!--Animated Block--> */}
-                <div
+                {/* <div
                   className="ptf-animated-block"
                   data-aos="fade"
                   data-aos-delay="0"
-                >
+                > */}
                   {/* <!--Twitter Review--> */}
-                  <div className="ptf-twitter-review ptf-twitter-review--style-3">
+                  {/* <div className="ptf-twitter-review ptf-twitter-review--style-3">
                     <div className="ptf-twitter-review__header">
                       <div className="ptf-twitter-review__avatar">
                         <img
@@ -232,8 +267,8 @@ const WorksShowcase = () => {
                         absolutely recommend Moonex Labs.
                       </p>
                     </div>
-                  </div>
-                </div>
+                  </div> */}
+                {/* </div> */}
 
                 {/* <!--Spacer--> */}
                 <div
@@ -257,7 +292,7 @@ const WorksShowcase = () => {
                 ></div>
 
                 {/* <!--Animated Block--> */}
-                <div
+                {/* <div
                   className="ptf-animated-block"
                   data-aos="fade"
                   data-aos-delay="0"
@@ -269,7 +304,7 @@ const WorksShowcase = () => {
                     would be marked by the hero and custom tags that filter
                     content.
                   </p>
-                </div>
+                </div> */}
 
                 {/* <!--Spacer--> */}
                 <div
@@ -284,21 +319,26 @@ const WorksShowcase = () => {
                   data-aos-delay="0"
                 >
                   {/* <!--Gallery--> */}
-                  <ImageGridThree />
+                  <ImageGridThree caseImages={caseDetilas?.other_images} />
                 </div>
+
+                <div
+                  className="ptf-spacer"
+                  style={{ "--ptf-xxl": "5.625rem", "--ptf-md": "2.8125rem" }}
+                ></div>
               </div>
             </section>
 
             <section>
               {/* <!--Post Navigation--> */}
-              <div className="ptf-post-navigation ptf-post-navigation--style-2">
+              {/* <div className="ptf-post-navigation ptf-post-navigation--style-2">
                 <div className="container">
                   <span>Next Project</span>
                   <a className="h1 large-heading ptf-filled-link" href="#">
                     SPA Brand
                   </a>
                 </div>
-              </div>
+              </div> */}
             </section>
           </article>
           {/* End .ptf-page */}
@@ -318,7 +358,15 @@ const WorksShowcase = () => {
         </div>
       </footer>
     </div>
-    // End .ptf-is--blog-grid
+      <ModalVideo
+        channel="youtube"
+        autoplay
+        isOpen={isOpen}
+        videoId={caseDetilas?.video_link}
+        onClose={() => setOpen(false)}
+      />
+    </>
+    
   );
 };
 

@@ -58,16 +58,16 @@ const blogContent = [
   },
 ];
 
-const BlogThree = () => {
+const BlogThree = ({news}) => {
   return (
     <>
-      {blogContent.map((val, i) => (
+      {news && news?.items.map((val, i) => (
         <div className="col-xl-4 col-lg-4" key={i}>
           <article className="ptf-post ptf-post--style-1">
             <div className="ptf-post__media">
-              <Link className="ptf-work__link" to="/blog-details"></Link>
+              <Link className="ptf-work__link" to={`/news-details/${val.id}`}></Link>
               <img
-                src={`assets/img/blog/grid/${val.img}.png`}
+                src={val.main_image}
                 alt="blog"
                 loading="lazy"
               />
@@ -75,11 +75,11 @@ const BlogThree = () => {
             <div className="ptf-post__content">
               <header className="ptf-post__header">
                 <div className="ptf-post__meta">
-                  <span className="cat">{val.cat}</span>
-                  <span className="date">{val.date}</span>
+                  <span className="cat">{val.category}</span>
+                  {/* <span className="date">{val.date}</span> */}
                 </div>
                 <h3 className="ptf-post__title">
-                  <Link to="/blog-details">{val.title}</Link>
+                  <Link to={`/news-details/${val.id}`}>{val.title}</Link>
                 </h3>
               </header>
             </div>

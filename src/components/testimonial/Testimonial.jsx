@@ -1,5 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
+import { useQuery } from '@tanstack/react-query';
+import { getTestimonial } from '../../Util/http';
 
 const testimonialContent = [
   {
@@ -28,15 +30,20 @@ const Testimonial = () => {
     slidesToScroll: 1,
     autoplay: true,
   };
+  
+  const { data: testimonial } = useQuery({
+    queryKey: ['testimonial'],
+    queryFn: () => getTestimonial(1)
+  });
 
   return (
     <>
       <Slider {...settings} className="arrow-none">
-        {testimonialContent.map((val, i) => (
+        {testimonial && testimonial?.items.map((val, i) => (
           <div
             className="ptf-animated-block"
             data-aos="fade"
-            data-aos-delay="100"
+            data-aos-delay={(i * 100).toString()}
             key={i}
           >
             <div
@@ -49,11 +56,11 @@ const Testimonial = () => {
               }}
             >
               <div className="ptf-testimonial__content">
-                <p>{val.descriptions}</p>
+                <p>{val.qute}</p>
               </div>
               <div className="ptf-testimonial__meta">
-                <h6 className="ptf-testimonial__author">{val.name}</h6>
-                <div className="ptf-testimonial__info">{val.designation}</div>
+                <h6 className="ptf-testimonial__author">{val.title}</h6>
+                <div className="ptf-testimonial__info">{val.subtitle}</div>
               </div>
             </div>
           </div>

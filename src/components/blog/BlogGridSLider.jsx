@@ -29,7 +29,7 @@ const BlogGridContent = [
   },
 ];
 
-const BlogGridSLider = () => {
+const BlogGridSLider = ({news}) => {
   const settings = {
     dots: true,
     arrow: false,
@@ -51,25 +51,25 @@ const BlogGridSLider = () => {
     <>
       <div className="swiper-slide grid-slider">
         <Slider {...settings} className="arrow-none">
-          {BlogGridContent.map((val, i) => (
+          {news && news?.items.map((val, i) => (
             <div className="ptf-news-slide" key={i}>
               <div className="ptf-news-slide__media">
                 <img
-                  src={`assets/img/blog/slider/${val.img}.png`}
+                  src={val.main_image}
                   alt=""
                   loading="lazy"
                 />
               </div>
               <div className="ptf-news-slide__content">
                 <div className="ptf-news-slide__meta">
-                  <span className="cat">Inspiration</span>
-                  <span className="date">{val.date}</span>
+                  <span className="cat">{val.category}</span>
+                  {/* <span className="date">{val.date}</span> */}
                 </div>
                 <h3 className="ptf-news-slide__title">
-                  <Link to="/blog-details">{val.title}</Link>
+                  <Link to={`/news-details/${val.id}`}>{val.title}</Link>
                 </h3>
                 <div className="ptf-news-slide__excerpt">
-                  <p>{val.descriptions}</p>
+                  <p>{val.brief}</p>
                 </div>
               </div>
             </div>

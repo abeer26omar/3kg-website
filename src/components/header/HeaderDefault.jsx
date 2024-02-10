@@ -38,15 +38,15 @@ const HeaderDefault = () => {
               {/* <!--Logo--> */}
               <Link className="ptf-navbar-logo" to="/">
                 <img
-                  className="black"
-                  src="assets/img/root/logo-dark.png"
-                  alt=""
+                  className="black w-100"
+                  src="assets/img/root/Logos/logo_orignalSize2.svg"
+                  alt="Logo-audio Tech"
                   loading="lazy"
                 />
                 <img
                   className="white"
-                  src="assets/img/root/logo-white.png"
-                  alt=""
+                  src="assets/img/root/Logos/logo_orignalSizeWhite.svg"
+                  alt="Logo-audio Tech"
                   loading="lazy"
                 />
               </Link>

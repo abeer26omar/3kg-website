@@ -24,13 +24,13 @@ const menuContent = [
     name: "Projects",
     activeClass: "",
     menuClass: "two-columns",
-    to: ''
+    to: '/projects'
   },
   {
     name: "Case Studies",
     activeClass: "",
     menuClass: "two-columns",
-    to: ''
+    to: '/case-studies'
   },
   {
     name: "Contact us",
@@ -45,7 +45,9 @@ const DropdownMenu = () => {
     <ul className="sf-menu">
       {menuContent.map((item, i) => (
         <li className={`menu-item-has-children ${item.menuClass}`} key={i}>
-          <NavLink to={item.to} className={item.activeClass}>
+          <NavLink 
+            to={item.to} 
+            className={item.activeClass}>
             <span>{item.name}</span>
           </NavLink>
         </li>

@@ -42,25 +42,25 @@ const AllRoutes = () => {
         <Route path="/" element={<HomeDefault />} />
         {/* Service */}
         <Route path="/service" element={<Service />} />
-        <Route path="/service-details" element={<ServiceDetails />} />
+        {/* <Route path="/service-details" element={<ServiceDetails />} /> */}
 
         {/* About */}
         <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/about-me" element={<AboutMe />} />
+        {/* <Route path="/about-me" element={<AboutMe />} /> */}
 
         {/* Blog */}
-        <Route path="/blog-grid" element={<BlogGrid />} />
-        <Route path="/blog-masonry" element={<BlogMasonry />} />
-        <Route path="/blog-sidebar" element={<BlogSidebar />} />
-        <Route path="/blog-details" element={<BlogDetails />} />
-        <Route path="/blog-details-sidebar" element={<BlogDetailsSidebar />} />
+        <Route path="/projects" element={<BlogMasonry />} />
+        <Route path="/news" element={<BlogGrid />} />
+        <Route path="/news-details/:id" element={<BlogDetails />} />
+        {/* <Route path="/blog-sidebar" element={<BlogSidebar />} />
+        <Route path="/blog-details-sidebar" element={<BlogDetailsSidebar />} /> */}
 
         {/* Portfolio */}
-        <Route path="/works-grid" element={<WorksGrid />} />
-        <Route path="/works-masonry" element={<WorksMasonry />} />
+        <Route path="/case-studies" element={<WorksGrid />} />
+        {/* <Route path="/works-masonry" element={<WorksMasonry />} />
         <Route path="/works-listing" element={<WorksListing />} />
-        <Route path="/works-carousel" element={<WorksCarousel />} />
-        <Route path="/works-showcase" element={<WorksShowcase />} />
+        <Route path="/works-carousel" element={<WorksCarousel />} /> */}
+        <Route path="/case-details/:id" element={<WorksShowcase />} />
 
         {/* others */}
         <Route path="/team" element={<Team />} />

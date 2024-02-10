@@ -1,4 +1,7 @@
 import React from "react";
+import moment from 'moment';
+import { useQuery } from '@tanstack/react-query';
+import { getAwards } from '../../Util/http';
 
 const awardContent = [
   {
@@ -49,6 +52,12 @@ const awardContent = [
 ];
 
 const Award = () => {
+  
+  const { data: awards } = useQuery({
+    queryKey: ['awards'],
+    queryFn: () => getAwards(1)
+  });
+
   return (
     <ul
       className="ptf-rewards-list ptf-rewards-list--small"
@@ -57,42 +66,30 @@ const Award = () => {
         "--ptf-border-color": "var(--ptf-color-black)",
       }}
     >
-      {awardContent.map((val, i) => (
+      {awards && awards?.items.map((val, i) => (
         <li
-          className="ptf-rewards-item"
+          className="ptf-rewards-item gap-3"
           data-aos="fade"
-          data-aos-delay={val.delayAnimation}
+          data-aos-delay={(i * 100).toString()}
           key={i}
         >
-          <div className="ptf-rewards-item__date">{val.date}</div>
+          <div className="ptf-rewards-item__date">{moment(val.timestamp).format('YYYY')}</div>
           <div className="ptf-rewards-item__logo">
             <img
-              src={`assets/img/root/rewards/${val.img}.png`}
+              src={`${val.logo}`}
               alt="brand"
               loading="lazy"
             />
           </div>
-          {/* End .ptf-rewards-item__logo */}
-
           <div className="ptf-rewards-item__content">
-            {val.awardList.map((list, i) => (
-              <div className="ptf-rewards-project" key={i}>
+              <div className="ptf-rewards-project">
                 <div className="ptf-rewards-project__content">
                   <h5>
-                    <a href="#">{list.title}</a>
+                    <a href="#!">{val.title}</a>
                   </h5>
-                  <span>{list.subTitle}</span>
-                </div>
-                <div className="ptf-rewards-project__link">
-                  <a
-                    className="ptf-link-with-arrow text-uppercase fz-14"
-                    href="#"
-                  >
-                    See project
-                  </a>
+                  <span>{val.subtitle}</span>
                 </div>
               </div>
-            ))}
             {/* End .ptf-rewards-project */}
           </div>
         </li>

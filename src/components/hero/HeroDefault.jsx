@@ -1,25 +1,20 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 
-const heroContent = {
-  title: "AudioTech",
-  subTitle1: "Crafting Digital",
-  subTitle2: "Agency",
-  subTitleDescription1: "Good design mean that",
-  subTitleDescription2: "good business",
-  detailsDescription: `We help our client suceed by creating identities, digital
-    experiences, and printmaterials that communicate clearly,
-    achieve marketing goals & look fantastic Lorem uispum dolor
-    sit amert tunoer poea opefse ceefo goipully.`,
-};
-
-const HeroDefault = () => {
+const HeroDefault = ({landingData}) => {
+  const heroContent = {
+    title: "AudioTech",
+    subTitle1: "Crafting Digital",
+    subTitle2: "Agency",
+    subTitleDescription1: landingData.title,
+    detailsDescription: landingData.description,
+  };
   return (
     <div className="row">
       <div className="col-xl-9">
         {/* <!--Animated Block--> */}
         <div className="ptf-animated-block" data-aos="fade" data-aos-delay="0">
-          <h1 className="fz-230 fz-130--lg fz-90--md">{heroContent.title}</h1>
+          <h1 className="fz-230 fz-130--lg fz-90--md has-white-color">{heroContent.title}</h1>
         </div>
         {/* <!--Spacer--> */}
         <div className="ptf-spacer" style={{ "--ptf-xxl": "0.625rem" }}></div>
@@ -66,7 +61,6 @@ const HeroDefault = () => {
               "
           >
             {heroContent.subTitleDescription1} <br />
-            {heroContent.subTitleDescription2}
           </p>
         </div>
         {/* <!--Spacer--> */}
@@ -87,7 +81,7 @@ const HeroDefault = () => {
                 data-aos-delay="0"
               >
                 {/* <!--Divider--> */}
-                <div className="ptf-divider"></div>
+                <div className="ptf-divider ptf-divider-white"></div>
                 {/* <!--Spacer--> */}
                 <div
                   className="ptf-spacer"
@@ -96,7 +90,7 @@ const HeroDefault = () => {
                     "--ptf-md": "2.1875rem",
                   }}
                 ></div>
-                <p className="fz-24 has-black-color">
+                <p className="fz-24 has-white-color">
                   {heroContent.detailsDescription}
                 </p>
               </div>

@@ -16,11 +16,11 @@ const imageList = [
   },
 ];
 
-const ImageGridTwo = () => {
+const ImageGridTwo = ({other_images}) => {
   return (
     <Gallery>
       <div className="row" style={{ "--bs-gutter-y": "2rem" }}>
-        {imageList.map((val, i) => (
+        {other_images && other_images.map((val, i) => (
           <div className="col-6" key={i}>
             {/* <!--Animated Block--> */}
             <div
@@ -31,14 +31,14 @@ const ImageGridTwo = () => {
               {/* <!--Simple Image--> */}
               <div className="ptf-simple-image">
                 <Item
-                  original={val.img}
-                  thumbnail={val.img}
+                  original={val}
+                  thumbnail={val}
                   width={416}
                   height={335}
                 >
                   {({ ref, open }) => (
                     <img
-                      src={val.img}
+                      src={val}
                       alt="service"
                       role="button"
                       ref={ref}
@@ -51,7 +51,7 @@ const ImageGridTwo = () => {
               <div className="ptf-simple-image-caption">
                 Image by{" "}
                 <a href={val.link} target="_blank" rel="noopener noreferrer">
-                  {val.imageOwner}
+                  {/* {val.imageOwner} */}
                 </a>
               </div>
               {/* End .ptf-simple-image-caption */}

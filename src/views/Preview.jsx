@@ -10,7 +10,7 @@ const Preview = () => {
   return (
     <div className="ptf-site-wrapper animsition">
       <Helmet>
-        <title>Moonex - Preview</title>
+        <title>Audio Technology - Preview</title>
       </Helmet>
       <div className="ptf-site-wrapper__inner">
         {/* <!--Header--> */}

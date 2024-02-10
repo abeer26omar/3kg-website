@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import BrandModal from "./BrandModal";
+import { useQuery } from '@tanstack/react-query';
+import { getPartners } from '../../Util/http';
+
 
 const brandContent = [
   {
@@ -46,37 +50,62 @@ const brandContent = [
 ];
 
 const Brand = () => {
+
+  const [openModal, setOpenModal] = useState(false);
+  const [brand, setBrand] = useState({})
+
+  const closeModal = () => setOpenModal(false);
+
+  
+  const { data: partners } = useQuery({
+    queryKey: ['ourPartners'],
+    queryFn: () => getPartners(1)
+  });
+
+  const onOpenModal = (brandObj) => {
+    setOpenModal(true);
+    setBrand(brandObj);
+  }
+
+
   return (
-    <div className="row" style={{ "--bs-gutter-y": "2rem" }}>
-      {brandContent.map((item, i) => (
-        <div className="col-6 col-md-3 col-lg-2" key={i}>
+    <>
+      <div className="row" style={{ "--bs-gutter-y": "2rem" }}>
+      {partners && partners?.items.map((item, i) => (
+        <div className="col-6 col-md-3 col-lg-2" key={i} onClick={() => onOpenModal(item)}>
           {/* <!--Animated Block--> */}
           <div
             className="ptf-animated-block"
             data-aos="fade"
-            data-aos-delay={item.delayAnimation}
+            data-aos-delay={(i * 100).toString()}
           >
             {/* <!--Partner Box--> */}
             <div
               className="ptf-partner-box"
               style={{
-                "--ptf-hover-background": item.hoverBg,
-                "--ptf-image-height": item.imgHeight,
+                "--ptf-hover-background": '#fcf8f4',
+                "--ptf-image-height": '85px',
               }}
             >
               <div className="ptf-partner-box__image">
                 <img
-                  src={`assets/img/root/partners/${item.imgName}.png`}
-                  alt="Zeplin"
+                  src={item.logo}
+                  alt={item.name}
                   loading="lazy"
                 />
               </div>
-              <h6 className="ptf-partner-box__title">{item.title}</h6>
+              <h6 className="ptf-partner-box__title">{item.name}</h6>
             </div>
           </div>
         </div>
       ))}
-    </div>
+      </div>
+      <BrandModal 
+        show={openModal}
+        onHide={closeModal}
+        brand={brand}
+      />
+    </>
   );
 };
 

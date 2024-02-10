@@ -11,7 +11,7 @@ const BlogMasonry = () => {
   return (
     <div className="ptf-site-wrapper animsition ptf-is--blog-grid">
       <Helmet>
-        <title>Audio Technology - Blog Masonry</title>
+        <title>Audio Technology - Projects</title>
       </Helmet>
       {/* End Page SEO Content */}
       <div className="ptf-site-wrapper__inner">
@@ -36,12 +36,11 @@ const BlogMasonry = () => {
                       data-aos="fade"
                       data-aos-delay="0"
                     >
-                      <h1 className="large-heading">Blog</h1>
+                      <h1 className="large-heading">Projects</h1>
                     </div>
                   </div>
                   {/* End .col */}
-                  <div className="col-xl-3 offset-xl-1 col-lg-4">
-                    {/* <!--Animated Block--> */}
+                  {/* <div className="col-xl-3 offset-xl-1 col-lg-4">
                     <div
                       className="ptf-animated-block"
                       data-aos="fade"
@@ -51,7 +50,7 @@ const BlogMasonry = () => {
                         <SearchBlog />
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 {/* <!--Spacer--> */}
                 <div

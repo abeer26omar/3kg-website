@@ -4,14 +4,11 @@ export const getLangingData = async () => {
 
     const config = {
         method: 'GET',
-        url: `${process.env.REACT_APP_API_URL}/api/landing`,
-        Headers: {
-            'Access-Control-Allow-Origin': '*'
-        }
+        url: `${process.env.REACT_APP_API_URL}/api/landing`
     };
 
     const response = await axios(config)
-    return response.data.data;
+    return response.data;
 }
 
 export const subscribeNewsLetter = async (email) => {
@@ -25,10 +22,10 @@ export const subscribeNewsLetter = async (email) => {
     };
 
     const response = await axios(config)
-    return response.data.data;
+    return response.data;
 }
 
-export const getHomeServices = async (email) => {
+export const getHomeServices = async () => {
 
     const config = {
         method: 'GET',
@@ -36,7 +33,7 @@ export const getHomeServices = async (email) => {
     };
 
     const response = await axios(config)
-    return response.data.data;
+    return response.data;
 }
 
 export const getAwards = async (pageNum) => {
@@ -47,7 +44,7 @@ export const getAwards = async (pageNum) => {
     };
 
     const response = await axios(config)
-    return response.data.data;
+    return response.data;
 }
 
 export const getTestimonial = async (pageNum) => {
@@ -58,7 +55,7 @@ export const getTestimonial = async (pageNum) => {
     };
 
     const response = await axios(config)
-    return response.data.data;
+    return response.data;
 }
 
 export const getPartners = async (pageNum) => {
@@ -69,5 +66,60 @@ export const getPartners = async (pageNum) => {
     };
 
     const response = await axios(config)
-    return response.data.data;
+    return response.data;
+}
+
+export const getProjects = async (pageNum) => {
+
+    const config = {
+        method: 'GET',
+        url: `${process.env.REACT_APP_API_URL}/api/project?page=${pageNum}`,
+    };
+
+    const response = await axios(config)
+    return response.data;
+}
+
+export const getCaseStudies = async (home, pageNum) => {
+
+    const config = {
+        method: 'GET',
+        url: `${process.env.REACT_APP_API_URL}/api/case-study?home_page=${home}&page=${pageNum}`,
+    };
+
+    const response = await axios(config)
+    return response.data;
+}
+
+export const getCaseDetails = async (case_id) => {
+
+    const config = {
+        method: 'GET',
+        url: `${process.env.REACT_APP_API_URL}/api/case-study/${case_id}`,
+    };
+
+    const response = await axios(config)
+    return response.data;
+}
+
+export const getNews = async (home, pageNum) => {
+
+    const config = {
+        method: 'GET',
+        url: `${process.env.REACT_APP_API_URL}/api/news?home_page=${home}&page=${pageNum}`,
+    };
+
+    const response = await axios(config)
+    return response.data;
+}
+
+export const getNewsDetails = async (news_id) => {
+
+    const config = {
+        method: 'GET',
+        url: `${process.env.REACT_APP_API_URL}/api/news/${news_id}`,
+    };
+
+    const response = await axios(config)
+    return response.data;
 }

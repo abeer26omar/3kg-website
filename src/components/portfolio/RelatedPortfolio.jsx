@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useQuery } from '@tanstack/react-query';
+import { getCaseStudies } from '../../Util/http';
 
 const portfolioContent = [
   { img: "work-1", categorie: "UI/UX", title: "Taskly Dashboard" },
@@ -19,25 +21,31 @@ const portfolioContent = [
 ];
 
 const RelatedPortfolio = () => {
+
+  const { data: caseStudies } = useQuery({
+    queryKey: ['caseStudies'],
+    queryFn: () => getCaseStudies(false, 1)
+  });
+
   return (
     <>
-      {portfolioContent.map((val, i) => (
+      {caseStudies && caseStudies?.items.map((val, i) => (
         <div className="col-lg-4" key={i}>
           <div className="grid-item">
             {/* <!--Portfolio Item--> */}
             <article className="ptf-work ptf-work--style-1">
               <div className="ptf-work__media">
-                <Link className="ptf-work__link" to="/works-showcase"></Link>
+                <Link className="ptf-work__link" to={`/case-details/${val.id}`}></Link>
                 <img
-                  src={`assets/img/portfolio/${val.img}.png`}
+                  src={val.main_image}
                   alt="portfolio"
                   loading="lazy"
                 />
               </div>
               <div className="ptf-work__meta">
-                <div className="ptf-work__category">{val.categorie}</div>
+                <div className="ptf-work__category">{val.category}</div>
                 <h4 className="ptf-work__title">
-                  <Link to="/works-showcase">{val.title}</Link>
+                  <Link to={`/case-details/${val.id}`}>{val.title}</Link>
                 </h4>
               </div>
             </article>

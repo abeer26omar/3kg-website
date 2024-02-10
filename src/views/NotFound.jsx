@@ -9,7 +9,7 @@ const NotFound = () => {
   return (
     <div>
       <Helmet>
-        <title>Moonex - 404 Page</title>
+        <title>Audio Technology - 404 Page</title>
       </Helmet>
       {/* End Page SEO Content */}
 

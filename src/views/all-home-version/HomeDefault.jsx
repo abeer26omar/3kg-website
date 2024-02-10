@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useQuery } from '@tanstack/react-query';
@@ -18,10 +18,18 @@ import { getLangingData } from '../../Util/http';
 
 const HomeDefault = () => {
 
-  const { isPending, error, data } = useQuery({
-    queryKey: ['KnowledgeHome'],
+  const [serviceTitle, setServiceTitle] = useState('');
+  const [serviceDescription, setServiceDescription] = useState('');
+
+  const { data: landingData } = useQuery({
+    queryKey: ['landingData'],
     queryFn: () => getLangingData()
   });
+
+  const getServicevalues = (title, description) => {
+    setServiceDescription(description);
+    setServiceTitle(title)
+  }
 
   return (
     <div className="ptf-site-wrapper animsition  ptf-is--home-default">
@@ -39,14 +47,17 @@ const HomeDefault = () => {
             {/*=============================================
                 Start Hero Section
               ============================================== */}
-            <section className="has-accent-1-background">
+               {/* style={{
+              backgroundImage: `url(${landingData ? landingData[0].image : 'assets/img/home/AT_8.jpg'})`
+                }} */}
+            <section className="has-accent-5-background">
               {/* <!--Spacer--> */}
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "15rem" }}
               ></div>
               <div className="container-xxl">
-                <HeroDefault />
+                {landingData && (<HeroDefault landingData={landingData?.landing}/>)}
               </div>
               {/* <!--Spacer--> */}
               <div
@@ -74,8 +85,7 @@ const HomeDefault = () => {
                       data-aos-delay="0"
                     >
                       <h2 className="h1 large-heading">
-                        Our <br />
-                        Services
+                         {serviceTitle} <br />
                       </h2>
                       {/* <!--Spacer--> */}
                       <div
@@ -83,9 +93,7 @@ const HomeDefault = () => {
                         style={{ "--ptf-xxl": "2.5rem" }}
                       ></div>
                       <p className="fz-18">
-                        We help ambitious businesses like yours generate more
-                        profits by building awareness, driving web traffic,
-                        connecting with customers and growing overall sales.
+                        {serviceDescription}
                       </p>
                     </div>
                     {/* <!--Spacer--> */}
@@ -98,7 +106,7 @@ const HomeDefault = () => {
                     ></div>
                   </div>
                   <div className="col-lg-8 offset-lg-1">
-                    <ServiceOne />
+                    <ServiceOne getServicevalues={getServicevalues} />
                   </div>
                 </div>
               </div>
@@ -110,7 +118,7 @@ const HomeDefault = () => {
             </section>
 
             {/*=============================================
-                Start Portfolio Section
+                Start Case Studies
               ============================================== */}
             <section>
               <div className="container-xxl">
@@ -143,7 +151,7 @@ const HomeDefault = () => {
                           has-black-color
                           d-none d-lg-inline-flex
                         "
-                      to="/works-grid"
+                      to="/case-studies"
                       style={{ marginLeft: "5.625rem" }}
                     >
                       All Case studies <i className="lnil lnil-chevron-right"></i>
@@ -218,8 +226,9 @@ const HomeDefault = () => {
                           fw-semibold
                           has-black-color
                           d-none d-lg-inline-flex
+                          hover-white
                         "
-                      to="/works-grid"
+                      to="/news"
                       style={{ marginLeft: "5.625rem" }}
                     >
                       All News <i className="lnil lnil-chevron-right"></i>
@@ -299,7 +308,7 @@ const HomeDefault = () => {
                 </div>
                 {/* End .row */}
 
-                <Counter />
+                <Counter statistics={landingData?.statistics} />
               </div>
               {/* <!--Spacer--> */}
               <div
@@ -393,21 +402,6 @@ const HomeDefault = () => {
                     ></div>
                     <div className="fz-90 has-black-color">
                       {/* <!--Animated Block--> */}
-                      <Link
-                        className="ptf-animated-block"
-                        data-aos="fade"
-                        data-aos-delay="300"
-                        to="/contact"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="currentColor"
-                          style={{ height: "1em" }}
-                          viewBox="0 0 17 17"
-                        >
-                          <path d="M16 .997V10h-1V2.703L4.683 13l-.707-.708L14.291 1.997H6.975v-1H16z" />
-                        </svg>
-                      </Link>
                     </div>
                   </div>
                   <div className="col-lg-8">
@@ -422,43 +416,6 @@ const HomeDefault = () => {
               ></div>
             </section>
 
-            {/* <section>
-              <div className="container-xxl">
-                <div className="ptf-divider"></div>
-              </div>
-            </section>
-
-            <section>
-              <div
-                className="ptf-spacer"
-                style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
-              ></div>
-              <div className="container-xxl">
-                <div
-                  className="ptf-animated-block"
-                  data-aos="fade"
-                  data-aos-delay="0"
-                >
-                  <div
-                    className="row"
-                    style={{
-                      "--bs-gutter-x": "3.75rem",
-                      "--bs-gutter-y": "7.5rem",
-                    }}
-                  >
-                    <Blog />
-                  </div>
-                </div>
-              </div>
-              <div
-                className="ptf-spacer"
-                style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
-              ></div>
-            </section> */}
-
-            {/*=============================================
-                End Blog Section
-              ============================================== */}
           </div>
         </div>
         {/* End .ptf-main */}

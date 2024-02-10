@@ -25,7 +25,7 @@ const imageList = [
   },
 ];
 
-const ImageGridThree = () => {
+const ImageGridThree = ({caseImages}) => {
   return (
     <Gallery>
       <div
@@ -35,19 +35,19 @@ const ImageGridThree = () => {
           "--bs-gutter-y": "2rem",
         }}
       >
-        {imageList.map((val, i) => (
-          <div className={val.column} key={i}>
+        {caseImages && caseImages?.map((val, i) => (
+          <div className={'col-lg-6'} key={i}>
             <div className="ptf-gallery__item">
               <div className="ptf-simple-image">
                 <Item
-                  original={val.img}
-                  thumbnail={val.img}
-                  width={val.width}
-                  height={val.height}
+                  original={val}
+                  thumbnail={val}
+                  // width={val.width}
+                  // height={val.height}
                 >
                   {({ ref, open }) => (
                     <img
-                      src={val.img}
+                      src={val}
                       alt="works gallery"
                       role="button"
                       ref={ref}

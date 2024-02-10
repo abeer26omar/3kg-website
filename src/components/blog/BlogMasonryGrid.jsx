@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Masonry from "react-masonry-css";
+import { useQuery } from '@tanstack/react-query';
+import { getProjects } from "../../Util/http";
 
 const blogContent = [
   {
@@ -109,6 +111,12 @@ const breakpointColumnsObj = {
 };
 
 const BlogMasonryGrid = () => {
+
+  const { data: projects } = useQuery({
+    queryKey: ['projects'],
+    queryFn: () => getProjects(1)
+  });
+
   return (
     <>
       <Masonry
@@ -116,21 +124,21 @@ const BlogMasonryGrid = () => {
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
-        {blogContent.map((item, i) => (
+        {projects && projects?.items.map((item, i) => (
           <div className="grid-item" key={i}>
             {/* <!--Blog Post--> */}
             <article className="ptf-post ptf-post--style-2">
               <div className="ptf-post__media">
                 <img
-                  src={`assets/img/blog/masonry/${item.img}.png`}
+                  src={item.image}
                   alt=""
                   loading="lazy"
                 />
                 <div className="ptf-post__media__content">
                   <header className="ptf-post__header">
                     <div className="ptf-post__meta">
-                      <span className="cat">{item.cat}</span>
-                      <span className="date">{item.date}</span>
+                      <span className="cat">{item.category}</span>
+                      {/* <span className="date">{item.date}</span> */}
                     </div>
                     <h3 className="ptf-post__title">{item.title}</h3>
                   </header>
@@ -140,21 +148,21 @@ const BlogMasonryGrid = () => {
               <div className="ptf-post__content">
                 <header className="ptf-post__header">
                   <div className="ptf-post__meta">
-                    <span className="cat">{item.cat}</span>
-                    <span className="date">{item.date}</span>
+                    <span className="cat">{item.category}</span>
+                    {/* <span className="date">{item.date}</span> */}
                   </div>
                   <h3 className="ptf-post__title">
                     <Link to="/blog-details">{item.title}</Link>
                   </h3>
                 </header>
-                <div className="ptf-post__excerpt">
+                {/* <div className="ptf-post__excerpt">
                   <p>{item.description}</p>
                 </div>
                 <footer className="ptf-post__footer">
                   <Link className="ptf-read-more-link" to="/blog-details">
                     Continue
                   </Link>
-                </footer>
+                </footer> */}
               </div>
               {/* End .ptf-post__content */}
             </article>

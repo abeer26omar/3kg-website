@@ -1,4 +1,7 @@
 import React from "react";
+import { useQuery } from '@tanstack/react-query';
+import { getNews } from '../../Util/http';
+import { Link } from "react-router-dom";
 
 const approachContent = [
   {
@@ -23,6 +26,12 @@ const approachContent = [
 ];
 
 const Approach = () => {
+
+  const { data: news } = useQuery({
+    queryKey: ['news'],
+    queryFn: () => getNews(true, 1)
+  });
+
   return (
     <div
       className="row"
@@ -31,25 +40,29 @@ const Approach = () => {
         "--bs-gutter-y": "7.5rem",
       }}
     >
-      {approachContent.map((val, i) => (
+      {news && news?.items.map((val, i) => (
         <div className="col-xl-4 col-lg-6" key={i}>
           {/* <!--Animated Block--> */}
           <div
             className="ptf-animated-block"
             data-aos="fade"
-            data-aos-delay={val.delayAnimation}
+            data-aos-delay={(i * 100).toString()}
           >
             {/* <!--Approach Box--> */}
             <div
-              className="ptf-approach-box"
+              className="ptf-approach-box ptf-work--style-3"
               style={{
                 "--ptf-title-color": "var(--ptf-color-white)",
               }}
             >
-              <div className="ptf-approach-box__subtitle">{val.subTitle}</div>
-              <h3 className="ptf-approach-box__title h1">{val.title}</h3>
+              <div className="ptf-approach-box__subtitle">{val.category}</div>
+              <h4 className="ptf-approach-box__title ptf-work__title">
+                <Link to='/'>
+                  {val.title}
+                </Link>
+              </h4>
               <div className="ptf-approach-box__content">
-                <p>{val.descriptions}</p>
+                <p>{val.brief}</p>
               </div>
             </div>
           </div>

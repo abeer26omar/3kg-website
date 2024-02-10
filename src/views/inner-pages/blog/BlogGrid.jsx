@@ -1,5 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import { useQuery } from '@tanstack/react-query';
+import { getNews } from "../../../Util/http";
 import BlogGridSLider from "../../../components/blog/BlogGridSLider";
 import BlogThree from "../../../components/blog/BlogThree";
 import CopyRight from "../../../components/footer/copyright/CopyRight";
@@ -9,10 +11,16 @@ import HeaderDefault from "../../../components/header/HeaderDefault";
 import NewsletterTwo from "../../../components/newsletter/NewsletterTwo";
 
 const BlogGrid = () => {
+
+  const { data: news } = useQuery({
+    queryKey: ['news', 'all'],
+    queryFn: () => getNews(false, 1)
+  });
+
   return (
     <div className="ptf-site-wrapper animsition ptf-is--blog-grid">
       <Helmet>
-        <title>Audio Technology - Bog Grid</title>
+        <title>Audio Technology - News</title>
       </Helmet>
       {/* End Page SEO Content */}
       <div className="ptf-site-wrapper__inner">
@@ -41,8 +49,7 @@ const BlogGrid = () => {
                     </div>
                   </div>
                   {/* End .col */}
-                  <div className="col-xl-3 offset-xl-1 col-lg-4">
-                    {/* <!--Animated Block--> */}
+                  {/* <div className="col-xl-3 offset-xl-1 col-lg-4">
                     <div
                       className="ptf-animated-block"
                       data-aos="fade"
@@ -52,7 +59,7 @@ const BlogGrid = () => {
                         <SearchBlog />
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 {/* <!--Spacer--> */}
                 <div
@@ -81,7 +88,7 @@ const BlogGrid = () => {
                 >
                   <div className="ptf-news-slider swiper-container">
                     <div className="swiper-wrapper">
-                      <BlogGridSLider />
+                      <BlogGridSLider news={news}/>
                     </div>
                     {/* End swiper-wrapper */}
                   </div>
@@ -135,7 +142,7 @@ const BlogGrid = () => {
                       "--bs-gutter-y": "3rem",
                     }}
                   >
-                    <BlogThree />
+                    <BlogThree news={news} />
                   </div>
                 </div>
                 {/* End .ptf-animated-block */}
@@ -170,9 +177,8 @@ const BlogGrid = () => {
             </section>
             {/* End blog gird */}
 
-            <section>
+            {/* <section>
               <div className="container-xxl">
-                {/* <!--Divider--> */}
                 <div
                   className="ptf-divider"
                   style={{
@@ -181,13 +187,12 @@ const BlogGrid = () => {
                   }}
                 ></div>
               </div>
-            </section>
+            </section> */}
 
             {/*=============================================
             Start Newsletter section
             ============================================== */}
-            <section>
-              {/* <!--Spacer--> */}
+            {/* <section>
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "9.375rem", "--ptf-md": "4.6875rem" }}
@@ -195,45 +200,39 @@ const BlogGrid = () => {
               <div className="container-xxl">
                 <div className="row align-items-center">
                   <div className="col-lg-4">
-                    {/* <!--Animated Block--> */}
                     <div
                       className="ptf-animated-block"
                       data-aos="fade"
                       data-aos-delay="0"
                     >
                       <h1 className="large-heading">Newsletter</h1>
-                      {/* <!--Spacer--> */}
                       <div
                         className="ptf-spacer"
                         style={{ "--ptf-xxl": "1.25rem" }}
                       ></div>
                       <p>Get the latest news & insight.</p>
                     </div>
-                    {/* <!--Spacer--> */}
                     <div
                       className="ptf-spacer"
                       style={{ "--ptf-lg": "3.75rem", "--ptf-md": "1.875rem" }}
                     ></div>
                   </div>
                   <div className="col-lg-6 offset-lg-2">
-                    {/* <!--Animated Block--> */}
                     <div
                       className="ptf-animated-block"
                       data-aos="fade"
                       data-aos-delay="100"
                     >
-                      {/* <!--Spacer--> */}
                       <NewsletterTwo />
                     </div>
                   </div>
                 </div>
               </div>
-              {/* <!--Spacer--> */}
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
               ></div>
-            </section>
+            </section> */}
           </div>
           {/* End .ptf-page */}
         </div>

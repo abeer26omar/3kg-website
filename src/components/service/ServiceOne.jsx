@@ -1,5 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { getHomeServices } from '../../Util/http';
+import { useQuery } from '@tanstack/react-query';
 
 const serviceContent = [
   {
@@ -32,10 +33,22 @@ const serviceContent = [
   },
 ];
 
-const ServiceOne = () => {
+const ServiceOne = ({getServicevalues}) => {
+
+  const { data: ourServices } = useQuery({
+    queryKey: ['ourServices'],
+    queryFn: () => getHomeServices()
+  });
+  useEffect(()=>{
+    if(getServicevalues){
+      getServicevalues(ourServices?.title, ourServices?.description)
+    }
+
+  },[ourServices]);
+
   return (
     <>
-      {serviceContent.map((val, i) => (
+      {ourServices && ourServices?.items.map((val, i) => (
         <div
           className="ptf-animated-block"
           data-aos="fade"
@@ -43,20 +56,16 @@ const ServiceOne = () => {
           key={i}
         >
           {/* <!--Services Box--> */}
-          <div className="ptf-service-box">
-            {/* <Link
-              to="/service-details"
-              className="ptf-service-box__link"
-            ></Link> */}
-            <div className="ptf-service-box__icon">
-              <i className={val.icon}></i>
+          <div className="ptf-service-box gap-2">
+            <div className="">
+              {/* <i className={val.icon}></i> */}
+              <img src={val.icon} alt={val.title} loading="lazy"/>
             </div>
             <h5 className="ptf-service-box__title">
-              {val.titlePart1} <br />
-              {val.titlePart2}
+              {val.title} <br />
             </h5>
             <div className="ptf-service-box__content">
-              <p>{val.descriptions}</p>
+              <p>{val.description}</p>
             </div>
             {/* <div className="ptf-service-box__arrow">
               <i className="lnil lnil-chevron-right"></i>

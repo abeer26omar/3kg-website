@@ -1,40 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import NewsletterTwo from '../newsletter/NewsletterTwo';
 
 const linkList = [
   {
     itemName: "About us",
-    link: "/",
+    link: "/about-us",
   },
   {
     itemName: "Contact us",
-    link: "/",
+    link: "/contact",
   }
 ];
 
-// const Product = [
-//   {
-//     itemName: "Works",
-//     link: "/",
-//   },
-//   {
-//     itemName: "About",
-//     link: "/",
-//   },
-//   {
-//     itemName: "News",
-//     link: "/",
-//   },
-//   {
-//     itemName: "Contact",
-//     link: "/",
-//   },
-// ];
-
 const Footer = () => {
   return (
-    <div className="row">
-      <div className="col-12 col-xl-6">
+    <div className="row justify-content-between">
+      <div className="col-12 col-md-6">
         {/* <!--Animated Block--> */}
         <div className="ptf-animated-block" data-aos="fade" data-aos-delay="0">
           <div
@@ -45,14 +27,14 @@ const Footer = () => {
           </div>
 
           <div className="ptf-footer-heading has-black-color">
-            Start by
-            <Link
+            <p
               className="has-accent-1 text-decoration-underline"
               to="/contact"
             >
-              Saying Hi!
-            </Link>
+              Our NewsLetters
+            </p>
           </div>
+          <NewsletterTwo />
 
           {/* <p className="fz-24">90 Fairground Rd, FL 3290, United States</p>
           <a className="fz-40 has-black-color" href="mailto:hello@moonex.co">
@@ -60,7 +42,7 @@ const Footer = () => {
           </a> */}
         </div>
       </div>
-      <div className="col-12 col-md-6 col-xl-3">
+      <div className="col-12 col-md-3">
         {/* <!--Animated Block--> */}
         <div
           className="ptf-animated-block"
@@ -72,7 +54,7 @@ const Footer = () => {
             <ul>
               {linkList.map((val, i) => (
                 <li key={i}>
-                  <a href={val.link}>{val.itemName}</a>
+                  <Link to={val.link}>{val.itemName}</Link>
                 </li>
               ))}
             </ul>

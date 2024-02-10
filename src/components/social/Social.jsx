@@ -22,19 +22,50 @@ const SocialShare = [
     iconClass: "pinterest",
   },
 ];
-const Social = () => {
+const Social = ({social}) => {
+
+  const getIconClass = (type) => {
+    switch (type) {
+      case 'Facebook' :
+        return 'facebook';
+      case 'X' :
+        return 'twitter';
+      case 'INSTAGRAM' :
+        return 'instagram';
+      case 'LinkedIn' :
+        return 'linkedin';
+      default: 
+        return '';  
+    }
+  };
+
+  const getIconName = (type) => {
+    switch (type) {
+      case 'Facebook' :
+        return 'socicon-facebook';
+      case 'X' :
+        return 'socicon-twitter';
+      case 'INSTAGRAM' :
+        return 'socicon-instagram';
+      case 'LinkedIn' :
+        return 'socicon-linkedin';
+      default: 
+        return '';  
+    }
+  }
+
   return (
     <div className="ptf-offcanvas-menu__socials">
       {/* <!--Social Icon--> */}
-      {SocialShare.map((icon, i) => (
+      {social && social.map((icon, i) => (
         <a
-          className={`ptf-social-icon ptf-social-icon--style-3  ${icon.iconClass}`}
+          className={`ptf-social-icon ptf-social-icon--style-3 ${getIconClass(icon.type)}`}
           href={icon.link}
           target="_blank"
           rel="noopener noreferrer"
           key={i}
         >
-          <i className={icon.iconName}></i>
+          <i className={getIconName(icon.type)}></i>
         </a>
       ))}
     </div>
