@@ -12,7 +12,7 @@ const BlogSidebar = () => {
   return (
     <div className="ptf-site-wrapper animsition ptf-is--blog-sidebar">
       <Helmet>
-        <title>Moonex - Bog Sidebar</title>
+        <title>Audio Technology - Bog Sidebar</title>
       </Helmet>
       {/* End Page SEO Content */}
       <div className="ptf-site-wrapper__inner">

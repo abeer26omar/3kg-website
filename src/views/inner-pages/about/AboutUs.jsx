@@ -14,7 +14,7 @@ const AboutUs = () => {
   return (
     <div className="ptf-site-wrapper animsition  ptf-is--about-us">
       <Helmet>
-        <title>Moonex - About Us</title>
+        <title>Audio Technology - About Us</title>
       </Helmet>
       {/* End Page SEO Content */}
       <div className="ptf-site-wrapper__inner">

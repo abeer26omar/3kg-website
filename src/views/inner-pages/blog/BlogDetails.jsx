@@ -15,7 +15,7 @@ const BlogDetails = () => {
   return (
     <div className="ptf-site-wrapper animsition ptf-is--blog-grid">
       <Helmet>
-        <title>Moonex - Bog Post Details</title>
+        <title>Audio Technology - Bog Post Details</title>
       </Helmet>
       {/* End Page SEO Content */}
       <div className="ptf-site-wrapper__inner">

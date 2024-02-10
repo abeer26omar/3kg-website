@@ -15,7 +15,7 @@ const BlogDetailsSidebar = () => {
   return (
     <div className="ptf-site-wrapper animsition ptf-is--single-post-sidebar">
       <Helmet>
-        <title>Moonex - Bog Details Sidebar</title>
+        <title>Audio Technology - Bog Details Sidebar</title>
       </Helmet>
       {/* End Page SEO Content */}
       <div className="ptf-site-wrapper__inner">

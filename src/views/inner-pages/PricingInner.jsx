@@ -10,7 +10,7 @@ const PricingInner = () => {
   return (
     <div>
       <Helmet>
-        <title>Moonex - Pricing Page</title>
+        <title>Audio Technology - Pricing Page</title>
       </Helmet>
       {/* End Page SEO Content */}
 

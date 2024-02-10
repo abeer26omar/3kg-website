@@ -16,7 +16,7 @@ const AboutMe = () => {
   return (
     <div className="ptf-site-wrapper animsition  ptf-is--about-me">
       <Helmet>
-        <title>Moonex - AboutMe</title>
+        <title>Audio Technology - AboutMe</title>
       </Helmet>
       {/* End Page SEO Content */}
       <div className="ptf-site-wrapper__inner">

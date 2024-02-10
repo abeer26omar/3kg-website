@@ -12,7 +12,7 @@ const BlogGrid = () => {
   return (
     <div className="ptf-site-wrapper animsition ptf-is--blog-grid">
       <Helmet>
-        <title>Moonex - Bog Grid</title>
+        <title>Audio Technology - Bog Grid</title>
       </Helmet>
       {/* End Page SEO Content */}
       <div className="ptf-site-wrapper__inner">

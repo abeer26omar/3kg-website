@@ -11,7 +11,7 @@ const WorksShowcase = () => {
   return (
     <div className="ptf-site-wrapper animsition ptf-is--work-showcase-1">
       <Helmet>
-        <title>Moonex - Works Showcase</title>
+        <title>Audio Technology - Works Showcase</title>
       </Helmet>
       {/* End Page SEO Content */}
       <div className="ptf-site-wrapper__inner">

@@ -8,7 +8,7 @@ const ComingSoon = () => {
   return (
     <div>
       <Helmet>
-        <title>Moonex - ComingSoon</title>
+        <title>Audio Technology - ComingSoon</title>
       </Helmet>
       {/* End Page SEO Content */}
 

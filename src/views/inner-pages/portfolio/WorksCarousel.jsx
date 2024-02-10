@@ -10,7 +10,7 @@ const WorksCarousel = () => {
   return (
     <div className="ptf-site-wrapper animsition ptf-is--works-carousel">
       <Helmet>
-        <title>Moonex - Works/Portfolio Carousel</title>
+        <title>Audio Technology - Works/Portfolio Carousel</title>
       </Helmet>
       {/* End Page SEO Content */}
       <div className="ptf-site-wrapper__inner">
