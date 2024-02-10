@@ -57,7 +57,7 @@ const Approach = () => {
             >
               <div className="ptf-approach-box__subtitle">{val.category}</div>
               <h4 className="ptf-approach-box__title ptf-work__title">
-                <Link to='/'>
+                <Link to={`/news-details/${val.id}`}>
                   {val.title}
                 </Link>
               </h4>
