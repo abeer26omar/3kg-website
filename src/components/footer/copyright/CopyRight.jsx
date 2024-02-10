@@ -1,8 +1,9 @@
 import React from "react";
 import SocialTwo from "../../social/SocialTwo";
 import { Link } from "react-router-dom";
+import logo from '../../../assets/img/root/Logos/logo_orignalSize2.svg';
 
-const logo = "assets/img/root/Logos/Logo all versions-03.png";
+// const logo = "assets/img/root/Logos/Logo all versions-03.png";
 
 const CopyRight = () => {
   return (

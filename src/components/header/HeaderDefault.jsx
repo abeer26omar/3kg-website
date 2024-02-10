@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Search from "../form/Search";
 import DropdownMenu from "./menu/DropdownMenu";
 import MobileMenu from "./menu/MobileMenu";
+import logo from '../../assets/img/root/Logos/logo_orignalSize2.svg';
 
 const HeaderDefault = () => {
   const [click, setClick] = useState(false);
@@ -39,7 +40,7 @@ const HeaderDefault = () => {
               <Link className="ptf-navbar-logo" to="/">
                 <img
                   className="black w-100"
-                  src="assets/img/root/Logos/logo_orignalSize2.svg"
+                  src={logo}
                   alt="Logo-audio Tech"
                   loading="lazy"
                 />

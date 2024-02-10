@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import scroll from '../assets/img/chevron-w.png';
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -32,7 +33,7 @@ export default function ScrollToTop() {
       {isVisible && (
         <div>
           <button className="scroll-top " onClick={scrollToTop}>
-            <img src="assets/img/chevron-w.png" alt="icon" />
+            <img src={scroll} alt="icon" />
           </button>
         </div>
       )}

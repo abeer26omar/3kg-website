@@ -57,10 +57,10 @@ const AllRoutes = () => {
 
         {/* Portfolio */}
         <Route path="/case-studies" element={<WorksGrid />} />
+        <Route path="/case-details/:id" element={<WorksShowcase />} />
         {/* <Route path="/works-masonry" element={<WorksMasonry />} />
         <Route path="/works-listing" element={<WorksListing />} />
         <Route path="/works-carousel" element={<WorksCarousel />} /> */}
-        <Route path="/case-details/:id" element={<WorksShowcase />} />
 
         {/* others */}
         <Route path="/team" element={<Team />} />

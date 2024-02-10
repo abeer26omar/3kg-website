@@ -86,7 +86,7 @@ const PortfolioSix = () => {
           className="ptf-spacer"
           style={{ "--ptf-xxl": "6.25rem", "--ptf-md": "3.125rem" }}
         ></div>
-        <div className="row">
+        <div className="row g-3">
           {caseStudies && caseStudies?.items.map((item, i) => (
             // <TabPanel key={i}>
               <div
