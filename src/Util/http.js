@@ -123,3 +123,14 @@ export const getNewsDetails = async (news_id) => {
     const response = await axios(config)
     return response.data;
 }
+
+export const getSiteContacts = async () => {
+
+    const config = {
+        method: 'GET',
+        url: `${process.env.REACT_APP_API_URL}/api/site-contacts`,
+    };
+
+    const response = await axios(config)
+    return response.data;
+}

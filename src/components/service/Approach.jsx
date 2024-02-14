@@ -40,7 +40,7 @@ const Approach = () => {
         "--bs-gutter-y": "7.5rem",
       }}
     >
-      {news && news?.items.map((val, i) => (
+      {news && news?.items.slice(0, 3).map((val, i) => (
         <div className="col-xl-4 col-lg-6" key={i}>
           {/* <!--Animated Block--> */}
           <div

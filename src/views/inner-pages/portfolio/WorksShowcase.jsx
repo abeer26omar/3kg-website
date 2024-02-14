@@ -152,38 +152,40 @@ const WorksShowcase = () => {
                 ></div>
 
                 {/* <!--Animated Block--> */}
-                <div
-                  className="ptf-animated-block"
-                  data-aos="fade"
-                  data-aos-delay="0"
-                >
-                  <h2>Challenge</h2>
-                  <div
-                      className="ptf-spacer"
-                      style={{ "--ptf-xxl": "6.25rem", "--ptf-md": "3.125rem" }}
-                    ></div>
-                  <div
-                  className="ptf-video-button"
-                  onClick={() => setOpen(true)}
+                <section
+              className="jarallax jarallax-img"
                   style={{
-                    "--ptf-title-color": "var(--ptf-color-black)",
-                    marginLeft: "2rem",
+                    backgroundImage: `url(${caseDetilas?.other_images[0]})`,
+                    textAlign: 'center',
+                    filter: 'grayscale(60%)'
                   }}
                 >
-                  <a href="#" rel="nofollow">
-                    <i className="lnil lnil-play"></i>
-                  </a>
-                  <div className="ptf-video-button__title">
-                    View case story
-                  </div>
-                </div>
-                </div>
+                  <div
+                      className="ptf-spacer"
+                      style={{ "--ptf-xxl": "12.5rem", "--ptf-md": "6.25rem" }}
+                    ></div>
 
-                {/* <!--Spacer--> */}
-                <div
-                  className="ptf-spacer"
-                  style={{ "--ptf-xxl": "1.5625rem" }}
-                ></div>
+                  <div
+                    className="ptf-video-button"
+                    onClick={() => setOpen(true)}
+                    style={{
+                      "--ptf-title-color": "var(--ptf-color-white)",
+                      marginLeft: "2rem",
+                    }}
+                  >
+                    <a href="#" rel="nofollow">
+                      <i className="lnil lnil-play"></i>
+                    </a>
+                    <div className="ptf-video-button__title">
+                      View case story
+                    </div>
+                  </div>
+                  {/* <!--Spacer--> */}
+                  <div
+                      className="ptf-spacer"
+                      style={{ "--ptf-xxl": "12.5rem", "--ptf-md": "6.25rem" }}
+                    ></div>
+                </section>
                 
                 {/* <!--Animated Block--> */}
                 {/* <div

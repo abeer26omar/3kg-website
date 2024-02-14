@@ -36,7 +36,7 @@ const menuContent = [
     name: "Contact us",
     activeClass: "",
     menuClass: "two-columns",
-    to: ''
+    to: '/contact'
   }
 ];
 

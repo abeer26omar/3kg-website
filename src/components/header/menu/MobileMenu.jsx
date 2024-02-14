@@ -10,24 +10,30 @@ import {
 } from "react-pro-sidebar";
 import Social from "../../social/Social";
 
-const menuContent = [
+const menuContent =  [
   {
     name: "Home",
+    to: '/'
   },
   {
     name: "About us",
+    to: '/about-us'
   },
   {
     name: "Brands",
+    to: ''
   },
   {
     name: "Projects",
+    to: '/projects'
   },
   {
     name: "Case Studies",
+    to: '/case-studies'
   },
   {
     name: "Contact us",
+    to: '/contact'
   }
 ];
 
@@ -41,7 +47,7 @@ const MobileMenu = () => {
               {menuContent.map((item, i) => (
                 // <SubMenu title={item.name} key={i} />
                 <MenuItem key={i}>
-                  <Link to={item?.routerPath}>{item.name}</Link>
+                  <Link to={item?.to}>{item.name}</Link>
                 </MenuItem>
               ))}
             </Menu>

@@ -67,38 +67,37 @@ const Brand = () => {
     setBrand(brandObj);
   }
 
-
   return (
     <>
       <div className="row" style={{ "--bs-gutter-y": "2rem" }}>
-      {partners && partners?.items.map((item, i) => (
-        <div className="col-6 col-md-3 col-lg-2" key={i} onClick={() => onOpenModal(item)}>
-          {/* <!--Animated Block--> */}
-          <div
-            className="ptf-animated-block"
-            data-aos="fade"
-            data-aos-delay={(i * 100).toString()}
-          >
-            {/* <!--Partner Box--> */}
-            <div
-              className="ptf-partner-box"
-              style={{
-                "--ptf-hover-background": '#fcf8f4',
-                "--ptf-image-height": '85px',
-              }}
-            >
-              <div className="ptf-partner-box__image">
-                <img
-                  src={item.logo}
-                  alt={item.name}
-                  loading="lazy"
-                />
+          {partners && partners?.items.slice(0, 6).map((item, i) => (
+            <div className="col-6 col-md-3 col-lg-2" key={i} onClick={() => onOpenModal(item)}>
+              {/* <!--Animated Block--> */}
+              <div
+                className="ptf-animated-block"
+                data-aos="fade"
+                data-aos-delay={(i * 100).toString()}
+              >
+                {/* <!--Partner Box--> */}
+                <div
+                  className="ptf-partner-box"
+                  style={{
+                    "--ptf-hover-background": '#fcf8f4',
+                    "--ptf-image-height": '85px',
+                  }}
+                >
+                  <div className="ptf-partner-box__image">
+                    <img
+                      src={item.logo}
+                      alt={item.name}
+                      loading="lazy"
+                    />
+                  </div>
+                  <h6 className="ptf-partner-box__title">{item.name}</h6>
+                </div>
               </div>
-              <h6 className="ptf-partner-box__title">{item.name}</h6>
             </div>
-          </div>
-        </div>
-      ))}
+          ))}
       </div>
       <BrandModal 
         show={openModal}

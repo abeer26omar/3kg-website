@@ -6,8 +6,16 @@ import Footer from "../../components/footer/Footer";
 import Social from "../../components/social/Social";
 import ContactForm from "../../components/ContactForm";
 import Address from "../../components/Address";
+import { useQuery } from '@tanstack/react-query';
+import { getSiteContacts } from '../../Util/http';
 
 const Contact = () => {
+
+  const { data: siteContacts } = useQuery({
+    queryKey: ['site-contacts'],
+    queryFn: getSiteContacts
+  });
+
   return (
     <div>
       <Helmet>
@@ -46,7 +54,7 @@ const Contact = () => {
                       style={{ "--ptf-xxl": "3rem", "--ptf-md": "2.5rem" }}
                     ></div>
 
-                    <Social />
+                    <Social social={siteContacts?.social_media}/>
                     {/* <!--Social Icon--> */}
                   </div>
                 </div>
@@ -67,7 +75,7 @@ const Contact = () => {
             <div className="container-xxl">
               <div className="row">
                 <div className="col-lg-4">
-                  <Address />
+                  <Address contacts={siteContacts?.contacts} />
                 </div>
                 {/* End .col */}
 

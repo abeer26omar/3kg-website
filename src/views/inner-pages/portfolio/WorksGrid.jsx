@@ -10,7 +10,7 @@ const WorksGrid = () => {
   return (
     <div className="ptf-site-wrapper animsition ptf-is--works-grid">
       <Helmet>
-        <title>Audio Technology - case-studies</title>
+        <title>Audio Technology - case studies</title>
       </Helmet>
       {/* End Page SEO Content */}
       <div className="ptf-site-wrapper__inner">

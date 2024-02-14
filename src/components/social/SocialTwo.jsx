@@ -1,32 +1,32 @@
 import React from "react";
-
-const socialList = [
-  {
-    iconName: "socicon-twitter",
-    link: "https://twitter.com/",
-  },
-  {
-    iconName: "socicon-facebook",
-    link: "https://www.facebook.com/",
-  },
-  {
-    iconName: "socicon-instagram",
-    link: "https://www.instagram.com/",
-  },
-  {
-    iconName: "socicon-pinterest",
-    link: "https://www.pinterest.com/",
-  },
-  {
-    iconName: "socicon-dribbble",
-    link: "https://dribbble.com/",
-  },
-];
+import { useQuery } from '@tanstack/react-query';
+import { getSiteContacts } from '../../Util/http';
 
 const SocialTwo = () => {
+
+  const getIconName = (type) => {
+    switch (type) {
+      case 'Facebook' :
+        return 'socicon-facebook';
+      case 'X' :
+        return 'socicon-twitter';
+      case 'INSTAGRAM' :
+        return 'socicon-instagram';
+      case 'LinkedIn' :
+        return 'socicon-linkedin';
+      default: 
+        return '';  
+    }
+  }
+
+  const { data: socialList } = useQuery({
+    queryKey: ['social-list'],
+    queryFn: getSiteContacts
+  });
+
   return (
     <>
-      {socialList.map((val, i) => (
+      {socialList && socialList?.social_media.map((val, i) => (
         <a
           className="ptf-social-icon ptf-social-icon--style-1"
           target="_blank"
@@ -34,7 +34,7 @@ const SocialTwo = () => {
           href={val.link}
           key={i}
         >
-          <i className={val.iconName}></i>
+          <i className={getIconName(val.type)}></i>
         </a>
       ))}
     </>

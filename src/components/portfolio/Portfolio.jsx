@@ -79,7 +79,7 @@ const Portfolio = () => {
                 <Link to={`/case-details/${item.id}`} className="ptf-work__link"></Link>
                 <img
                   src={item.main_image}
-                  alt=""
+                  alt={item.title}
                   loading="lazy"
                 />
               </div>

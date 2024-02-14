@@ -345,7 +345,7 @@ const HomeDefault = () => {
                     >
                       <img
                         src="assets/img/root/quote.png"
-                        alt=""
+                        alt="quote"
                         loading="lazy"
                       />
                     </div>
