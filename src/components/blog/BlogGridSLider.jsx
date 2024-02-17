@@ -51,7 +51,7 @@ const BlogGridSLider = ({news}) => {
     <>
       <div className="swiper-slide grid-slider">
         <Slider {...settings} className="arrow-none">
-          {news && news?.items.map((val, i) => (
+          {news && news?.items.slice(0, 3).map((val, i) => (
             <div className="ptf-news-slide" key={i}>
               <div className="ptf-news-slide__media">
                 <img

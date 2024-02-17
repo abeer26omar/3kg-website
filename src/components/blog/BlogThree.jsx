@@ -58,10 +58,10 @@ const blogContent = [
   },
 ];
 
-const BlogThree = ({news}) => {
+const BlogThree = ({news, visibleCards}) => {
   return (
     <>
-      {news && news?.items.map((val, i) => (
+      {news && news?.slice(0, visibleCards).map((val, i) => (
         <div className="col-xl-4 col-lg-4" key={i}>
           <article className="ptf-post ptf-post--style-1">
             <div className="ptf-post__media">

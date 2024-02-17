@@ -112,6 +112,7 @@ const HeroDefault = ({landingData}) => {
                 <Link
                   className="ptf-btn ptf-btn--primary ptf-btn--inversed"
                   to="/about-us"
+                  title="about audio techology"
                 >
                   Learn More
                 </Link>

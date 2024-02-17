@@ -134,3 +134,25 @@ export const getSiteContacts = async () => {
     const response = await axios(config)
     return response.data;
 }
+
+export const getAboutUs = async () => {
+
+    const config = {
+        method: 'GET',
+        url: `${process.env.REACT_APP_API_URL}/api/about-us`,
+    };
+
+    const response = await axios(config)
+    return response.data;
+}
+
+export const getStatistic = async () => {
+
+    const config = {
+        method: 'GET',
+        url: `${process.env.REACT_APP_API_URL}/api/statistic`,
+    };
+
+    const response = await axios(config)
+    return response.data;
+}

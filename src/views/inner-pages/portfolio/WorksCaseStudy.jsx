@@ -86,7 +86,7 @@ const WorksCaseStudy = ({services, team, client_name, date}) => {
                     style={{ "--ptf-xxl": "1.25rem" }}
                   ></div>
                   <p className="fz-20 lh-1p5 has-black-color">
-                    {team} <br />
+                    {team.join(", ")} <br />
                     
                   </p>
                 </div>
@@ -116,7 +116,7 @@ const WorksCaseStudy = ({services, team, client_name, date}) => {
                     style={{ "--ptf-xxl": "1.25rem" }}
                   ></div>
                   <p className="fz-20 lh-1p5 has-black-color">
-                    {services} <br />
+                    {services.join(", ")} <br />
                     
                   </p>
                 </div>

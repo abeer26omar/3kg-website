@@ -5,37 +5,10 @@ import {
   ProSidebar,
   Menu,
   MenuItem,
-  SubMenu,
   SidebarContent,
 } from "react-pro-sidebar";
 import Social from "../../social/Social";
-
-const menuContent =  [
-  {
-    name: "Home",
-    to: '/'
-  },
-  {
-    name: "About us",
-    to: '/about-us'
-  },
-  {
-    name: "Brands",
-    to: ''
-  },
-  {
-    name: "Projects",
-    to: '/projects'
-  },
-  {
-    name: "Case Studies",
-    to: '/case-studies'
-  },
-  {
-    name: "Contact us",
-    to: '/contact'
-  }
-];
+import { NavHashLink } from 'react-router-hash-link';
 
 const MobileMenu = () => {
   return (
@@ -44,12 +17,26 @@ const MobileMenu = () => {
         <ProSidebar>
           <SidebarContent>
             <Menu className="sidebar-menu_wrapper">
-              {menuContent.map((item, i) => (
-                // <SubMenu title={item.name} key={i} />
-                <MenuItem key={i}>
-                  <Link to={item?.to}>{item.name}</Link>
+                <MenuItem>
+                  <Link to={'/'}>{'Home'}</Link>
                 </MenuItem>
-              ))}
+                <MenuItem>
+                  <Link to={'/about-us'}>{'About us'}</Link>
+                </MenuItem>
+                <MenuItem>
+                    <NavHashLink smooth to={'/#brands'}>
+                        <span>{'Brands'}</span>
+                    </NavHashLink>
+                </MenuItem>
+                <MenuItem>
+                  <Link to={'/projects'}>{'Projects'}</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to={'/case-studies'}>{'Case Studies'}</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link to={'/contact'}>{'Contact us'}</Link>
+                </MenuItem>
             </Menu>
           </SidebarContent>
         </ProSidebar>

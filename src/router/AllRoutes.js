@@ -63,8 +63,8 @@ const AllRoutes = () => {
         <Route path="/works-carousel" element={<WorksCarousel />} /> */}
 
         {/* others */}
-        <Route path="/team" element={<Team />} />
-        <Route path="/pricing" element={<PricingInner />} />
+        {/* <Route path="/team" element={<Team />} /> */}
+        {/* <Route path="/pricing" element={<PricingInner />} /> */}
         <Route path="/contact" element={<Contact />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="/faq" element={<Faq />} />

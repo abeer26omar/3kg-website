@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useQuery } from '@tanstack/react-query';
@@ -12,18 +12,34 @@ import HeaderDefault from "../../../components/header/HeaderDefault";
 import ImageGridTwo from "../../../components/image-grid/ImageGridTwo";
 import SocialFour from "../../../components/social/SocialFour";
 import { getNewsDetails } from "../../../Util/http";
+import DOMPurify from 'dompurify';
+import placeHolder from '../../../assets/img/home/agency/main-slide-2.png';
+import ModalVideo from "react-modal-video";
 
 const BlogDetails = () => {
+  
+  const [isOpen, setOpen] = useState(false);
+  const [videoId, setVideoId] = useState('');
 
   const { id } = useParams();
 
   const { data: newsDetails } = useQuery({
-    queryKey: ['newsDetails'],
+    queryKey: ['newsDetails', id],
     queryFn: () => getNewsDetails(id)
   });
 
+  useEffect(()=>{
+    if(newsDetails){
+        const regex = /youtu\.be\/([^?]+)/;
+        const match = newsDetails?.video_link.match(regex);
+        const videoId = match && match[1];
+        setVideoId(videoId)
+    }
+  },[newsDetails, id])
+
   return (
-    <div className="ptf-site-wrapper animsition ptf-is--blog-grid">
+    <>  
+      <div className="ptf-site-wrapper animsition ptf-is--blog-grid">
       <Helmet>
         <title>Audio Technology - News Details</title>
       </Helmet>
@@ -86,17 +102,9 @@ const BlogDetails = () => {
 
                     {/* <!--Post Content--> */}
                     <div className="ptf-single-post__content">
-                      <p>
-                        {newsDetails?.description}
-                      </p>
-                      
+                      <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(newsDetails?.description) }}></div>
                       {/* <!--Spacer--> */}
-                      <div
-                        className="ptf-spacer"
-                        style={{ "--ptf-xxl": "5rem", "--ptf-md": "2.5rem" }}
-                      ></div>
-
-                      <ImageGridTwo other_images={newsDetails?.other_images} />
+                    
 
                       {/* <!--Spacer--> */}
                       {/* <div
@@ -238,6 +246,47 @@ const BlogDetails = () => {
                       </Link>*/}
                     </div> 
                   </div>
+                      <div
+                        className="ptf-spacer"
+                        style={{ "--ptf-xxl": "5rem", "--ptf-md": "2.5rem" }}
+                      ></div>
+
+                      <section
+                          className="jarallax jarallax-img"
+                          style={{
+                            backgroundImage: `url(${newsDetails?.other_images[0] ? newsDetails?.other_images[0] : placeHolder})`,
+                            textAlign: 'center',
+                            filter: 'grayscale(60%)'
+                          }}
+                        >
+                          <div
+                              className="ptf-spacer"
+                              style={{ "--ptf-xxl": "12.5rem", "--ptf-md": "6.25rem" }}
+                        ></div>
+
+                      <div
+                        className="ptf-video-button"
+                        onClick={() => setOpen(true)}
+                        style={{
+                          "--ptf-title-color": "var(--ptf-color-white)",
+                          marginLeft: "2rem",
+                        }}
+                      >
+                        <a href="#" rel="nofollow">
+                          <i className="lnil lnil-play"></i>
+                        </a>
+                        <div className="ptf-video-button__title">
+                          View case story
+                        </div>
+                      </div>
+                        {/* <!--Spacer--> */}
+                        <div
+                            className="ptf-spacer"
+                            style={{ "--ptf-xxl": "12.5rem", "--ptf-md": "6.25rem" }}
+                          ></div>
+                      </section>
+
+                      <ImageGridTwo other_images={newsDetails?.other_images} />
                 </div>
               </div>
             </div>
@@ -258,6 +307,14 @@ const BlogDetails = () => {
         </div>
       </footer>
     </div>
+    <ModalVideo
+        channel="youtube"
+        autoplay
+        isOpen={isOpen}
+        videoId={videoId}
+        onClose={() => setOpen(false)}
+      />
+    </>
   );
 };
 

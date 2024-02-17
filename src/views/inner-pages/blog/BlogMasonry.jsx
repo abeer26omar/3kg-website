@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import BlogMasonryGrid from "../../../components/blog/BlogMasonryGrid";
 import CopyRight from "../../../components/footer/copyright/CopyRight";
@@ -6,8 +6,29 @@ import Footer from "../../../components/footer/Footer";
 import SearchBlog from "../../../components/form/SearchBlog";
 import HeaderDefault from "../../../components/header/HeaderDefault";
 import NewsletterTwo from "../../../components/newsletter/NewsletterTwo";
+import { useQuery } from '@tanstack/react-query';
+import { getProjects } from "../../../Util/http";
 
 const BlogMasonry = () => {
+
+  const { data: projects } = useQuery({
+    queryKey: ['projects'],
+    queryFn: () => getProjects(1)
+  });
+
+  const [visibleCards, setVisibleCards] = useState(13);
+  const [cards, setCards] = useState(projects?.items.slice(0, 13));
+
+  useEffect(()=>{
+    if(projects){
+      setCards(projects?.items.slice(0, 13))
+    }
+  }, [projects])
+
+  const handleShowMore = () => {
+    setVisibleCards(prevVisibleCards => prevVisibleCards + 3);
+  };
+
   return (
     <div className="ptf-site-wrapper animsition ptf-is--blog-grid">
       <Helmet>
@@ -80,29 +101,28 @@ const BlogMasonry = () => {
                 >
                   <div className="ptf-isotope-grid">
                     {" "}
-                    <BlogMasonryGrid />
+                    <BlogMasonryGrid projects={cards} visibleCards={visibleCards} />
                   </div>
                 </div>
                 {/* End .ptf-animated-block */}
 
                 {/* <!--Spacer--> */}
-                <div
-                  className="ptf-spacer"
-                  style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
-                ></div>
 
-                <div className="text-center">
-                  {/* <!--Animated Block--> */}
+                {cards && visibleCards < cards.length && (<div className="text-center">
+                  <div
+                    className="ptf-spacer"
+                    style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
+                  ></div>
                   <div
                     className="ptf-animated-block"
                     data-aos="fade"
                     data-aos-delay="0"
                   >
-                    <a className="ptf-load-more" href="#">
+                    <a className="ptf-load-more" onClick={handleShowMore}>
                       More
                     </a>
                   </div>
-                </div>
+                </div>)}
                 {/* End More Blog btn */}
 
                 {/* <!--Spacer--> */}
@@ -132,8 +152,7 @@ const BlogMasonry = () => {
             {/*=============================================
             Start Newsletter section
             ============================================== */}
-            <section>
-              {/* <!--Spacer--> */}
+            {/* <section>
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "9.375rem", "--ptf-md": "4.6875rem" }}
@@ -141,45 +160,39 @@ const BlogMasonry = () => {
               <div className="container-xxl">
                 <div className="row align-items-center">
                   <div className="col-lg-4">
-                    {/* <!--Animated Block--> */}
                     <div
                       className="ptf-animated-block"
                       data-aos="fade"
                       data-aos-delay="0"
                     >
                       <h1 className="large-heading">Newsletter</h1>
-                      {/* <!--Spacer--> */}
                       <div
                         className="ptf-spacer"
                         style={{ "--ptf-xxl": "1.25rem" }}
                       ></div>
                       <p>Get the latest news & insight.</p>
                     </div>
-                    {/* <!--Spacer--> */}
                     <div
                       className="ptf-spacer"
                       style={{ "--ptf-lg": "3.75rem", "--ptf-md": "1.875rem" }}
                     ></div>
                   </div>
                   <div className="col-lg-6 offset-lg-2">
-                    {/* <!--Animated Block--> */}
                     <div
                       className="ptf-animated-block"
                       data-aos="fade"
                       data-aos-delay="100"
                     >
-                      {/* <!--Spacer--> */}
                       <NewsletterTwo />
                     </div>
                   </div>
                 </div>
               </div>
-              {/* <!--Spacer--> */}
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
               ></div>
-            </section>
+            </section> */}
           </div>
           {/* End .ptf-page */}
         </div>

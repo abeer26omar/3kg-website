@@ -45,8 +45,7 @@ const Contact = () => {
                     data-aos-delay="0"
                   >
                     <h1 className="large-heading">
-                      Let's get Contact an <br />
-                      estimate
+                      Let's get Contact <br />
                     </h1>
                     {/* <!--Spacer--> */}
                     <div
@@ -79,8 +78,7 @@ const Contact = () => {
                 </div>
                 {/* End .col */}
 
-                <div className="col-lg-8">
-                  {/* <!--Animated Block--> */}
+                {/* <div className="col-lg-8">
                   <div
                     className="ptf-animated-block"
                     data-aos="fade"
@@ -89,19 +87,15 @@ const Contact = () => {
                     <h5 className="fz-14 text-uppercase has-3-color fw-normal">
                       Tell us about your project and goals.
                     </h5>
-                    {/* <!--Spacer--> */}
                     <div
                       className="ptf-spacer"
                       style={{ "--ptf-xxl": "3.125rem" }}
                     ></div>
                     <ContactForm />
-                    {/* End ContactForm */}
                   </div>
-                </div>
-                {/* End .col */}
+                </div> */}
               </div>
             </div>
-            {/* <!--Spacer--> */}
             <div
               className="ptf-spacer"
               style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}

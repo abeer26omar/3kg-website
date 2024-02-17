@@ -23,7 +23,7 @@ const HomeDefault = () => {
 
   const { data: landingData } = useQuery({
     queryKey: ['landingData'],
-    queryFn: () => getLangingData()
+    queryFn: getLangingData
   });
 
   const getServicevalues = (title, description) => {
@@ -48,7 +48,7 @@ const HomeDefault = () => {
                 Start Hero Section
               ============================================== */}
                {/* style={{
-              backgroundImage: `url(${landingData ? landingData[0].image : 'assets/img/home/AT_8.jpg'})`
+              backgroundImage: `url(${landingData ? landingData?.landing.image : 'assets/img/home/AT_8.jpg'})`
                 }} */}
             <section className="has-accent-5-background">
               {/* <!--Spacer--> */}
@@ -57,7 +57,7 @@ const HomeDefault = () => {
                 style={{ "--ptf-xxl": "15rem" }}
               ></div>
               <div className="container-xxl">
-                {landingData && (<HeroDefault landingData={landingData?.landing}/>)}
+                {landingData && (<HeroDefault landingData={landingData}/>)}
               </div>
               {/* <!--Spacer--> */}
               <div
@@ -253,7 +253,7 @@ const HomeDefault = () => {
             {/*=============================================
                 Start Brand and Counterup Section
               ============================================== */}
-            <section>
+            <section id="brands">
               {/* <!--Spacer--> */}
               <div
                 className="ptf-spacer"
@@ -308,7 +308,7 @@ const HomeDefault = () => {
                 </div>
                 {/* End .row */}
 
-                <Counter statistics={landingData?.statistics} />
+                <Counter />
               </div>
               {/* <!--Spacer--> */}
               <div

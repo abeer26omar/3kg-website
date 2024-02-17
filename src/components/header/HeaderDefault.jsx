@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Search from "../form/Search";
 import DropdownMenu from "./menu/DropdownMenu";
 import MobileMenu from "./menu/MobileMenu";
 import logo from '../../assets/img/root/Logos/logo_orignalSize2.svg';
+import logoWhite from '../../assets/img/root/Logos/logo_orignalSizeWhite.svg';
 
 const HeaderDefault = () => {
   const [click, setClick] = useState(false);
@@ -46,7 +46,7 @@ const HeaderDefault = () => {
                 />
                 <img
                   className="white"
-                  src="assets/img/root/Logos/logo_orignalSizeWhite.svg"
+                  src={logoWhite}
                   alt="Logo-audio Tech"
                   loading="lazy"
                 />
@@ -57,25 +57,7 @@ const HeaderDefault = () => {
                 <DropdownMenu />
               </nav>
               {/* <!--Buttons--> */}
-
-              {/* <!--Navbar Search--> */}
-              <div
-                className={
-                  click ? "ptf-navbar-search is-open" : "ptf-navbar-search"
-                }
-              >
-                <div className="ptf-navbar-search__wrapper">
-                  <Search />
-                </div>
-
-                <div
-                  className="ptf-navbar-search__toggle"
-                  onClick={handleClick}
-                >
-                  <i className="lnir lnir-search-alt"></i>
-                  <i className="lnir lnir-close"></i>
-                </div>
-              </div>
+            
               {/* <!--Offcanvas Menu Toggle--> */}
 
               <div

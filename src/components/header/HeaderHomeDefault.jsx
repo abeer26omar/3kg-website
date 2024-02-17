@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Search from "../form/Search";
 import DropdownMenu from "./menu/DropdownMenu";
 import MobileMenu from "./menu/MobileMenu";
 import logo from '../../assets/img/root/Logos/logo_orignalSize2.svg';
+import logoWhite from '../../assets/img/root/Logos/logo_orignalSizeWhite.svg';
 
 const HeaderHomeDefault = () => {
 
@@ -47,7 +47,7 @@ const HeaderHomeDefault = () => {
                 />
                 <img
                   className="white"
-                  src="assets/img/root/Logos/logo_orignalSizeWhite.svg"
+                  src={logoWhite}
                   alt="Logo-audio Tech"
                   loading="lazy"
                 />
@@ -62,7 +62,6 @@ const HeaderHomeDefault = () => {
                   <a
                     href="#"
                     target="_blank"
-                    rel="noopener noreferrer"
                     className="py-3 px-4 ptf-btn ptf-btn--primary"
                     style={{
                       backgroundColor: 'black'

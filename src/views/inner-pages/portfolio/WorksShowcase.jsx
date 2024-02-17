@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useParams } from 'react-router-dom';
 import HeaderDefault from "../../../components/header/HeaderDefault";
@@ -10,16 +10,27 @@ import WorksCaseStudy from "./WorksCaseStudy";
 import ImageGridThree from "../../../components/image-grid/ImageGridThree";
 import { getCaseDetails } from "../../../Util/http";
 import ModalVideo from "react-modal-video";
+import DOMPurify from 'dompurify';
 
 const WorksShowcase = () => {
 
   const { id } = useParams();
   const [isOpen, setOpen] = useState(false);
+  const [videoId, setVideoId] = useState('');
 
   const { data: caseDetilas } = useQuery({
     queryKey: ['caseDetails', id],
     queryFn: () => getCaseDetails(id)
   });
+
+  useEffect(()=>{
+    if(caseDetilas){
+        const regex = /youtu\.be\/([^?]+)/;
+        const match = caseDetilas?.video_link.match(regex);
+        const videoId = match && match[1];
+        setVideoId(videoId)
+    }
+  },[caseDetilas, id])
 
   return (
     <>
@@ -125,9 +136,7 @@ const WorksShowcase = () => {
                   data-aos="fade"
                   data-aos-delay="0"
                 >
-                  <p className="fz-30 has-black-color">
-                    {caseDetilas?.description}
-                  </p>
+                  <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(caseDetilas?.description) }}></div>
                 </div>
 
                 {/* <!--Spacer--> */}
@@ -153,7 +162,7 @@ const WorksShowcase = () => {
 
                 {/* <!--Animated Block--> */}
                 <section
-              className="jarallax jarallax-img"
+                  className="jarallax jarallax-img"
                   style={{
                     backgroundImage: `url(${caseDetilas?.other_images[0]})`,
                     textAlign: 'center',
@@ -364,7 +373,7 @@ const WorksShowcase = () => {
         channel="youtube"
         autoplay
         isOpen={isOpen}
-        videoId={caseDetilas?.video_link}
+        videoId={videoId}
         onClose={() => setOpen(false)}
       />
     </>

@@ -2,8 +2,15 @@ import React from "react";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 
+import { getStatistic } from "../../Util/http";
+import { useQuery } from '@tanstack/react-query';
 
-const Counter = ({statistics}) => {
+const Counter = () => {
+  
+  const { data: statistics } = useQuery({
+    queryKey: ['datastatistics'],
+    queryFn: () => getStatistic()
+  });
 
   const counterUpContent = [
     {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Helmet } from "react-helmet";
 import { useQuery } from '@tanstack/react-query';
 import { getNews } from "../../../Util/http";
@@ -16,6 +16,19 @@ const BlogGrid = () => {
     queryKey: ['news', 'all'],
     queryFn: () => getNews(false, 1)
   });
+
+  const [visibleCards, setVisibleCards] = useState(9);
+  const [cards, setCards] = useState(news?.items.slice(0, 9));
+
+  useEffect(()=>{
+    if(news){
+      setCards(news?.items.slice(0, 9))
+    }
+  }, [news])
+
+  const handleShowMore = () => {
+    setVisibleCards(prevVisibleCards => prevVisibleCards + 3);
+  };
 
   return (
     <div className="ptf-site-wrapper animsition ptf-is--blog-grid">
@@ -142,29 +155,28 @@ const BlogGrid = () => {
                       "--bs-gutter-y": "3rem",
                     }}
                   >
-                    <BlogThree news={news} />
+                    <BlogThree news={cards} visibleCards={visibleCards}/>
                   </div>
                 </div>
                 {/* End .ptf-animated-block */}
 
                 {/* <!--Spacer--> */}
-                <div
-                  className="ptf-spacer"
-                  style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
-                ></div>
 
-                <div className="text-center">
-                  {/* <!--Animated Block--> */}
+                {cards && visibleCards < cards.length && (<div className="text-center">
+                  <div
+                    className="ptf-spacer"
+                    style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
+                  ></div>
                   <div
                     className="ptf-animated-block"
                     data-aos="fade"
                     data-aos-delay="0"
                   >
-                    <a className="ptf-load-more" href="#">
+                    <a className="ptf-load-more" onClick={handleShowMore}>
                       More
                     </a>
                   </div>
-                </div>
+                </div>)}
                 {/* End More Blog btn */}
 
                 {/* <!--Spacer--> */}

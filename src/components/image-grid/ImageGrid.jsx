@@ -1,12 +1,16 @@
 import React from "react";
 import { Gallery, Item } from "react-photoswipe-gallery";
+import img1 from '../../assets/img/image-0083.jpg';
+import img2 from '../../assets/img/image-0084.jpg';
 
-const imageList = [
-  { img: "assets/img/about-us-image-1.png", delayAnimation: "0" },
-  { img: "assets/img/about-us-image-2.png", delayAnimation: "100" },
-];
 
 const ImageGrid = () => {
+
+  const imageList = [
+    { img: img1, delayAnimation: "0" },
+    { img: img2, delayAnimation: "100" },
+  ];
+
   return (
     <Gallery>
       <div className="row" style={{ "--bs-gutter-y": "2rem" }}>

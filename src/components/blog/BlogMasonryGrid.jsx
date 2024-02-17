@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Masonry from "react-masonry-css";
-import { useQuery } from '@tanstack/react-query';
-import { getProjects } from "../../Util/http";
 
 const blogContent = [
   {
@@ -110,13 +108,7 @@ const breakpointColumnsObj = {
   500: 1,
 };
 
-const BlogMasonryGrid = () => {
-
-  const { data: projects } = useQuery({
-    queryKey: ['projects'],
-    queryFn: () => getProjects(1)
-  });
-
+const BlogMasonryGrid = ({projects, visibleCards}) => {
   return (
     <>
       <Masonry
@@ -124,7 +116,7 @@ const BlogMasonryGrid = () => {
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       >
-        {projects && projects?.items.map((item, i) => (
+        {projects && projects.slice(0, visibleCards).map((item, i) => (
           <div className="grid-item" key={i}>
             {/* <!--Blog Post--> */}
             <article className="ptf-post ptf-post--style-2">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Helmet } from "react-helmet";
 import Award from "../../../components/award/Award";
 import Brand from "../../../components/brand/Brand";
@@ -9,8 +9,27 @@ import HeaderDefault from "../../../components/header/HeaderDefault";
 import ImageGrid from "../../../components/image-grid/ImageGrid";
 import ServiceOne from "../../../components/service/ServiceOne";
 import Testimonial from "../../../components/testimonial/Testimonial";
+import imageMask from '../../../assets/img/about-us-main-image-layer-1.png';
+import { getAboutUs } from "../../../Util/http";
+import { useQuery } from '@tanstack/react-query';
+import DOMPurify from 'dompurify';
 
 const AboutUs = () => {
+
+  const [serviceTitle, setServiceTitle] = useState('');
+  const [serviceDescription, setServiceDescription] = useState('');
+
+  const { data: aboutUs } = useQuery({
+    queryKey: ['aboutUs'],
+    queryFn: getAboutUs
+  });
+
+
+  const getServicevalues = (title, description) => {
+    setServiceDescription(description);
+    setServiceTitle(title)
+  }
+
   return (
     <div className="ptf-site-wrapper animsition  ptf-is--about-us">
       <Helmet>
@@ -42,7 +61,7 @@ const AboutUs = () => {
                       data-aos="fade"
                       data-aos-delay="0"
                     >
-                      <h1 className="large-heading">Moonex Labs</h1>
+                      <h1 className="">Audio Technology</h1>
                     </div>
                     {/* <!--Spacer--> */}
                     <div
@@ -85,12 +104,7 @@ const AboutUs = () => {
                                 "--ptf-md": "2.1875rem",
                               }}
                             ></div>
-                            <p className="fz-24">
-                              We help our client suceed by creating identities,
-                              digital experiences, andprintmaterials that
-                              communicate clearly, achieve marketing goals &
-                              look fantastic.
-                            </p>
+                            <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(aboutUs?.content) }}></div>
                           </div>
                         </div>
                       </div>
@@ -112,17 +126,17 @@ const AboutUs = () => {
                         {/* <!--Mask Image--> */}
                         <div className="ptf-mask-image">
                           <img
-                            src="assets/img/root/about-us/about-us-main-image-mask.png"
+                            src={aboutUs?.main_image}
                             alt="layer"
                             loading="lazy"
                             className="lay2"
                             style={{
                               zIndex: "1",
                             }}
-                            srcSet="assets/img/about-us-main-image.jpg"
+                            srcSet={aboutUs?.main_image}
                           />
                           <img
-                            src="assets/img/root/about-us/about-us-main-image-layer-1.png"
+                            src={imageMask}
                             alt="layer"
                             loading="lazy"
                             style={{ zIndex: "2" }}
@@ -167,8 +181,7 @@ const AboutUs = () => {
                       data-aos-delay="0"
                     >
                       <h2 className="h1 large-heading">
-                        Our <br />
-                        Services
+                        {serviceTitle}
                       </h2>
                       {/* <!--Spacer--> */}
                       <div
@@ -176,9 +189,7 @@ const AboutUs = () => {
                         style={{ "--ptf-xxl": "2.5rem" }}
                       ></div>
                       <p className="fz-18">
-                        We help ambitious businesses like yours generate more
-                        profits by building awareness, driving web traffic,
-                        connecting with customers and growing overall sales.
+                        {serviceDescription}
                       </p>
                     </div>
                     {/* <!--Spacer--> */}
@@ -191,7 +202,7 @@ const AboutUs = () => {
                     ></div>
                   </div>
                   <div className="col-lg-8 offset-lg-1">
-                    <ServiceOne />
+                    <ServiceOne getServicevalues={getServicevalues}/>
                   </div>
                 </div>
                 {/* End .row */}
@@ -225,7 +236,7 @@ const AboutUs = () => {
                       data-aos="fade"
                       data-aos-delay="0"
                     >
-                      <h2 className="h1 large-heading">Moonex’s Partners</h2>
+                      <h2 className="h1 large-heading">Partners</h2>
                     </div>
                     {/* <!--Spacer--> */}
                     <div
