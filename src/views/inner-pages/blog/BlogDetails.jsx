@@ -276,7 +276,7 @@ const BlogDetails = () => {
                           <i className="lnil lnil-play"></i>
                         </a>
                         <div className="ptf-video-button__title">
-                          View case story
+                          View News
                         </div>
                       </div>
                         {/* <!--Spacer--> */}
