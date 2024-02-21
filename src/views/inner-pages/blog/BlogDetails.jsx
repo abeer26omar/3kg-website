@@ -64,7 +64,7 @@ const BlogDetails = () => {
             </header>
 
             {/* <!--Post Media--> */}
-            <div className="ptf-single-post__media">
+            {(newsDetails?.main_image && newsDetails?.main_image !== '') && (<div className="ptf-single-post__media">
               <div className="container-xxl">
                 <img
                   src={newsDetails?.main_image}
@@ -72,7 +72,7 @@ const BlogDetails = () => {
                   loading="lazy"
                 />
               </div>
-            </div>
+            </div>)}
 
             {/* <!--Post Wrapper--> */}
             <div className="ptf-single-post__wrapper">
@@ -251,7 +251,7 @@ const BlogDetails = () => {
                         style={{ "--ptf-xxl": "5rem", "--ptf-md": "2.5rem" }}
                       ></div>
 
-                      <section
+                      {(newsDetails?.video_link && newsDetails?.video_link !== '') && (<section
                           className="jarallax jarallax-img"
                           style={{
                             backgroundImage: `url(${newsDetails?.other_images[0] ? newsDetails?.other_images[0] : placeHolder})`,
@@ -284,7 +284,7 @@ const BlogDetails = () => {
                             className="ptf-spacer"
                             style={{ "--ptf-xxl": "12.5rem", "--ptf-md": "6.25rem" }}
                           ></div>
-                      </section>
+                      </section>)}
 
                       <ImageGridTwo other_images={newsDetails?.other_images} />
                 </div>
