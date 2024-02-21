@@ -12,7 +12,7 @@
 
 	transition: background-color var(--ptf-transition-duration) var(--ptf-transition-easing);
 
-	grid-template-columns: px2rem(120px) px2rem(300px) 1fr px2rem(140px);
+	grid-template-columns: px2rem(120px) px2rem(250px) 1fr px2rem(50px);
 	@include mq('xlarge') {
 		grid-template-columns: px2rem(120px) 1fr 1fr;
 	}

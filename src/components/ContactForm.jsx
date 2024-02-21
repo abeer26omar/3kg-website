@@ -7,17 +7,12 @@ const ContactForm = () => {
   // for validation
   const validationSchema = Yup.object().shape({
     name: Yup.string().required("Name is required"),
-    organization: Yup.string().required("Organization name is required"),
+    organization: Yup.string().required("Company name is required"),
     projectGoal: Yup.string().required("Please, write your project goal."),
-    timeline: Yup.string().required("Pleae write if you have timeline."),
     email: Yup.string()
       .required("Email is required")
       .email("Entered value does not match email format"),
-    budget: Yup.string().required("Pleaes select your budget"),
-    acceptTerms: Yup.bool().oneOf(
-      [true],
-      "Accept Terms and Conditions is required"
-    ),
+    number: Yup.string().required("Phone Number is required")
   });
 
   const formOptions = { resolver: yupResolver(validationSchema) };
@@ -34,7 +29,7 @@ const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contact_form">
       <div className="ptf-form-group">
-        <label data-number="01">What’s your name?</label>
+        <label data-number="01">What's your name?</label>
         <input
           type="text"
           name="name"
@@ -46,9 +41,34 @@ const ContactForm = () => {
         )}
       </div>
       {/* End .ptf-form-group */}
+      <div className="ptf-form-group">
+        <label data-number="02">What's your email address?</label>
+        <input
+          name="email"
+          type="text"
+          {...register("email")}
+          className={` ${errors.email ? "is-invalid" : ""}`}
+        />
+        {errors.email && (
+          <div className="invalid-feedback">{errors.email?.message}</div>
+        )}
+      </div>
 
       <div className="ptf-form-group">
-        <label data-number="02">What’s the name of your organization?</label>
+        <label data-number="03">What's your phone number?</label>
+        <input
+          type="number"
+          name="number"
+          {...register("number")}
+          className={`${errors.number ? "is-invalid" : ""}`}
+        />
+        {errors.number && (
+          <div className="invalid-feedback">{errors.number?.message}</div>
+        )}
+      </div>
+
+      <div className="ptf-form-group">
+        <label data-number="04">What's the name of your company?</label>
         <input
           type="text"
           name="organization"
@@ -62,21 +82,7 @@ const ContactForm = () => {
       {/* End .ptf-form-group */}
 
       <div className="ptf-form-group">
-        <label data-number="03">What’s your email address?</label>
-        <input
-          name="email"
-          type="text"
-          {...register("email")}
-          className={` ${errors.email ? "is-invalid" : ""}`}
-        />
-        {errors.email && (
-          <div className="invalid-feedback">{errors.email?.message}</div>
-        )}
-      </div>
-      {/* End .ptf-form-group */}
-
-      <div className="ptf-form-group">
-        <label data-number="04">Tell us about your project goals.</label>
+        <label data-number="05">Tell us about your project goals.</label>
         <textarea
           type="text"
           name="projectGoal"
@@ -89,21 +95,7 @@ const ContactForm = () => {
       </div>
       {/* End .ptf-form-group */}
 
-      <div className="ptf-form-group">
-        <label data-number="05">Do you have a timeline in mind?</label>
-        <input
-          type="text"
-          name="timeline"
-          {...register("timeline")}
-          className={`${errors.timeline ? "is-invalid" : ""}`}
-        />
-        {errors.timeline && (
-          <div className="invalid-feedback">{errors.timeline?.message}</div>
-        )}
-      </div>
-      {/* End .ptf-form-group */}
-
-      <div className="ptf-form-group">
+      {/* <div className="ptf-form-group">
         <label data-number="06">What have you budgeted for this project?</label>
         <select
           name="budget"
@@ -118,11 +110,11 @@ const ContactForm = () => {
         {errors.budget && (
           <div className="invalid-feedback">{errors.budget?.message}</div>
         )}
-      </div>
+      </div> */}
       {/* End .ptf-form-group */}
 
       {/* <!--Spacer--> */}
-      <div className="ptf-spacer" style={{ "--ptf-xxl": "2.5rem" }}></div>
+      {/* <div className="ptf-spacer" style={{ "--ptf-xxl": "2.5rem" }}></div>
 
       <div className="ptf-form-group agreement-checkbox ">
         <input
@@ -139,7 +131,7 @@ const ContactForm = () => {
         {errors.acceptTerms && (
           <div className="invalid-feedback">{errors.acceptTerms?.message}</div>
         )}
-      </div>
+      </div> */}
       {/* End .ptf-form-group */}
 
       {/* <!--Spacer--> */}

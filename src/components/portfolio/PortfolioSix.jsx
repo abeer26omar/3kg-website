@@ -1,72 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import { useQuery } from '@tanstack/react-query';
-import { getCaseStudies } from '../../Util/http';
 
-const portfolioMenu = [
-  "All",
-  "Branding",
-  "Packaging",
-  "Illustration",
-  "Motion",
-  "Animation",
-];
-
-const portfolioContent = [
-  {
-    tabContent: [
-      { img: "work-1", meta: "Web Design", title: "Supro Online Store" },
-      { img: "work-2", meta: "Web Design, Branding", title: "FG Print Brand" },
-      { img: "work-4", meta: "Web Design", title: "Taskly Dashboard" },
-      { img: "work-3", meta: "Illustration", title: "LW Poster" },
-      { img: "work-6", meta: "Branding, Motion", title: "Film & Art Festival" },
-      { img: "work-5", meta: "Branding, Motion", title: "Dark Wishky Wine" },
-    ],
-  },
-  {
-    tabContent: [
-      { img: "work-3", meta: "Illustration", title: "LW Poster" },
-      { img: "work-6", meta: "Branding, Motion", title: "Film & Art Festival" },
-      { img: "work-5", meta: "Branding, Motion", title: "Dark Wishky Wine" },
-    ],
-  },
-  {
-    tabContent: [
-      { img: "work-1", meta: "Web Design", title: "Supro Online Store" },
-      { img: "work-2", meta: "Web Design, Branding", title: "FG Print Brand" },
-      { img: "work-4", meta: "Web Design", title: "Taskly Dashboard" },
-    ],
-  },
-  {
-    tabContent: [
-      { img: "work-4", meta: "Web Design", title: "Taskly Dashboard" },
-      { img: "work-3", meta: "Illustration", title: "LW Poster" },
-      { img: "work-6", meta: "Branding, Motion", title: "Film & Art Festival" },
-    ],
-  },
-  {
-    tabContent: [
-      { img: "work-1", meta: "Web Design", title: "Supro Online Store" },
-      { img: "work-2", meta: "Web Design, Branding", title: "FG Print Brand" },
-      { img: "work-4", meta: "Web Design", title: "Taskly Dashboard" },
-    ],
-  },
-  {
-    tabContent: [
-      { img: "work-2", meta: "Web Design, Branding", title: "FG Print Brand" },
-      { img: "work-4", meta: "Web Design", title: "Taskly Dashboard" },
-      { img: "work-1", meta: "Web Design", title: "Supro Online Store" },
-    ],
-  },
-];
-
-const PortfolioSix = () => {
-
-  const { data: caseStudies } = useQuery({
-    queryKey: ['caseStudies'],
-    queryFn: () => getCaseStudies(false, 1)
-  });
+const PortfolioSix = ({caseStudies}) => {
 
   return (
     <>
@@ -86,8 +21,8 @@ const PortfolioSix = () => {
           className="ptf-spacer"
           style={{ "--ptf-xxl": "6.25rem", "--ptf-md": "3.125rem" }}
         ></div>
-        <div className="row g-3">
-          {caseStudies && caseStudies?.items.map((item, i) => (
+        <div className="row g-5">
+          {caseStudies && caseStudies?.items.slice(0, 4).map((item, i) => (
             // <TabPanel key={i}>
               <div
                 className="col-lg-6 ptf-animated-block"

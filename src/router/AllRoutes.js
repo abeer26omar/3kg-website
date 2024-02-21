@@ -1,33 +1,23 @@
 import React from "react";
-import Preview from "../views/Preview";
 // Homepage Demo
 import HomeDefault from "../views/all-home-version/HomeDefault";
 // Service
 import Service from "../views/inner-pages/service/Service";
-import ServiceDetails from "../views/inner-pages/service/ServiceDetails";
 
 // About
 import AboutUs from "../views/inner-pages/about/AboutUs";
-import AboutMe from "../views/inner-pages/about/AboutMe";
 
 // Blog
 import BlogGrid from "../views/inner-pages/blog/BlogGrid";
 import BlogMasonry from "../views/inner-pages/blog/BlogMasonry";
-import BlogSidebar from "../views/inner-pages/blog/BlogSidebar";
 import BlogDetails from "../views/inner-pages/blog/BlogDetails";
-import BlogDetailsSidebar from "../views/inner-pages/blog/BlogDetailsSidebar";
 
 // Portfolio
 import WorksGrid from "../views/inner-pages/portfolio/WorksGrid";
-import WorksMasonry from "../views/inner-pages/portfolio/WorksMasonry";
-import WorksListing from "../views/inner-pages/portfolio/WorksListing";
-import WorksCarousel from "../views/inner-pages/portfolio/WorksCarousel";
 import WorksShowcase from "../views/inner-pages/portfolio/WorksShowcase";
 
 // Others
 import Contact from "../views/inner-pages/Contact";
-import PricingInner from "../views/inner-pages/PricingInner";
-import Team from "../views/inner-pages/Team";
 import ComingSoon from "../views/inner-pages/ComingSoon";
 import Faq from "../views/inner-pages/Faq";
 import NotFound from "../views/NotFound";

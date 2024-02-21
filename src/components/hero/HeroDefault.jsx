@@ -14,7 +14,7 @@ const HeroDefault = ({landingData}) => {
       <div className="col-xl-9">
         {/* <!--Animated Block--> */}
         <div className="ptf-animated-block" data-aos="fade" data-aos-delay="0">
-          <h1 className="fz-230 fz-130--lg fz-90--md has-white-color">{heroContent.title}</h1>
+          <h1 className="fz-230 fz-230--xxl fz-130--lg fz-60--md has-white-color">{heroContent.title}</h1>
         </div>
         {/* <!--Spacer--> */}
         <div className="ptf-spacer" style={{ "--ptf-xxl": "0.625rem" }}></div>
@@ -114,7 +114,7 @@ const HeroDefault = ({landingData}) => {
                   to="/about-us"
                   title="about audio techology"
                 >
-                  Learn More
+                  About Us
                 </Link>
               </div>
             </div>

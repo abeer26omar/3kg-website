@@ -68,7 +68,7 @@ const WorksShowcase = () => {
                         className="ptf-spacer"
                         style={{ "--ptf-xxl": "4rem", "--ptf-md": "2.5rem" }}
                       ></div>
-                      <Social social={caseDetilas?.social_media} />
+                      {/* <Social social={caseDetilas?.social_media} /> */}
                     </div>
                     {/* <!--Spacer--> */}
                     <div
@@ -82,9 +82,7 @@ const WorksShowcase = () => {
                   {/* End .col */}
                   <div className="col-xl-6">
                     <WorksCaseStudy 
-                      date={''} 
                       client_name={caseDetilas?.client_name}
-                      team={caseDetilas?.teams}
                       services={caseDetilas?.services}
                     />
                   </div>
@@ -97,15 +95,13 @@ const WorksShowcase = () => {
               ></div>
             </section>
 
-            <section>
+            {(caseDetilas?.main_image && caseDetilas?.main_image !== '') && (<section>
               <div className="container-xxl">
-                {/* <!--Animated Block--> */}
                 <div
                   className="ptf-animated-block"
                   data-aos="fade"
                   data-aos-delay="0"
                 >
-                  {/* <!--Simple Image--> */}
                   <div className="ptf-simple-image">
                     <a
                       href="assets/img/portfolio/single-work/content-image-1.png"
@@ -120,7 +116,7 @@ const WorksShowcase = () => {
                   </div>
                 </div>
               </div>
-            </section>
+            </section>)}
 
             <section>
               {/* <!--Spacer--> */}
@@ -160,8 +156,7 @@ const WorksShowcase = () => {
                   style={{ "--ptf-xxl": "6.25rem", "--ptf-md": "3.125rem" }}
                 ></div>
 
-                {/* <!--Animated Block--> */}
-                <section
+                {(caseDetilas?.video_link && caseDetilas?.video_link !== '') && (<section
                   className="jarallax jarallax-img"
                   style={{
                     backgroundImage: `url(${caseDetilas?.other_images[0]})`,
@@ -189,12 +184,11 @@ const WorksShowcase = () => {
                       View case story
                     </div>
                   </div>
-                  {/* <!--Spacer--> */}
                   <div
                       className="ptf-spacer"
                       style={{ "--ptf-xxl": "12.5rem", "--ptf-md": "6.25rem" }}
                     ></div>
-                </section>
+                </section>)}
                 
                 {/* <!--Animated Block--> */}
                 {/* <div
@@ -293,7 +287,7 @@ const WorksShowcase = () => {
                   data-aos="fade"
                   data-aos-delay="0"
                 >
-                  <h2>Solution</h2>
+                  <h2>Gallery</h2>
                 </div>
 
                 {/* <!--Spacer--> */}

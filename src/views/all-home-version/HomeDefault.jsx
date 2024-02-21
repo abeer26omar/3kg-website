@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useQuery } from '@tanstack/react-query';
 import Award from "../../components/award/Award";
-import Blog from "../../components/blog/Blog";
 import Brand from "../../components/brand/Brand";
 import Counter from "../../components/counter/Counter";
 import CopyRight from "../../components/footer/copyright/CopyRight";
@@ -15,6 +14,7 @@ import Approach from "../../components/service/Approach";
 import ServiceOne from "../../components/service/ServiceOne";
 import Testimonial from "../../components/testimonial/Testimonial";
 import { getLangingData } from '../../Util/http';
+import quotes from '../../assets/img/root/quote.png'
 
 const HomeDefault = () => {
 
@@ -123,7 +123,7 @@ const HomeDefault = () => {
             <section>
               <div className="container-xxl">
                 <div className="row align-items-center">
-                  <div className="col-12 col-md-9">
+                  <div className="col-12 col-lg-9 col-md-6">
                     {/* <!--Animated Block--> */}
                     <div
                       className="ptf-animated-block"
@@ -135,7 +135,7 @@ const HomeDefault = () => {
                       </h2>
                     </div>
                   </div>
-                  <div className="col-12 col-md-3 text-md-end">
+                  <div className="col-12 col-lg-3 col-md-6 text-md-end">
                     {/* <!--Spacer--> */}
                     <div
                       className="ptf-spacer"
@@ -149,10 +149,10 @@ const HomeDefault = () => {
                           text-uppercase
                           fw-semibold
                           has-black-color
-                          d-none d-lg-inline-flex
+                          d-inline-flex
                         "
                       to="/case-studies"
-                      style={{ marginLeft: "5.625rem" }}
+                      // style={{ marginLeft: "5.625rem" }}
                     >
                       All Case studies <i className="lnil lnil-chevron-right"></i>
                     </Link>
@@ -185,13 +185,13 @@ const HomeDefault = () => {
               ============================================== */}
             <section
               className="has-accent-1-background"
-              style={{
-                backgroundImage: `url(${
-                  process.env.PUBLIC_URL + "assets/img/root/service-bubble.png"
-                })`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "100% calc(100% + 120px)",
-              }}
+              // style={{
+              //   backgroundImage: `url(${
+              //     process.env.PUBLIC_URL + "assets/img/root/service-bubble.png"
+              //   })`,
+              //   backgroundRepeat: "no-repeat",
+              //   backgroundPosition: "100% calc(100% + 120px)",
+              // }}
             >
               {/* <!--Spacer--> */}
               <div
@@ -225,11 +225,10 @@ const HomeDefault = () => {
                           text-uppercase
                           fw-semibold
                           has-black-color
-                          d-none d-lg-inline-flex
+                          d-inline-flex
                           hover-white
                         "
                       to="/news"
-                      style={{ marginLeft: "5.625rem" }}
                     >
                       All News <i className="lnil lnil-chevron-right"></i>
                     </Link>
@@ -297,7 +296,7 @@ const HomeDefault = () => {
                       data-aos="fade"
                       data-aos-delay="0"
                     >
-                      <h2 className="h1 large-heading">Audio Tech in Numbers</h2>
+                      <h2 className="h1 large-heading">Audio Technology in Numbers</h2>
                     </div>
                     {/* <!--Spacer--> */}
                     <div
@@ -344,7 +343,7 @@ const HomeDefault = () => {
                       data-aos-delay="0"
                     >
                       <img
-                        src="assets/img/root/quote.png"
+                        src={quotes}
                         alt="quote"
                         loading="lazy"
                       />

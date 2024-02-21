@@ -208,12 +208,12 @@ const AboutUs = () => {
                 {/* End .row */}
 
                 {/* <!--Spacer--> */}
-                <div
+                {/* <div
                   className="ptf-spacer"
                   style={{ "--ptf-xxl": "7.5rem", "--ptf-md": "3.75rem" }}
                 ></div>
-                <ImageGrid />
-              </div>
+                <ImageGrid />*/}
+              </div> 
               {/* End .container-xxl */}
             </section>
             {/* End service */}
@@ -222,7 +222,6 @@ const AboutUs = () => {
                 Start Brand and Counterup Section
               ============================================== */}
             <section>
-              {/* <!--Spacer--> */}
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
@@ -230,7 +229,6 @@ const AboutUs = () => {
               <div className="container-xxl">
                 <div className="row">
                   <div className="col-12">
-                    {/* <!--Animated Block--> */}
                     <div
                       className="ptf-animated-block"
                       data-aos="fade"
@@ -238,34 +236,28 @@ const AboutUs = () => {
                     >
                       <h2 className="h1 large-heading">Partners</h2>
                     </div>
-                    {/* <!--Spacer--> */}
                     <div
                       className="ptf-spacer"
                       style={{ "--ptf-xxl": "7.5rem", "--ptf-md": "3.75rem" }}
                     ></div>
                   </div>
                 </div>
-                {/* End .row */}
                 <Brand />
-                <div className="row">
+                {/* <div className="row">
                   <div className="col-12">
-                    {/* <!--Spacer--> */}
                     <div
                       className="ptf-spacer"
                       style={{ "--ptf-xxl": "8.75rem", "--ptf-md": "4.375rem" }}
                     ></div>
-                    {/* <!--Divider--> */}
                     <div className="ptf-divider"></div>
-                    {/* <!--Spacer--> */}
                     <div
                       className="ptf-spacer"
                       style={{ "--ptf-xxl": "6.25rem", "--ptf-md": "3.125rem" }}
                     ></div>
                   </div>
                 </div>
-                {/* End .row */}
 
-                <Counter />
+                <Counter /> */}
               </div>
               {/* <!--Spacer--> */}
               <div
@@ -277,7 +269,7 @@ const AboutUs = () => {
             {/*=============================================
                 Start Jaralax Testimonial Section
               ============================================== */}
-            <section
+            {/* <section
               className="jarallax jarallax-img"
               style={{
                 backgroundImage: `url(${
@@ -286,7 +278,6 @@ const AboutUs = () => {
                 })`,
               }}
             >
-              {/* <!--Spacer--> */}
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "12.5rem", "--ptf-md": "6.25rem" }}
@@ -294,7 +285,6 @@ const AboutUs = () => {
               <div className="container-xxl">
                 <div className="row">
                   <div className="col-xl-4">
-                    {/* <!--Animated Block--> */}
                     <div
                       className="ptf-animated-block"
                       data-aos="fade"
@@ -306,7 +296,6 @@ const AboutUs = () => {
                         loading="lazy"
                       />
                     </div>
-                    {/* <!--Spacer--> */}
                     <div
                       className="ptf-spacer"
                       style={{ "--ptf-xl": "3.75rem" }}
@@ -317,18 +306,16 @@ const AboutUs = () => {
                   </div>
                 </div>
               </div>
-              {/* <!--Spacer--> */}
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "12.5rem", "--ptf-md": "6.25rem" }}
               ></div>
-            </section>
+            </section> */}
 
             {/*=============================================
                 Start Award Section
               ============================================== */}
-            <section>
-              {/* <!--Spacer--> */}
+            {/* <section>
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "11.875rem", "--ptf-md": "5.9375rem" }}
@@ -336,7 +323,6 @@ const AboutUs = () => {
               <div className="container-xxl">
                 <div className="row">
                   <div className="col-lg-4">
-                    {/* <!--Animated Block--> */}
                     <div
                       className="ptf-animated-block"
                       data-aos="fade"
@@ -348,7 +334,6 @@ const AboutUs = () => {
                         Awards
                       </h2>
                     </div>
-                    {/* <!--Spacer--> */}
                     <div
                       className="ptf-spacer"
                       style={{ "--ptf-lg": "3.75rem" }}
@@ -359,12 +344,11 @@ const AboutUs = () => {
                   </div>
                 </div>
               </div>
-              {/* <!--Spacer--> */}
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
               ></div>
-            </section>
+            </section> */}
           </div>
         </div>
         {/* End ptf-main */}

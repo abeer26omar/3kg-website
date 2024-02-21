@@ -78,7 +78,7 @@
 -------------------------------------------- */
 
 .fz-230 {
-  font-size: px2rem(230px);
+  font-size: px2rem(200px);
   letter-spacing: -0.05em;
 }
 
@@ -115,6 +115,12 @@
   &--md {
     @include mq("medium") {
       font-size: px2rem(90px);
+    }
+  }
+
+  &--sm {
+    @include mq("small") {
+      font-size: px2rem(60px);
     }
   }
 }

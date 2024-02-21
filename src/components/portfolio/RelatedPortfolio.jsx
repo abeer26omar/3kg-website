@@ -1,35 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useQuery } from '@tanstack/react-query';
-import { getCaseStudies } from '../../Util/http';
 
-const portfolioContent = [
-  { img: "work-1", categorie: "UI/UX", title: "Taskly Dashboard" },
-  { img: "work-2", categorie: "Product", title: "Film & Art Festival" },
-  {
-    img: "work-3",
-    categorie: "Branding, Packaging",
-    title: "Dark Wishky Wine",
-  },
-  { img: "work-4", categorie: "Illustration", title: "Swiss Style Poster" },
-  { img: "work-5", categorie: "UI/UX", title: "Liarch Architecture Firm" },
-  {
-    img: "work-6",
-    categorie: "Branding, Packaging, Motion Video",
-    title: "FG Print Brand",
-  },
-];
-
-const RelatedPortfolio = () => {
-
-  const { data: caseStudies } = useQuery({
-    queryKey: ['caseStudies'],
-    queryFn: () => getCaseStudies(false, 1)
-  });
+const RelatedPortfolio = ({caseStudies, visibleCards={visibleCards}}) => {
 
   return (
     <>
-      {caseStudies && caseStudies?.items.map((val, i) => (
+      {caseStudies && caseStudies?.slice(0, visibleCards).map((val, i) => (
         <div className="col-lg-4" key={i}>
           <div className="grid-item">
             {/* <!--Portfolio Item--> */}

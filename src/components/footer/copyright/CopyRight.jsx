@@ -7,8 +7,8 @@ import logo from '../../../assets/img/root/Logos/logo_orignalSize2.svg';
 
 const CopyRight = () => {
   return (
-    <div className="row align-items-center justify-content-center">
-      <div className="col-12 col-md">
+    <div className="row align-items-center justify-content-sm-between justify-content-center">
+      <div className="col-md-6 col-12">
         <Link to="/">
           <img src={logo} alt="audio tech" loading="lazy" width={'151px'}/>
         </Link>
@@ -29,8 +29,8 @@ const CopyRight = () => {
           . All Rights Reserved.
         </p>
       </div> */}
-      <div className="col-12 col-lg text-md-center text-lg-end">
-        <div className="ptf-footer-socials has-black-color ">
+      <div className="col-md-6 col-12 text-md-end">
+        <div className="ptf-footer-socials has-black-color">
           <SocialTwo />
         </div>
       </div>

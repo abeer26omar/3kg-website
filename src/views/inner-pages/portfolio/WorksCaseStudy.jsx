@@ -41,7 +41,7 @@ const caseStudyContent = [
   },
 ];
 
-const WorksCaseStudy = ({services, team, client_name, date}) => {
+const WorksCaseStudy = ({services, client_name}) => {
   return (
     <>
       <div className="row">
@@ -71,7 +71,7 @@ const WorksCaseStudy = ({services, team, client_name, date}) => {
                   }}
             ></div>
           </div>)}
-          {(team && team.length !== 0) && (<div className="col-xl-6">
+          {/* {(team && team.length !== 0) && (<div className="col-xl-6">
             <div className="ptf-spacer" style={{ "--ptf-xxl": "1.25rem" }}></div>
                 <div
                   className="ptf-animated-block mb-70"
@@ -97,7 +97,7 @@ const WorksCaseStudy = ({services, team, client_name, date}) => {
                     "--ptf-md": "2.1875rem",
                   }}
                 ></div>
-          </div>)}
+          </div>)} */}
           {(services && services.length !== 0) && (<div className="col-xl-6">
             {/* <!--Spacer--> */}
             <div className="ptf-spacer" style={{ "--ptf-xxl": "1.25rem" }}></div>
@@ -129,10 +129,8 @@ const WorksCaseStudy = ({services, team, client_name, date}) => {
                   }}
                 ></div>
           </div>)}
-          {date && (<div className="col-xl-6">
-            {/* <!--Spacer--> */}
+          {/* {date && (<div className="col-xl-6">
             <div className="ptf-spacer" style={{ "--ptf-xxl": "1.25rem" }}></div>
-            {/* <!--Animated Block--> */}
                 <div
                   className="ptf-animated-block mb-70"
                   data-aos="fade"
@@ -141,7 +139,6 @@ const WorksCaseStudy = ({services, team, client_name, date}) => {
                   <h5 className="fz-14 text-uppercase has-3-color fw-normal">
                     {'Date'}
                   </h5>
-                  {/* <!--Spacer--> */}
                   <div
                     className="ptf-spacer"
                     style={{ "--ptf-xxl": "1.25rem" }}
@@ -151,7 +148,6 @@ const WorksCaseStudy = ({services, team, client_name, date}) => {
                     
                   </p>
                 </div>
-                {/* <!--Spacer--> */}
                 <div
                   className="ptf-spacer"
                   style={{
@@ -159,7 +155,7 @@ const WorksCaseStudy = ({services, team, client_name, date}) => {
                     "--ptf-md": "2.1875rem",
                   }}
                 ></div>
-          </div>)}
+          </div>)} */}
       </div>
     </>
   );

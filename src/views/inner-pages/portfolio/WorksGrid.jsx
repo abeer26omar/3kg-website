@@ -1,12 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import HeaderDefault from "../../../components/header/HeaderDefault";
 import CopyRight from "../../../components/footer/copyright/CopyRight";
 import Footer from "../../../components/footer/Footer";
 import PortfolioSix from "../../../components/portfolio/PortfolioSix";
 import RelatedPortfolio from "../../../components/portfolio/RelatedPortfolio";
+import { useQuery } from '@tanstack/react-query';
+import { getCaseStudies } from '../../../Util/http';
 
 const WorksGrid = () => {
+
+  const { data: caseStudies } = useQuery({
+    queryKey: ['caseStudies'],
+    queryFn: () => getCaseStudies(false, 1)
+  });
+
+  const [visibleCards, setVisibleCards] = useState(13);
+  const [cards, setCards] = useState(caseStudies?.items.slice(0, 13));
+
+  useEffect(()=>{
+    if(caseStudies){
+      setCards(caseStudies?.items.slice(0, 13))
+    }
+  }, [caseStudies])
+
+  const handleShowMore = () => {
+    setVisibleCards(prevVisibleCards => prevVisibleCards + 3);
+  };
+
   return (
     <div className="ptf-site-wrapper animsition ptf-is--works-grid">
       <Helmet>
@@ -51,7 +72,7 @@ const WorksGrid = () => {
                 Start Portfolio main 
                 ============================================== */}
               <div className="container-xxl">
-                <PortfolioSix />
+                <PortfolioSix caseStudies={caseStudies} />
                 {/* <!--Spacer--> */}
                 <div
                   className="ptf-spacer"
@@ -97,7 +118,7 @@ const WorksGrid = () => {
                       "--bs-gutter-y": "5.75rem",
                     }}
                   >
-                    <RelatedPortfolio />
+                    <RelatedPortfolio caseStudies={cards} visibleCards={visibleCards} />
                   </div>
                 </div>
                 {/* <!--Spacer--> */}
@@ -105,18 +126,17 @@ const WorksGrid = () => {
                   className="ptf-spacer"
                   style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
                 ></div>
-                <div className="text-center">
-                  {/* <!--Animated Block--> */}
+                {cards && visibleCards < cards.length && (<div className="text-center">
                   <div
                     className="ptf-animated-block"
                     data-aos="fade"
                     data-aos-delay="0"
                   >
-                    <a className="ptf-load-more" href="#">
+                    <a className="ptf-load-more" onClick={handleShowMore}>
                       More
                     </a>
                   </div>
-                </div>
+                </div>)}
               </div>
 
               {/* <!--Spacer--> */}
