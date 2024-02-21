@@ -52,17 +52,31 @@ const HeaderDefault = () => {
                 />
               </Link>
               {/* <!--Navigation--> */}
-              <nav className="ptf-nav ptf-nav--default">
+              <nav className="ptf-nav ptf-nav--default  mx-auto">
                 {/* <!--Menu--> */}
                 <DropdownMenu />
               </nav>
               {/* <!--Buttons--> */}
-            
+                <div className="d-flex align-items-center">
+                  <a
+                    href="#"
+                    target="_blank"
+                    className="py-3 px-4 ptf-btn ptf-btn--primary"
+                    style={{
+                      backgroundColor: 'black'
+                    }}
+                  >
+                    Retail
+                  </a>
+              </div>
               {/* <!--Offcanvas Menu Toggle--> */}
 
               <div
                 className="ptf-offcanvas-menu-icon js-offcanvas-menu-toggle bar right"
                 onClick={handleClick1}
+                style={{
+                  position: 'relative'
+                }}
               >
                 <i className="lnir lnir-menu-alt-5"></i>
               </div>

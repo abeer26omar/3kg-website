@@ -47,10 +47,10 @@ const HomeDefault = () => {
             {/*=============================================
                 Start Hero Section
               ============================================== */}
-               {/* style={{
-              backgroundImage: `url(${landingData ? landingData?.landing.image : 'assets/img/home/AT_8.jpg'})`
-                }} */}
-            <section className="has-accent-5-background">
+               {/*  */}
+            <section className="has-accent-5-background" style={{
+              backgroundImage: `url(${landingData ? landingData?.image : 'assets/img/home/AT_8.jpg'})`
+                }}>
               {/* <!--Spacer--> */}
               <div
                 className="ptf-spacer"
