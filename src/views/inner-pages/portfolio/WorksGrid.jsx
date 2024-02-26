@@ -56,7 +56,7 @@ const WorksGrid = () => {
                       data-aos="fade"
                       data-aos-delay="0"
                     >
-                      <h1 className="large-heading">Portfolio</h1>
+                      <h1 className="large-heading">Case Studies</h1>
                     </div>
                   </div>
                 </div>

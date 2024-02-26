@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import DropdownMenu from "./menu/DropdownMenu";
 import MobileMenu from "./menu/MobileMenu";
-import logo from '../../assets/img/root/Logos/logo_orignalSize2.svg';
-import logoWhite from '../../assets/img/root/Logos/logo_orignalSizeWhite.svg';
+import logo from '../../assets/img/root/Logos/Logo all versions-03.png';
+import logoWhite from '../../assets/img/root/Logos/Logo all versions-04.png';
 
 const HeaderDefault = () => {
   const [click, setClick] = useState(false);
@@ -39,16 +39,18 @@ const HeaderDefault = () => {
               {/* <!--Logo--> */}
               <Link className="ptf-navbar-logo" to="/">
                 <img
-                  className="black w-100"
+                  className="black"
                   src={logo}
                   alt="Logo-audio Tech"
                   loading="lazy"
+                  width={'164px'}
                 />
                 <img
                   className="white"
                   src={logoWhite}
                   alt="Logo-audio Tech"
                   loading="lazy"
+                  width={'164px'}
                 />
               </Link>
               {/* <!--Navigation--> */}

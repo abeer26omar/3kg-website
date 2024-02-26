@@ -7,7 +7,6 @@ import {
   MenuItem,
   SidebarContent,
 } from "react-pro-sidebar";
-import Social from "../../social/Social";
 import { NavHashLink } from 'react-router-hash-link';
 
 const MobileMenu = () => {
@@ -41,27 +40,6 @@ const MobileMenu = () => {
           </SidebarContent>
         </ProSidebar>
       </div>
-      {/* End .ptf-offcanvas-menu__navigation */}
-
-      {/* <div className="ptf-offcanvas-menu__footer">
-        <p className="ptf-offcanvas-menu__copyright">
-          @{new Date().getFullYear()} <span>Moonex</span>. All Rights Reserved.{" "}
-          <br />
-          Development by{" "}
-          <span>
-            <a
-              href="https://themeforest.net/user/ib-themes"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              ib-themes
-            </a>
-          </span>
-          .
-        </p>
-        <Social />
-      </div> */}
-      {/* End .ptf-offcanvas-menu__footer */}
     </>
   );
 };

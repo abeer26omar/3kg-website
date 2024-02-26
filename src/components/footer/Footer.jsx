@@ -35,11 +35,6 @@ const Footer = () => {
             </p>
           </div>
           <NewsletterTwo />
-
-          {/* <p className="fz-24">90 Fairground Rd, FL 3290, United States</p>
-          <a className="fz-40 has-black-color" href="mailto:hello@moonex.co">
-            hello@moonex.co
-          </a> */}
         </div>
       </div>
       <div className="col-12 col-md-3">
@@ -61,26 +56,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      {/* <div className="col-12 col-md-6 col-xl-3">
-        <div
-          className="ptf-animated-block"
-          data-aos="fade"
-          data-aos-delay="200"
-        >
-          <div className="ptf-widget ptf-widget-text">
-            <h4 className="ptf-widget-title">Product</h4>
-            <div className="ptf-widget ptf-widget-links has-black-color">
-              <ul>
-                {Product.map((val, i) => (
-                  <li key={i}>
-                    <a href={val.link}>{val.itemName}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 };

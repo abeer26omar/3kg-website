@@ -1,26 +1,19 @@
 import React from "react";
 import { Gallery, Item } from "react-photoswipe-gallery";
-import Masonry from "react-masonry-css";
-
 
 const ImageGridThree = ({caseImages}) => {
 
-  const breakpointColumnsObj = {
-    default: 2,
-    1100: 2,
-    768: 1,
-    500: 1,
-  };
-
   return (
     <Gallery>
-      <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className="my-masonry-grid"
-        columnClassName="my-masonry-grid_column"
+      <div
+        className="ptf-justified-gallery row"
+        style={{
+          "--bs-gutter-x": "2rem",
+          "--bs-gutter-y": "2rem",
+        }}
       >
         {caseImages && caseImages?.map((val, i) => (
-          <div className="grid-item" key={i}>
+          <div className={`col-lg-${i === caseImages.length - 1 ? '12' : '6'}`} key={i}>
             <div className="ptf-gallery__item">
               <div className="ptf-simple-image">
                 <Item
@@ -43,7 +36,7 @@ const ImageGridThree = ({caseImages}) => {
             </div>
           </div>
         ))}
-      </Masonry>
+      </div>
     </Gallery>
   );
 };

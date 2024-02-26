@@ -10,9 +10,15 @@ const Address = ({contacts}) => {
             <h5 className="fz-14 text-uppercase has-3-color fw-normal">{item.name}</h5>
             {/* <!--Spacer--> */}
             <div className="ptf-spacer" style={{ "--ptf-xxl": "1.25rem" }}></div>
-            <p className="fz-20 lh-1p5 has-black-color">
-              {item.value}
-            </p>
+            {(item.type == 'Fix' || item.type == 'Phone number') ? 
+              (<a href={`tel:${item.value}`}>
+                {item.value}
+              </a>) 
+              :
+              (<p className="fz-20 lh-1p5 has-black-color">
+                {item.value}
+              </p>)
+            }
           </div>
 
           {/* <!--Spacer--> */}
