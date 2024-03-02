@@ -171,6 +171,25 @@
     background-position: calc(50vw - 100px) calc(50% + 150px);
   }
 }
+.ptf-is--home-default.x-home {
+  .ptf-navbar,
+  .ptf-navbar.ptf-navbar--solid {
+    background-color: var(--ptf-color-white) !important;
+  }
+
+  .ptf-nav--default .sf-menu > li.current-menu-ancestor > a,
+  .ptf-nav--default .sf-menu > li.current-menu-item > a,
+  .ptf-nav--default .sf-menu > li.sfHover > a,
+  .ptf-nav--default .sf-menu > li:hover > a {
+    color: var(--ptf-accent-2) !important;
+  }
+
+  section:first-of-type {
+    background-image: url(../../img/home/default/main-image.png);
+    background-repeat: no-repeat;
+    background-position: calc(50vw - 100px) calc(50% + 150px);
+  }
+}
 
 /* SECTION: HOME STUDIO
 -------------------------------------------- */

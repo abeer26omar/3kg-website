@@ -13,8 +13,7 @@ const SocialFour = () => {
       </a>
       {/* <!--Social Icon--> */}
       <a
-        className="ptf-social-icon ptf-social-icon--style-4 twitter"
-        href="#"
+        className="ptf-social-icon ptf-social-icon--style-4 twitter"        href="#"
         target="_blank"
       >
         <i className="socicon-twitter"></i>

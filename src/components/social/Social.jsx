@@ -8,7 +8,7 @@ const Social = ({social}) => {
         return 'facebook';
       case 'X' :
         return 'twitter';
-      case 'INSTAGRAM' :
+      case 'Instagram' :
         return 'instagram';
       case 'LinkedIn' :
         return 'linkedin';
@@ -23,7 +23,7 @@ const Social = ({social}) => {
         return 'socicon-facebook';
       case 'X' :
         return 'socicon-twitter';
-      case 'INSTAGRAM' :
+      case 'Instagram' :
         return 'socicon-instagram';
       case 'LinkedIn' :
         return 'socicon-linkedin';

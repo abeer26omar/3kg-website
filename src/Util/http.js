@@ -156,3 +156,15 @@ export const getStatistic = async () => {
     const response = await axios(config)
     return response.data;
 }
+
+export const SubmitContactUs = async (formBody) => {
+
+    const config = {
+        method: 'POST',
+        url: `${process.env.REACT_APP_API_URL}/api/contact-us`,
+        data: formBody
+    };
+
+    const response = await axios(config)
+    return response.data;
+}

@@ -10,7 +10,7 @@ const SocialTwo = () => {
         return 'socicon-facebook';
       case 'X' :
         return 'socicon-twitter';
-      case 'INSTAGRAM' :
+      case 'Instagram' :
         return 'socicon-instagram';
       case 'LinkedIn' :
         return 'socicon-linkedin';

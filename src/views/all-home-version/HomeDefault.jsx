@@ -32,7 +32,7 @@ const HomeDefault = () => {
   }
 
   return (
-    <div className="ptf-site-wrapper animsition  ptf-is--home-default">
+    <div className="ptf-site-wrapper animsition  ptf-is--home-default x-home">
       <Helmet>
         <title>Audio Technology - home</title>
       </Helmet>
@@ -49,7 +49,7 @@ const HomeDefault = () => {
               ============================================== */}
                {/*  */}
             <section className="has-accent-5-background" style={{
-              backgroundImage: `url(${landingData ? landingData?.image : 'assets/img/home/AT_8.jpg'})`
+              backgroundImage: `url(${landingData && landingData?.image})`
                 }}>
               {/* <!--Spacer--> */}
               <div
@@ -184,7 +184,7 @@ const HomeDefault = () => {
                 Start Our Approach Section
               ============================================== */}
             <section
-              className="has-accent-1-background"
+              className=""
               // style={{
               //   backgroundImage: `url(${
               //     process.env.PUBLIC_URL + "assets/img/root/service-bubble.png"
@@ -226,7 +226,6 @@ const HomeDefault = () => {
                           fw-semibold
                           has-black-color
                           d-inline-flex
-                          hover-white
                         "
                       to="/news"
                     >

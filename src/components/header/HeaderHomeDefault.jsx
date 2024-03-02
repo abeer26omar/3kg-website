@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import DropdownMenu from "./menu/DropdownMenu";
 import MobileMenu from "./menu/MobileMenu";
-import logo from '../../assets/img/root/Logos/Logo all versions-03.png';
+// import logo from '../../assets/img/root/Logos/newcoloreddarklogo.svg';
+import logo from '../../assets/img/root/Logos/Logo all versions-01.png';
 import logoWhite from '../../assets/img/root/Logos/Logo all versions-04.png';
 
 const HeaderHomeDefault = () => {
@@ -62,13 +63,9 @@ const HeaderHomeDefault = () => {
               {/* <!--Buttons--> */}
               <div className="d-flex align-items-center">
                   <a
-                    href="#"
+                    href="https://audioteceg.com/"
                     target="_blank"
-                    className="py-3 px-4 ptf-btn ptf-btn--primary"
-                    style={{
-                      backgroundColor: 'black'
-                    }}
-                  >
+                    className="py-3 px-4 ptf-btn ptf-btn--primary">
                     Retail
                   </a>
                 

@@ -3,53 +3,6 @@ import moment from 'moment';
 import { useQuery } from '@tanstack/react-query';
 import { getAwards } from '../../Util/http';
 
-const awardContent = [
-  {
-    date: "2021",
-    img: "logo-4",
-    delayAnimation: "0",
-    awardList: [
-      {
-        title: "POTY 2021",
-        subTitle: "SPA Brand Redesign",
-      },
-      {
-        title: "Design Inspiration #5",
-        subTitle: "MNX Business Card",
-      },
-    ],
-  },
-  {
-    date: "2020",
-    img: "logo-2",
-    delayAnimation: "100",
-    awardList: [
-      {
-        title: "Websites Of The Year 2020",
-        subTitle: "Lewis Studio",
-      },
-      {
-        title: "Websites Of The Month, August 2020",
-        subTitle: "Liarch Architecture Firm Website",
-      },
-      {
-        title: "Best 20 Websites Favourite 2020",
-        subTitle: "Bauhaus Arc Site",
-      },
-    ],
-  },
-  {
-    date: "2019",
-    img: "logo-3",
-    delayAnimation: "200",
-    awardList: [
-      {
-        title: "1st Winner Portfolio Review US 2019",
-        subTitle: "Designer Logan Cee",
-      },
-    ],
-  },
-];
 
 const Award = () => {
   
