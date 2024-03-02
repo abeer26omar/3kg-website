@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import audiologo from '../../assets/img/root/Logos/whiteaudiotech.svg';
 
 const HeroDefault = ({landingData}) => {
   const heroContent = {
@@ -14,6 +15,7 @@ const HeroDefault = ({landingData}) => {
       <div className="col-xl-9">
         {/* <!--Animated Block--> */}
         <div className="ptf-animated-block" data-aos="fade" data-aos-delay="0">
+          {/* <img src={audiologo} alt="audio technology"/> */}
           <h1 className="fz-230 fz-230--xxl fz-130--lg fz-60--md has-white-color">{heroContent.title}</h1>
         </div>
         {/* <!--Spacer--> */}

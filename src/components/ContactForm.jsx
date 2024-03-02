@@ -22,7 +22,7 @@ const ContactForm = () => {
   const { register, handleSubmit, formState } = useForm(formOptions);
   const { errors } = formState;
 
-  const {mutate, isLoading, isError, error } = useMutation({
+  const {mutate, isError, error, isSuccess } = useMutation({
     mutationFn: SubmitContactUs
   });
 
@@ -114,6 +114,8 @@ const ContactForm = () => {
           <path d="M16 .997V10h-1V2.703L4.683 13l-.707-.708L14.291 1.997H6.975v-1H16z" />
         </svg>
       </button>
+      {isError ? (<p className="text-danger">{error.message}</p>) : null}
+      {isSuccess ? (<p className="text-success">Your Message Sent Successfully</p>) : null}
     </form>
   );
 };

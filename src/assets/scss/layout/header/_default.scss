@@ -336,7 +336,9 @@
           }
         }
       }
-
+      > a.sf-with-ul{
+        color: var(--ptf-accent-1);
+      }
       &:hover > a,
       &.sfHover > a,
       &.current-menu-ancestor > a {

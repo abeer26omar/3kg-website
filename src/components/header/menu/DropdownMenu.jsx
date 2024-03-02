@@ -8,14 +8,18 @@ const DropdownMenu = () => {
         <li className={`menu-item-has-children two-columns current-menu-item`}>
           <NavLink 
             to={'/'} 
-            className={'sf-with-ul'}>
+            className={({ isActive }) =>
+            isActive ? "sf-with-ul" : ""}
+            end>
             <span>{'Home'}</span>
           </NavLink>
         </li>
         <li className={`menu-item-has-children`}>
           <NavLink 
             to={'/about-us'} 
-            className={''}>
+            className={({ isActive }) =>
+            isActive ? "sf-with-ul" : ""}
+            end>
             <span>{'About us'}</span>
           </NavLink>
         </li>
@@ -27,21 +31,27 @@ const DropdownMenu = () => {
         <li className={`menu-item-has-children`}>
           <NavLink 
             to={'/projects'} 
-            className={'two-columns'}>
+            className={({ isActive }) =>
+            isActive ? "sf-with-ul" : ""}
+            end>
             <span>{'Projects'}</span>
           </NavLink>
         </li>
         <li className={`menu-item-has-children`}>
           <NavLink 
             to={'/case-studies'} 
-            className={'two-columns'}>
+            className={({ isActive }) =>
+            isActive ? "sf-with-ul" : ""}
+            end>
             <span>{'Case Studies'}</span>
           </NavLink>
         </li>
         <li className={`menu-item-has-children`}>
           <NavLink 
             to={'/contact'} 
-            className={'two-columns'}>
+            className={({ isActive }) =>
+            isActive ? "sf-with-ul" : ""}
+            end>
             <span>{'Contact us'}</span>
           </NavLink>
         </li>
