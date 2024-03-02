@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import HeaderDefault from "../components/header/HeaderDefault";
 import CopyRight from "../components/footer/copyright/CopyRight";
 import Footer from "../components/footer/Footer";
+import img404 from '../assets/img/root/404-robot.png';
 
 const NotFound = () => {
   return (
@@ -34,7 +35,7 @@ const NotFound = () => {
                     data-aos-delay="300"
                   >
                     <img
-                      src="assets/img/root/404-robot.png"
+                      src={img404}
                       alt="robot"
                       loading="lazy"
                     />

@@ -19,8 +19,8 @@ const ImageGridThree = ({caseImages}) => {
                 <Item
                   original={val}
                   thumbnail={val}
-                  // width={val.width}
-                  // height={val.height}
+                  width='800'
+                  height='800'
                 >
                   {({ ref, open }) => (
                     <img

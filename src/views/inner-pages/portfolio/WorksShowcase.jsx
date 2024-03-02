@@ -5,7 +5,6 @@ import HeaderDefault from "../../../components/header/HeaderDefault";
 import { useQuery } from '@tanstack/react-query';
 import CopyRight from "../../../components/footer/copyright/CopyRight";
 import Footer from "../../../components/footer/Footer";
-import Social from "../../../components/social/Social";
 import WorksCaseStudy from "./WorksCaseStudy";
 import ImageGridThree from "../../../components/image-grid/ImageGridThree";
 import { getCaseDetails } from "../../../Util/http";
@@ -104,7 +103,6 @@ const WorksShowcase = () => {
                 >
                   <div className="ptf-simple-image">
                     <a
-                      href="assets/img/portfolio/single-work/content-image-1.png"
                       rel="nofollow"
                     >
                       <img
