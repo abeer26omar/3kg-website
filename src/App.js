@@ -24,10 +24,10 @@ const App = () => {
 
         <Helmet>
           <title>Audio Technology</title>
-          <meta name="description" content="Portfolio & Agency React Template" />
+          <meta name="description" content="Audio Technology is proud to be the sole distributor of a variety of internationally acclaimed brands in Egypt, such as renowned Bose, JBL, Pioneer DJ, Shure and Harman Professional." />
           <meta
             name="keywords"
-            content="agency, bootstrap 5, business, clean, corporate, creative, fullpage, minimal, modern, multipurpose, parallax, personal, photography, portfolio, showcase"
+            description='Audio Technology is proud to be the sole distributor of a variety of internationally acclaimed brands in Egypt, such as renowned Bose, JBL, Pioneer DJ, Shure and Harman Professional.'
           />
         </Helmet>
         {/* End React Helmet for SEO */}
