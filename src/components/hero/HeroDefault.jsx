@@ -15,11 +15,12 @@ const HeroDefault = ({landingData}) => {
       <div className="col-xl-9">
         {/* <!--Animated Block--> */}
         <div className="ptf-animated-block" data-aos="fade" data-aos-delay="0">
-          <img src={audiologo} alt="audio technology"/>
+          <img src={audiologo} alt="audio technology" width={'164px'}/>
+          <div className="ptf-spacer" style={{ "--ptf-xxl": "0.625rem" }}></div>
           {/* <h1 className="fz-230 fz-230--xxl fz-130--lg fz-60--md has-white-color">{heroContent.title}</h1> */}
         </div>
         {/* <!--Spacer--> */}
-        <div className="ptf-spacer" style={{ "--ptf-xxl": "0.625rem" }}></div>
+        <div className="ptf-spacer" style={{ "--ptf-xxl": "1.625rem" }}></div>
         {/* <!--Animated Block--> */}
         <div
           className="ptf-animated-block"
@@ -28,10 +29,10 @@ const HeroDefault = ({landingData}) => {
         >
           <p
             className="
-                fz-40
+                fz-90
+                fz-40--md
                 fw-bold
-                lh-1p3
-                text-uppercase
+                lh-1p1
                 has-white-color
               "
           >
@@ -43,8 +44,8 @@ const HeroDefault = ({landingData}) => {
         <div
           className="ptf-spacer"
           style={{
-            "--ptf-xxl": "8.125rem",
-            "--ptf-md": "4.0625rem",
+            "--ptf-xxl": "9.375rem",
+            "--ptf-md": "4.6875rem",
           }}
         ></div>
         {/* <!--Animated Block--> */}
@@ -55,12 +56,12 @@ const HeroDefault = ({landingData}) => {
         >
           <p
             className="
-                fz-70
-                fz-40--md
-                fw-extrabold
-                lh-1p1
-                has-white-color
-              "
+              fz-60
+              fw-bold
+              lh-1p3
+              text-uppercase
+              has-white-color
+            "
           >
             {heroContent.subTitleDescription1} <br />
           </p>
@@ -69,8 +70,8 @@ const HeroDefault = ({landingData}) => {
         <div
           className="ptf-spacer"
           style={{
-            "--ptf-xxl": "9.375rem",
-            "--ptf-md": "4.6875rem",
+            "--ptf-xxl": "4.375rem",
+            "--ptf-md": "2.1875rem",
           }}
         ></div>
         <div className="row">
