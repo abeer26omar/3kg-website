@@ -44,8 +44,8 @@ const HeroDefault = ({landingData}) => {
         <div
           className="ptf-spacer"
           style={{
-            "--ptf-xxl": "9.375rem",
-            "--ptf-md": "4.6875rem",
+            "--ptf-xxl": "11.375rem",
+            "--ptf-md": "6.6875rem",
           }}
         ></div>
         {/* <!--Animated Block--> */}
