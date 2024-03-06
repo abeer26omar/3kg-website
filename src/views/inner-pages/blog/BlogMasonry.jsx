@@ -3,9 +3,7 @@ import { Helmet } from "react-helmet";
 import BlogMasonryGrid from "../../../components/blog/BlogMasonryGrid";
 import CopyRight from "../../../components/footer/copyright/CopyRight";
 import Footer from "../../../components/footer/Footer";
-import SearchBlog from "../../../components/form/SearchBlog";
 import HeaderDefault from "../../../components/header/HeaderDefault";
-import NewsletterTwo from "../../../components/newsletter/NewsletterTwo";
 import { useQuery } from '@tanstack/react-query';
 import { getProjects } from "../../../Util/http";
 
@@ -60,18 +58,7 @@ const BlogMasonry = () => {
                       <h1 className="large-heading">Projects</h1>
                     </div>
                   </div>
-                  {/* End .col */}
-                  {/* <div className="col-xl-3 offset-xl-1 col-lg-4">
-                    <div
-                      className="ptf-animated-block"
-                      data-aos="fade"
-                      data-aos-delay="100"
-                    >
-                      <div className="ptf-widget ptf-widget-search">
-                        <SearchBlog />
-                      </div>
-                    </div>
-                  </div> */}
+                  
                 </div>
                 {/* <!--Spacer--> */}
                 <div
@@ -99,8 +86,7 @@ const BlogMasonry = () => {
                   data-aos="fade"
                   data-aos-delay="0"
                 >
-                  <div className="ptf-isotope-grid">
-                    {" "}
+                  <div className="ptf-isotope-grid row g-xl-5 g-3">
                     <BlogMasonryGrid projects={cards} visibleCards={visibleCards} />
                   </div>
                 </div>

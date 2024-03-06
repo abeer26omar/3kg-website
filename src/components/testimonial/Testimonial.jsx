@@ -1,26 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import { useQuery } from '@tanstack/react-query';
 import { getTestimonial } from '../../Util/http';
 
-const testimonialContent = [
-  {
-    descriptions: ` “I don’t know what else to say, this is something that you
-        haven’t seen before. Unique design, lightweight, and outstanding
-        support!”`,
-    name: "Pavel. S",
-    designation: "CEO at Liarch Studio",
-  },
-  {
-    descriptions: ` “I don’t know what else to say, this is something that you
-        haven’t seen before. Unique design, lightweight, and outstanding
-        support!”`,
-    name: "Pavel. S",
-    designation: "CEO at Liarch Studio",
-  },
-];
 
-const Testimonial = () => {
+const Testimonial = ({getQuotesBg, getCurrentSlide}) => {
+
+  const handleSlideChange = (slideIndex) => {
+    getCurrentSlide(slideIndex);
+  };
+  
   const settings = {
     dots: false,
     arrow: false,
@@ -29,12 +18,19 @@ const Testimonial = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
+    beforeChange: (_, nextSlide) => handleSlideChange(nextSlide),
   };
   
   const { data: testimonial } = useQuery({
     queryKey: ['testimonial'],
     queryFn: () => getTestimonial(1)
   });
+
+  useEffect(()=>{
+    if(testimonial){
+      getQuotesBg(testimonial)
+    }
+  },[testimonial]);
 
   return (
     <>

@@ -20,6 +20,8 @@ const HomeDefault = () => {
 
   const [serviceTitle, setServiceTitle] = useState('');
   const [serviceDescription, setServiceDescription] = useState('');
+  const [quotesBg, setQuotesBg] = useState([]);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const { data: landingData } = useQuery({
     queryKey: ['landingData'],
@@ -29,6 +31,17 @@ const HomeDefault = () => {
   const getServicevalues = (title, description) => {
     setServiceDescription(description);
     setServiceTitle(title)
+  }
+
+  const getQuotesBg = (images) => {
+    setQuotesBg([]);
+    images?.items.map(item=>{
+      setQuotesBg((prevQuotesBg) => [...prevQuotesBg, item.image]);
+    })
+  }
+
+  const getCurrentSlide = (nextSlide) => {
+    setCurrentSlide(nextSlide)
   }
 
   return (
@@ -161,7 +174,7 @@ const HomeDefault = () => {
                 {/* <!--Spacer--> */}
                 <div
                   className="ptf-spacer"
-                  style={{ "--ptf-xxl": "6.25rem" }}
+                  style={{ "--ptf-xxl": "6rem" }}
                 ></div>
                 {/* <!--Animated Block--> */}
                 <div
@@ -237,7 +250,7 @@ const HomeDefault = () => {
                 {/* <!--Spacer--> */}
                 <div
                   className="ptf-spacer"
-                  style={{ "--ptf-xxl": "7.5rem", "--ptf-md": " 3.75rem" }}
+                  style={{ "--ptf-xxl": "6rem", "--ptf-md": " 3.75rem" }}
                 ></div>
                 <Approach />
               </div>
@@ -317,14 +330,16 @@ const HomeDefault = () => {
 
             {/*=============================================
                 Start Jaralax Testimonial Section
+                url(${
+                  process.env.PUBLIC_URL +
+                  "assets/img/about-us-testimonial-background.png"
+                })
               ============================================== */}
             <section
               className="jarallax jarallax-img"
               style={{
-                backgroundImage: `url(${
-                  process.env.PUBLIC_URL +
-                  "assets/img/about-us-testimonial-background.png"
-                })`,
+                backgroundImage: `url(${quotesBg[currentSlide]})`,
+                // filter: 'grayscale(60%)'
               }}
             >
               {/* <!--Spacer--> */}
@@ -354,7 +369,7 @@ const HomeDefault = () => {
                     ></div>
                   </div>
                   <div className="col-xl-8">
-                    <Testimonial />
+                    <Testimonial getQuotesBg={getQuotesBg} getCurrentSlide={getCurrentSlide} />
                   </div>
                 </div>
               </div>

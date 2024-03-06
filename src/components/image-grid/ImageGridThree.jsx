@@ -29,6 +29,11 @@ const ImageGridThree = ({caseImages}) => {
                       role="button"
                       ref={ref}
                       onClick={open}
+                      style={{
+                        height: '509px',
+                        width: '100%',
+                        objectFit: 'cover',
+                      }}
                     />
                   )}
                 </Item>

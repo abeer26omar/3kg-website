@@ -8,8 +8,8 @@ const SocialTwo = () => {
     switch (type) {
       case 'Facebook' :
         return 'socicon-facebook';
-      case 'X' :
-        return 'socicon-twitter';
+      case 'YouTube' :
+        return 'socicon-youtube';
       case 'Instagram' :
         return 'socicon-instagram';
       case 'LinkedIn' :

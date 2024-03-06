@@ -8,7 +8,7 @@ const CopyRight = () => {
     <div className="row align-items-center justify-content-sm-between justify-content-center">
       <div className="col-md-6 col-12">
         <Link to="/">
-          <img src={logo} alt="audio tech" loading="lazy" width={'151px'}/>
+          <img src={logo} alt="audio tech" loading="lazy" width={'164px'} />
         </Link>
       </div>
       <div className="col-md-6 col-12 text-md-end">

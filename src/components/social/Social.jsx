@@ -6,8 +6,8 @@ const Social = ({social}) => {
     switch (type) {
       case 'Facebook' :
         return 'facebook';
-      case 'X' :
-        return 'twitter';
+      case 'YouTube' :
+        return 'youtube';
       case 'Instagram' :
         return 'instagram';
       case 'LinkedIn' :
@@ -21,8 +21,8 @@ const Social = ({social}) => {
     switch (type) {
       case 'Facebook' :
         return 'socicon-facebook';
-      case 'X' :
-        return 'socicon-twitter';
+      case 'YouTube' :
+        return 'socicon-youtube';
       case 'Instagram' :
         return 'socicon-instagram';
       case 'LinkedIn' :

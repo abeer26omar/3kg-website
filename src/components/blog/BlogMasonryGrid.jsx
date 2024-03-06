@@ -2,105 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Masonry from "react-masonry-css";
 
-const blogContent = [
-  {
-    img: "post-1",
-    cat: "Product",
-    date: "Dec 15, 2021",
-    title: "Review product BWIB",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Nullam dignissim tortor vitae mattis tempor...`,
-  },
-  {
-    img: "post-2",
-    cat: "Inspiration",
-    date: "Dec 15, 2021",
-    title: "The evolution of Swiss style in Interaction Design",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Nullam dignissim tortor vitae mattis tempor...`,
-  },
-  {
-    img: "post-3",
-    cat: "Community",
-    date: "Dec 15, 2021",
-    title: "Design Trends - Stage 14",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Nullam dignissim tortor vitae mattis tempor...`,
-  },
-  {
-    img: "post-4",
-    cat: "Inspiration",
-    date: "Dec 15, 2021",
-    title: "Site inspiration with Swiss style",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Nullam dignissim tortor vitae mattis tempor...`,
-  },
-  {
-    img: "post-5",
-    cat: "Inspiration",
-    date: "Dec 15, 2021",
-    title: " Contrast in Brand Design",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Nullam dignissim tortor vitae mattis tempor...`,
-  },
-  {
-    img: "post-6",
-    cat: "Inspiration",
-    date: "Dec 15, 2021",
-    title: "Minimalist Trends",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Nullam dignissim tortor vitae mattis tempor...`,
-  },
-  {
-    img: "post-7",
-    cat: "Inspiration",
-    date: "Dec 15, 2021",
-    title: "The role of leader inteamwork",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Nullam dignissim tortor vitae mattis tempor...`,
-  },
-  {
-    img: "post-8",
-    cat: "Community",
-    date: "Dec 15, 2021",
-    title: "Simple Logos Collection",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Nullam dignissim tortor vitae mattis tempor...`,
-  },
-  {
-    img: "post-9",
-    cat: "Inspiration",
-    date: "Dec 15, 2021",
-    title: "  How to build photoshoots scene for product impress more",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Nullam dignissim tortor vitae mattis tempor...`,
-  },
-  {
-    img: "post-10",
-    cat: "Product",
-    date: "Dec 15, 2021",
-    title: "Krown, Clothing & Accessories",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Nullam dignissim tortor vitae mattis tempor...`,
-  },
-  {
-    img: "post-11",
-    cat: "Inspiration",
-    date: "Dec 15, 2021",
-    title: " Graphic in the life",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Nullam dignissim tortor vitae mattis tempor...`,
-  },
-  {
-    img: "post-12",
-    cat: "Community",
-    date: "Dec 15, 2021",
-    title: "UX Process",
-    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Nullam dignissim tortor vitae mattis tempor...`,
-  },
-];
-
 const breakpointColumnsObj = {
   default: 4,
   1100: 3,
@@ -111,56 +12,72 @@ const breakpointColumnsObj = {
 const BlogMasonryGrid = ({projects, visibleCards}) => {
   return (
     <>
-      <Masonry
+      {/* <Masonry
         breakpointCols={breakpointColumnsObj}
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
-      >
+      > */}
         {projects && projects.slice(0, visibleCards).map((item, i) => (
-          <div className="grid-item" key={i}>
-            {/* <!--Blog Post--> */}
-            <article className="ptf-post ptf-post--style-2">
-              <div className="ptf-post__media">
-                <img
-                  src={item.image}
-                  alt=""
-                  loading="lazy"
-                />
-                <div className="ptf-post__media__content">
+           <div className="col-lg-4 col-md-6 col-12 h-100" key={i}>
+            <div className="grid-item">
+              <article className="ptf-post ptf-post--style-2">
+                <div className="ptf-post__media">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    loading="lazy"
+                    style={{
+                      height: '336px',
+                      objectFit: 'cover',
+                    }}
+                  />
+                  <div className="ptf-post__media__content">
+                    <header className="ptf-post__header">
+                      <div className="ptf-post__meta">
+                        <span className="cat">{item.category}</span>
+                      </div>
+                      <h3 className="ptf-post__title">{item.title}</h3>
+                    </header>
+                  </div>
+                </div>
+                <div className="ptf-post__content">
                   <header className="ptf-post__header">
                     <div className="ptf-post__meta">
                       <span className="cat">{item.category}</span>
-                      {/* <span className="date">{item.date}</span> */}
                     </div>
-                    <h3 className="ptf-post__title">{item.title}</h3>
+                    <h3 className="ptf-post__title">
+                      <Link>{item.title}</Link>
+                    </h3>
                   </header>
                 </div>
-              </div>
-              {/* End .ptf-post */}
-              <div className="ptf-post__content">
-                <header className="ptf-post__header">
-                  <div className="ptf-post__meta">
-                    <span className="cat">{item.category}</span>
-                    {/* <span className="date">{item.date}</span> */}
-                  </div>
-                  <h3 className="ptf-post__title">
-                    <Link>{item.title}</Link>
-                  </h3>
-                </header>
-                {/* <div className="ptf-post__excerpt">
-                  <p>{item.description}</p>
-                </div>
-                <footer className="ptf-post__footer">
-                  <Link className="ptf-read-more-link" to="/blog-details">
-                    Continue
-                  </Link>
-                </footer> */}
-              </div>
-              {/* End .ptf-post__content */}
-            </article>
-          </div>
+              </article>
+            </div>
+           </div>
         ))}
-      </Masonry>
+        {/* {projects && projects?.slice(0, visibleCards).map((val, i) => (
+          <div className="col-lg-4" key={i}>
+            <div className="grid-item">
+              <article className="ptf-work ptf-work--style-1">
+                <div className="ptf-work__media">
+                  <Link className="ptf-work__link" to={`/case-details/${val.id}`}></Link>
+                  <img
+                    src={val.image}
+                    alt="portfolio"
+                    loading="lazy"
+                    
+                  />
+                </div>
+                <div className="ptf-work__meta">
+                  <div className="ptf-work__category">{val.category}</div>
+                  <h4 className="ptf-work__title">
+                    <Link to={`/case-details/${val.id}`}>{val.title}</Link>
+                  </h4>
+                </div>
+              </article>
+            </div>
+          </div>
+        ))} */}
+      {/* </Masonry> */}
     </>
   );
 };
