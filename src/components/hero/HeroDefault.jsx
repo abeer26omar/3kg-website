@@ -5,8 +5,8 @@ import audiologo from '../../assets/img/root/Logos/whiteaudiotech.svg';
 const HeroDefault = ({landingData}) => {
   const heroContent = {
     title: "AudioTech",
-    subTitle1: "Crafting Digital",
-    subTitle2: "Agency",
+    subTitle1: "Committed to excellence",
+    subTitle2: '',
     subTitleDescription1: landingData.title,
     detailsDescription: landingData.description,
   };
