@@ -157,7 +157,7 @@ h1,
 
   @include mq("xlarge", min) {
     &.large-heading {
-      font-size: px2rem(80px);
+      font-size: px2rem(70px);
       line-height: 1.1;
     }
   }
