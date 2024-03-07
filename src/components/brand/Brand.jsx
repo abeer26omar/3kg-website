@@ -2,52 +2,7 @@ import React, { useState } from "react";
 import BrandModal from "./BrandModal";
 import { useQuery } from '@tanstack/react-query';
 import { getPartners } from '../../Util/http';
-
-
-const brandContent = [
-  {
-    delayAnimation: "0",
-    hoverBg: "#fcf8f4",
-    imgHeight: "85px",
-    imgName: "image-1",
-    title: "Zeplin",
-  },
-  {
-    delayAnimation: "100",
-    hoverBg: "#f3f7fc",
-    imgHeight: "78px",
-    imgName: "image-2",
-    title: "Dropbox",
-  },
-  {
-    delayAnimation: "200",
-    hoverBg: "#f9fcf3",
-    imgHeight: "90px",
-    imgName: "image-3",
-    title: "Shopify",
-  },
-  {
-    delayAnimation: "300",
-    hoverBg: "#f9f9f9",
-    imgHeight: "90px",
-    imgName: "image-4",
-    title: "Slack",
-  },
-  {
-    delayAnimation: "400",
-    hoverBg: "#fdf4fb",
-    imgHeight: "62px",
-    imgName: "image-5",
-    title: "WooCommerce",
-  },
-  {
-    delayAnimation: "500",
-    hoverBg: "#fdf4fb",
-    imgHeight: "77px",
-    imgName: "image-6",
-    title: "InvisionApp",
-  },
-];
+import Slider from "react-slick";
 
 const Brand = () => {
 
@@ -67,11 +22,45 @@ const Brand = () => {
     setBrand(brandObj);
   }
 
+  const settings = {
+    dots: false,
+    arrow: false,
+    infinite: false,
+    speed: 900,
+    slidesToShow: 6,
+    centerPadding: "40px",
+    slidesToScroll: 1,
+    autoplay: false,
+    responsive: [
+      {
+        breakpoint: 1050,
+        settings: {
+          slidesToShow: 4,
+          dots: false,
+          arrow: false,
+        },
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <>
-      <div className="row" style={{ "--bs-gutter-y": "2rem" }}>
-          {partners && partners?.items.slice(0, 6).map((item, i) => (
-            <div className="col-6 col-md-3 col-lg-2" key={i} onClick={() => onOpenModal(item)}>
+      <div className="slider_brand" style={{ "--bs-gutter-y": "2rem" }}>
+        <Slider {...settings}>
+          {partners && partners?.items.map((item, i) => (
+            <div className="px-2" key={i} onClick={() => onOpenModal(item)}>
               {/* <!--Animated Block--> */}
               <div
                 className="ptf-animated-block"
@@ -98,6 +87,7 @@ const Brand = () => {
               </div>
             </div>
           ))}
+        </Slider>
       </div>
       <BrandModal 
         show={openModal}

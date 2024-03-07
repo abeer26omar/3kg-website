@@ -187,3 +187,17 @@
     }
   }
 }
+
+.slider_brand{
+  .slick-slider{
+    .slick-prev, 
+    .slick-next {
+      top: 52%;
+    }
+    .slick-list{
+      .slick-track{
+        margin: 0 !important;
+      }
+    }
+  }
+}

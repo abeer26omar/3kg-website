@@ -35,6 +35,9 @@ const HeroDefault = ({landingData}) => {
                 lh-1p1
                 has-white-color
               "
+              style={{
+                textTransform: 'uppercase'
+              }}
           >
             {heroContent.subTitle1} <br />
             {heroContent.subTitle2}

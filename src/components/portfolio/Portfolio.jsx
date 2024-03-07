@@ -4,34 +4,6 @@ import Slider from "react-slick";
 import { useQuery } from '@tanstack/react-query';
 import { getCaseStudies } from '../../Util/http';
 
-const portfolioContent = [
-  {
-    img: "work-1",
-    categorie: "UI/UX",
-    title: "Taskly Dashboard",
-  },
-  {
-    img: "work-2",
-    categorie: "Product",
-    title: "Film & Art Festival",
-  },
-  {
-    img: "work-3",
-    categorie: "Branding, Packaging",
-    title: "Dark Wishky Wine",
-  },
-  {
-    img: "work-4",
-    categorie: "Illustration",
-    title: "Swiss Style Poster",
-  },
-  {
-    img: "work-5",
-    categorie: "UI/UX",
-    title: "Liarch Architecture Firm",
-  },
-];
-
 const Portfolio = () => {
 
   const { data: caseStudies } = useQuery({
