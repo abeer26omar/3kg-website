@@ -32,8 +32,11 @@ const PortfolioSix = ({caseStudies}) => {
                           ></Link>
                           <img
                             src={item.main_image}
-                            alt=""
+                            alt={item.title}
                             loading="lazy"
+                            style={{
+                              height: '500px'
+                            }}
                           />
                         </div>
                         <div className="ptf-work__meta">

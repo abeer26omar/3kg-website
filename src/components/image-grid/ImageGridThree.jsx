@@ -13,14 +13,12 @@ const ImageGridThree = ({caseImages}) => {
         }}
       >
         {caseImages && caseImages?.map((val, i) => (
-          <div className={`col-lg-${i === caseImages.length - 1 ? '12' : '6'}`} key={i}>
+          <div className={`col-lg-${i === caseImages.length - 1 && caseImages.length % 2 !== 0 ? '12' : '6'}`} key={i}>
             <div className="ptf-gallery__item">
               <div className="ptf-simple-image">
                 <Item
                   original={val}
                   thumbnail={val}
-                  width='800'
-                  height='800'
                 >
                   {({ ref, open }) => (
                     <img

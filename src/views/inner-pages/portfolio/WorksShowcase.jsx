@@ -149,44 +149,48 @@ const WorksShowcase = () => {
                 ></div>
 
                 {/* <!--Spacer--> */}
-                <div
-                  className="ptf-spacer"
-                  style={{ "--ptf-xxl": "6.25rem", "--ptf-md": "3.125rem" }}
-                ></div>
 
-                {(caseDetilas?.video_link && caseDetilas?.video_link !== '') && (<section
-                  className="jarallax jarallax-img"
-                  style={{
-                    backgroundImage: `url(${caseDetilas?.other_images[0]})`,
-                    textAlign: 'center',
-                    filter: 'grayscale(60%)'
-                  }}
-                >
-                  <div
+                {(caseDetilas?.video_link && caseDetilas?.video_link !== '') && (
+                  <>
+                    <div
                       className="ptf-spacer"
-                      style={{ "--ptf-xxl": "12.5rem", "--ptf-md": "6.25rem" }}
+                      style={{ "--ptf-xxl": "6.25rem", "--ptf-md": "3.125rem" }}
                     ></div>
-
-                  <div
-                    className="ptf-video-button"
-                    onClick={() => setOpen(true)}
+                    <section
+                    className="jarallax jarallax-img"
                     style={{
-                      "--ptf-title-color": "var(--ptf-color-white)",
-                      marginLeft: "2rem",
+                      backgroundImage: `url(${caseDetilas?.other_images[0]})`,
+                      textAlign: 'center',
+                      filter: 'grayscale(60%)'
                     }}
                   >
-                    <a href="#" rel="nofollow">
-                      <i className="lnil lnil-play"></i>
-                    </a>
-                    <div className="ptf-video-button__title">
-                      View case story
+                    <div
+                        className="ptf-spacer"
+                        style={{ "--ptf-xxl": "12.5rem", "--ptf-md": "6.25rem" }}
+                      ></div>
+
+                    <div
+                      className="ptf-video-button"
+                      onClick={() => setOpen(true)}
+                      style={{
+                        "--ptf-title-color": "var(--ptf-color-white)",
+                        marginLeft: "2rem",
+                      }}
+                    >
+                      <a href="#" rel="nofollow">
+                        <i className="lnil lnil-play"></i>
+                      </a>
+                      <div className="ptf-video-button__title">
+                        View case story
+                      </div>
                     </div>
-                  </div>
-                  <div
-                      className="ptf-spacer"
-                      style={{ "--ptf-xxl": "12.5rem", "--ptf-md": "6.25rem" }}
-                    ></div>
-                </section>)}                
+                    <div
+                        className="ptf-spacer"
+                        style={{ "--ptf-xxl": "12.5rem", "--ptf-md": "6.25rem" }}
+                      ></div>
+                    </section>
+                  </>
+                )}                
                 {/* <!--Spacer--> */}
                 <div
                   className="ptf-spacer"

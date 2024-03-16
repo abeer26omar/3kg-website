@@ -28,9 +28,6 @@ const AllRoutes = () => {
       <ScrollTopBehaviour />
       <Routes>
         <Route path="/" element={<HomeDefault />} />
-        {/* Service */}
-        <Route path="/service" element={<Service />} />
-
         {/* About */}
         <Route path="/about-us" element={<AboutUs />} />
 

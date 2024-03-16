@@ -157,7 +157,7 @@ h1,
 
   @include mq("xlarge", min) {
     &.large-heading {
-      font-size: px2rem(70px);
+      font-size: px2rem(60px);
       line-height: 1.1;
     }
   }
@@ -549,4 +549,7 @@ table {
     color: var(--ptf-color-black);
     font-weight: 700;
   }
+}
+.pswp__img{
+  object-fit: contain !important;
 }

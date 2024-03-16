@@ -10,22 +10,15 @@ import { getCaseStudies } from '../../../Util/http';
 
 const WorksGrid = () => {
 
+  const [page, setPage] = useState(1);
+  
   const { data: caseStudies } = useQuery({
     queryKey: ['caseStudies'],
-    queryFn: () => getCaseStudies(false, 1)
+    queryFn : () => getCaseStudies(false, page),
   });
-
-  const [visibleCards, setVisibleCards] = useState(13);
-  const [cards, setCards] = useState(caseStudies?.items.slice(0, 13));
-
-  useEffect(()=>{
-    if(caseStudies){
-      setCards(caseStudies?.items.slice(0, 13))
-    }
-  }, [caseStudies])
-
+  
   const handleShowMore = () => {
-    setVisibleCards(prevVisibleCards => prevVisibleCards + 3);
+    setPage(page + 1);
   };
 
   return (
@@ -118,7 +111,7 @@ const WorksGrid = () => {
                       "--bs-gutter-y": "5.75rem",
                     }}
                   >
-                    <RelatedPortfolio caseStudies={cards} visibleCards={visibleCards} />
+                    <RelatedPortfolio caseStudies={caseStudies?.items} />
                   </div>
                 </div>
                 {/* <!--Spacer--> */}
@@ -126,7 +119,7 @@ const WorksGrid = () => {
                   className="ptf-spacer"
                   style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
                 ></div>
-                {cards && visibleCards < cards.length && (<div className="text-center">
+                {caseStudies?.lenght > 30 && (<div className="text-center">
                   <div
                     className="ptf-animated-block"
                     data-aos="fade"

@@ -11,20 +11,12 @@ const BlogMasonry = () => {
 
   const { data: projects } = useQuery({
     queryKey: ['projects'],
-    queryFn: () => getProjects(1)
+    queryFn: () => getProjects(page)
   });
 
-  const [visibleCards, setVisibleCards] = useState(13);
-  const [cards, setCards] = useState(projects?.items.slice(0, 13));
-
-  useEffect(()=>{
-    if(projects){
-      setCards(projects?.items.slice(0, 13))
-    }
-  }, [projects])
+  const [page, setPage] = useState(1);
 
   const handleShowMore = () => {
-    setVisibleCards(prevVisibleCards => prevVisibleCards + 3);
   };
 
   return (
@@ -87,14 +79,14 @@ const BlogMasonry = () => {
                   data-aos-delay="0"
                 >
                   <div className="ptf-isotope-grid row g-xl-5 g-3">
-                    <BlogMasonryGrid projects={cards} visibleCards={visibleCards} />
+                    <BlogMasonryGrid projects={projects?.items} />
                   </div>
                 </div>
                 {/* End .ptf-animated-block */}
 
                 {/* <!--Spacer--> */}
 
-                {cards && visibleCards < cards.length && (<div className="text-center">
+                {projects?.count > 30 && (<div className="text-center">
                   <div
                     className="ptf-spacer"
                     style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}

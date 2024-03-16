@@ -9,7 +9,7 @@ const breakpointColumnsObj = {
   500: 1,
 };
 
-const BlogMasonryGrid = ({projects, visibleCards}) => {
+const BlogMasonryGrid = ({projects}) => {
   return (
     <>
       {/* <Masonry
@@ -17,7 +17,7 @@ const BlogMasonryGrid = ({projects, visibleCards}) => {
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
       > */}
-        {projects && projects.slice(0, visibleCards).map((item, i) => (
+        {projects && projects.map((item, i) => (
            <div className="col-lg-4 col-md-6 col-12 h-100" key={i}>
             <div className="grid-item">
               <article className="ptf-post ptf-post--style-2">

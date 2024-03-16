@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const RelatedPortfolio = ({caseStudies, visibleCards={visibleCards}}) => {
+const RelatedPortfolio = ({caseStudies}) => {
 
   return (
     <>
-      {caseStudies && caseStudies?.slice(0, visibleCards).map((val, i) => (
+      {caseStudies && caseStudies?.map((val, i) => (
         <div className="col-lg-4" key={i}>
           <div className="grid-item">
             {/* <!--Portfolio Item--> */}
@@ -14,8 +14,11 @@ const RelatedPortfolio = ({caseStudies, visibleCards={visibleCards}}) => {
                 <Link className="ptf-work__link" to={`/case-details/${val.id}`}></Link>
                 <img
                   src={val.main_image}
-                  alt="portfolio"
+                  alt={val.title}
                   loading="lazy"
+                  style={{
+                    height: '300px'
+                  }}
                 />
               </div>
               <div className="ptf-work__meta">
