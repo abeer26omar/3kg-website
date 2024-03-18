@@ -6,28 +6,26 @@ import BlogGridSLider from "../../../components/blog/BlogGridSLider";
 import BlogThree from "../../../components/blog/BlogThree";
 import CopyRight from "../../../components/footer/copyright/CopyRight";
 import Footer from "../../../components/footer/Footer";
-import SearchBlog from "../../../components/form/SearchBlog";
 import HeaderDefault from "../../../components/header/HeaderDefault";
-import NewsletterTwo from "../../../components/newsletter/NewsletterTwo";
 
 const BlogGrid = () => {
 
+  const [page, setPage] = useState(1);
+  const [paginatedNews, setPaginatedNews] = useState([]);
+
   const { data: news } = useQuery({
-    queryKey: ['news', 'all'],
-    queryFn: () => getNews(false, 1)
+    queryKey: ['news', 'all', page],
+    queryFn: () => getNews(false, page)
   });
 
-  const [visibleCards, setVisibleCards] = useState(9);
-  const [cards, setCards] = useState(news?.items.slice(0, 9));
-
   useEffect(()=>{
-    if(news){
-      setCards(news?.items.slice(0, 9))
+    if (news?.items) {
+      setPaginatedNews(prevNews => [...prevNews, ...news?.items]);
     }
-  }, [news])
+  },[news])
 
   const handleShowMore = () => {
-    setVisibleCards(prevVisibleCards => prevVisibleCards + 3);
+    setPage(prevPage => prevPage + 1);
   };
 
   return (
@@ -62,17 +60,7 @@ const BlogGrid = () => {
                     </div>
                   </div>
                   {/* End .col */}
-                  {/* <div className="col-xl-3 offset-xl-1 col-lg-4">
-                    <div
-                      className="ptf-animated-block"
-                      data-aos="fade"
-                      data-aos-delay="100"
-                    >
-                      <div className="ptf-widget ptf-widget-search">
-                        <SearchBlog />
-                      </div>
-                    </div>
-                  </div> */}
+                  
                 </div>
                 {/* <!--Spacer--> */}
                 <div
@@ -155,14 +143,14 @@ const BlogGrid = () => {
                       "--bs-gutter-y": "3rem",
                     }}
                   >
-                    <BlogThree news={cards} visibleCards={visibleCards}/>
+                    <BlogThree news={paginatedNews} />
                   </div>
                 </div>
                 {/* End .ptf-animated-block */}
 
                 {/* <!--Spacer--> */}
 
-                {cards && visibleCards < cards.length && (<div className="text-center">
+                {(news?.count > 30 && news?.items.length > 0) && (<div className="text-center">
                   <div
                     className="ptf-spacer"
                     style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}

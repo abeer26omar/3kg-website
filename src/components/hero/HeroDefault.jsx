@@ -31,6 +31,7 @@ const HeroDefault = ({landingData}) => {
             className="
                 fz-90
                 fz-40--md
+                fz-40--xs 
                 fw-bold
                 lh-1p1
                 has-white-color
@@ -39,8 +40,7 @@ const HeroDefault = ({landingData}) => {
                 textTransform: 'uppercase'
               }}
           >
-            {heroContent.subTitle1} <br />
-            {heroContent.subTitle2}
+            {heroContent.subTitle1}
           </p>
         </div>
         {/* <!--Spacer--> */}
@@ -60,6 +60,8 @@ const HeroDefault = ({landingData}) => {
           <p
             className="
               fz-60
+              fz-60--sm
+              fz-60--xs
               fw-bold
               lh-1p3
               text-uppercase
@@ -96,7 +98,7 @@ const HeroDefault = ({landingData}) => {
                     "--ptf-md": "2.1875rem",
                   }}
                 ></div>
-                <p className="fz-24 has-white-color">
+                <p className="fz-24 fz-24--xs has-white-color">
                   {heroContent.detailsDescription}
                 </p>
               </div>

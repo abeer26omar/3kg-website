@@ -26,7 +26,6 @@ const Portfolio = () => {
         breakpoint: 991,
         settings: {
           slidesToShow: 2,
-          dots: true,
           centerMode: false,
         },
       },
@@ -34,7 +33,6 @@ const Portfolio = () => {
         breakpoint: 576,
         settings: {
           slidesToShow: 1,
-          dots: true,
         },
       },
     ],

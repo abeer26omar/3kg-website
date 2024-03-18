@@ -24,8 +24,8 @@ const Brand = () => {
 
   const settings = {
     dots: false,
-    arrow: false,
-    infinite: false,
+    arrow: true,
+    infinite: true,
     speed: 900,
     slidesToShow: 6,
     centerPadding: "40px",
@@ -33,11 +33,15 @@ const Brand = () => {
     autoplay: false,
     responsive: [
       {
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 5,
+        },
+      },
+      {
         breakpoint: 1050,
         settings: {
           slidesToShow: 4,
-          dots: false,
-          arrow: false,
         },
       },
       {
@@ -65,7 +69,6 @@ const Brand = () => {
               <div
                 className="ptf-animated-block"
                 data-aos="fade"
-                data-aos-delay={(i * 100).toString()}
               >
                 {/* <!--Partner Box--> */}
                 <div

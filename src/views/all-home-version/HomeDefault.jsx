@@ -60,7 +60,6 @@ const HomeDefault = () => {
             {/*=============================================
                 Start Hero Section
               ============================================== */}
-               {/*  */}
             <section className="has-accent-5-background" style={{
               backgroundImage: `url(${landingData && landingData?.image})`
                 }}>
@@ -136,7 +135,7 @@ const HomeDefault = () => {
             <section>
               <div className="container-xxl">
                 <div className="row align-items-center">
-                  <div className="col-12 col-lg-9 col-md-6">
+                  <div className="col-lg-9 col-6">
                     {/* <!--Animated Block--> */}
                     <div
                       className="ptf-animated-block"
@@ -148,12 +147,7 @@ const HomeDefault = () => {
                       </h2>
                     </div>
                   </div>
-                  <div className="col-12 col-lg-3 col-md-6 text-md-end">
-                    {/* <!--Spacer--> */}
-                    <div
-                      className="ptf-spacer"
-                      style={{ "--ptf-md": "1.875rem" }}
-                    ></div>
+                  <div className="col-lg-3 col-6 d-flex justify-content-end">
                     {/* <!--Animated Block--> */}
                     <Link
                       className="
@@ -165,9 +159,8 @@ const HomeDefault = () => {
                           d-inline-flex
                         "
                       to="/case-studies"
-                      // style={{ marginLeft: "5.625rem" }}
                     >
-                      All Case studies <i className="lnil lnil-chevron-right"></i>
+                      <span className="d-sm-block d-none">All Case studies</span> <i className="lnil lnil-chevron-right"></i>
                     </Link>
                   </div>
                 </div>
@@ -187,25 +180,16 @@ const HomeDefault = () => {
                 </div>
               </div>
               {/* <!--Spacer--> */}
-              <div
+              {/* <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "10rem", "--ptf-md": "9.5rem" }}
-              ></div>
+              ></div> */}
             </section>
 
             {/*=============================================
                 Start Our Approach Section
               ============================================== */}
-            <section
-              className=""
-              // style={{
-              //   backgroundImage: `url(${
-              //     process.env.PUBLIC_URL + "assets/img/root/service-bubble.png"
-              //   })`,
-              //   backgroundRepeat: "no-repeat",
-              //   backgroundPosition: "100% calc(100% + 120px)",
-              // }}
-            >
+            <section>
               {/* <!--Spacer--> */}
               <div
                 className="ptf-spacer"
@@ -214,7 +198,7 @@ const HomeDefault = () => {
               <div className="container-xxl">
                 {/* <!--Animated Block--> */}
                 <div className="row align-items-center">
-                  <div className="col-12 col-md-9">
+                  <div className="col-md-9 col-6">
                     {/* <!--Animated Block--> */}
                     <div
                       className="ptf-animated-block"
@@ -224,12 +208,7 @@ const HomeDefault = () => {
                       <h2 className="h1 large-heading">News</h2>
                     </div>
                   </div>
-                  <div className="col-12 col-md-3 text-md-end">
-                    {/* <!--Spacer--> */}
-                    <div
-                      className="ptf-spacer"
-                      style={{ "--ptf-md": "1.875rem" }}
-                    ></div>
+                  <div className="col-md-3 col-6 d-flex justify-content-end">
                     {/* <!--Animated Block--> */}
                     <Link
                       className="
@@ -242,7 +221,7 @@ const HomeDefault = () => {
                         "
                       to="/news"
                     >
-                      All News <i className="lnil lnil-chevron-right"></i>
+                    <span className="d-sm-block d-none">All News</span><i className="lnil lnil-chevron-right"></i>
                     </Link>
                   </div>
                 </div>
@@ -399,9 +378,7 @@ const HomeDefault = () => {
                       data-aos-delay="0"
                     >
                       <h2 className="h1 large-heading">
-                        Our
-                        <br />
-                        Awards
+                        Our  <br className="d-sm-block d-none"/> Awards
                       </h2>
                     </div>
                     {/* <!--Spacer--> */}

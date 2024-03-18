@@ -70,7 +70,11 @@
 			color: var(--ptf-value-color);
 			font-size: px2rem(60px);
 		}
-
+		@media (max-width: 425px) {
+			.ptf-counter-up__value {
+				font-size: px2rem(40px);
+			}
+		}
 		.ptf-counter-up__title {
 			font-size: px2rem(16px);
 			line-height: 1.6;

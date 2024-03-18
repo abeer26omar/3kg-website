@@ -145,6 +145,16 @@
       font-size: px2rem(60px);
     }
   }
+  &--sm{
+    @include mq("small") {
+      font-size: px2rem(40px);
+    }
+  }
+  &--xs {
+    @include mq("xsmall") {
+      font-size: px2rem(25px);
+    }
+  }
 }
 
 .fz-48 {
@@ -159,10 +169,14 @@
       font-size: px2rem(40px);
     }
   }
-
   &--sm {
     @include mq("small") {
       font-size: px2rem(40px);
+    }
+  }
+  &--xs {
+    @include mq("xsmall") {
+      font-size: px2rem(25px);
     }
   }
 }
@@ -183,6 +197,12 @@
 
 .fz-24 {
   font-size: px2rem(24px);
+
+  &--xs {
+    @include mq("xsmall") {
+      font-size: px2rem(18px);
+    }
+  }
 }
 
 .fz-20 {

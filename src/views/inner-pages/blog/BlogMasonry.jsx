@@ -8,16 +8,23 @@ import { useQuery } from '@tanstack/react-query';
 import { getProjects } from "../../../Util/http";
 
 const BlogMasonry = () => {
-
-  const { data: projects } = useQuery({
-    queryKey: ['projects'],
-    queryFn: () => getProjects(page)
-  });
-
+  
   const [page, setPage] = useState(1);
 
+  const { data: projects } = useQuery({
+    queryKey: ['projects', page],
+    queryFn: () => getProjects(page),
+  });
+  const [paginatedProjects, setPaginatedProjects] = useState([]);
+
   const handleShowMore = () => {
+    setPage(prevPage => prevPage + 1);
   };
+  useEffect(()=>{
+    if (projects?.items) {
+      setPaginatedProjects(prevProjects => [...prevProjects, ...projects?.items]);
+    }
+  },[projects])
 
   return (
     <div className="ptf-site-wrapper animsition ptf-is--blog-grid">
@@ -79,14 +86,14 @@ const BlogMasonry = () => {
                   data-aos-delay="0"
                 >
                   <div className="ptf-isotope-grid row g-xl-5 g-3">
-                    <BlogMasonryGrid projects={projects?.items} />
+                    <BlogMasonryGrid projects={paginatedProjects} />
                   </div>
                 </div>
                 {/* End .ptf-animated-block */}
 
                 {/* <!--Spacer--> */}
 
-                {projects?.count > 30 && (<div className="text-center">
+               {(projects?.count > 30 && projects?.items.length > 0) && (<div className="text-center">
                   <div
                     className="ptf-spacer"
                     style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
@@ -126,51 +133,6 @@ const BlogMasonry = () => {
               </div>
             </section>
             {/* End continaer devider */}
-
-            {/*=============================================
-            Start Newsletter section
-            ============================================== */}
-            {/* <section>
-              <div
-                className="ptf-spacer"
-                style={{ "--ptf-xxl": "9.375rem", "--ptf-md": "4.6875rem" }}
-              ></div>
-              <div className="container-xxl">
-                <div className="row align-items-center">
-                  <div className="col-lg-4">
-                    <div
-                      className="ptf-animated-block"
-                      data-aos="fade"
-                      data-aos-delay="0"
-                    >
-                      <h1 className="large-heading">Newsletter</h1>
-                      <div
-                        className="ptf-spacer"
-                        style={{ "--ptf-xxl": "1.25rem" }}
-                      ></div>
-                      <p>Get the latest news & insight.</p>
-                    </div>
-                    <div
-                      className="ptf-spacer"
-                      style={{ "--ptf-lg": "3.75rem", "--ptf-md": "1.875rem" }}
-                    ></div>
-                  </div>
-                  <div className="col-lg-6 offset-lg-2">
-                    <div
-                      className="ptf-animated-block"
-                      data-aos="fade"
-                      data-aos-delay="100"
-                    >
-                      <NewsletterTwo />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                className="ptf-spacer"
-                style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
-              ></div>
-            </section> */}
           </div>
           {/* End .ptf-page */}
         </div>

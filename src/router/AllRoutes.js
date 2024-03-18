@@ -1,9 +1,6 @@
 import React from "react";
 // Homepage Demo
 import HomeDefault from "../views/all-home-version/HomeDefault";
-// Service
-import Service from "../views/inner-pages/service/Service";
-
 // About
 import AboutUs from "../views/inner-pages/about/AboutUs";
 

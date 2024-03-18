@@ -11,15 +11,22 @@ import { getCaseStudies } from '../../../Util/http';
 const WorksGrid = () => {
 
   const [page, setPage] = useState(1);
-  
+  const [paginatedWorks, setPaginatedWorks] = useState([]);
+
   const { data: caseStudies } = useQuery({
     queryKey: ['caseStudies'],
     queryFn : () => getCaseStudies(false, page),
   });
   
   const handleShowMore = () => {
-    setPage(page + 1);
+    setPage(prevPage => prevPage + 1);
   };
+
+  useEffect(()=>{
+    if (caseStudies?.items) {
+      setPaginatedWorks(prevWorks => [...prevWorks, ...caseStudies?.items]);
+    }
+  },[caseStudies])
 
   return (
     <div className="ptf-site-wrapper animsition ptf-is--works-grid">
@@ -111,7 +118,7 @@ const WorksGrid = () => {
                       "--bs-gutter-y": "5.75rem",
                     }}
                   >
-                    <RelatedPortfolio caseStudies={caseStudies?.items} />
+                    <RelatedPortfolio caseStudies={paginatedWorks} />
                   </div>
                 </div>
                 {/* <!--Spacer--> */}
@@ -119,7 +126,7 @@ const WorksGrid = () => {
                   className="ptf-spacer"
                   style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
                 ></div>
-                {caseStudies?.lenght > 30 && (<div className="text-center">
+                {(caseStudies?.count > 30 && caseStudies?.items.length > 0) && (<div className="text-center">
                   <div
                     className="ptf-animated-block"
                     data-aos="fade"
