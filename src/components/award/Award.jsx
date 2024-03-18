@@ -27,7 +27,7 @@ const Award = () => {
           key={i}
         >
           <div className="ptf-rewards-item__date">{moment(val.timestamp).format('YYYY')}</div>
-          {val?.logo && (<div className="ptf-rewards-item__logo">
+          {(val?.logo && val?.logo === '') && (<div className="ptf-rewards-item__logo">
             <img
               src={`${val?.logo}`}
               alt="brand"
