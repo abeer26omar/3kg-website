@@ -9,12 +9,12 @@ const NewsletterTwo = () => {
   const [email, setEmail] = useState('');
   const [error, setError] = useState(null);
 
-  const { mutate, isSuccess , error: failed} = useMutation({
+  const { mutate, isSuccess , error: failed, isError} = useMutation({
     mutationFn: (email) => {
       subscribeNewsLetter(email)
     },
     onSuccess: () => {
-      setEmail(null)
+      setEmail('')
     }
   });
 
@@ -54,8 +54,17 @@ const NewsletterTwo = () => {
         <button type="submit" onClick={handleSubmit}>Subscribe</button>
       </div>
       {error && <span className="text-danger">{error}</span>}
-      {isSuccess && <span className="text-success">{'success'}</span>}
-    </form>
+      {isError ? 
+          (<div class="alert alert-danger d-flex align-items-center" role="alert">
+           {failed.message}
+          </div>) 
+        : null}
+      {isSuccess ? 
+          (<div class="alert alert-success d-flex align-items-center" role="alert">
+          Success
+        </div>) 
+        : null}
+      </form>
   );
 };
 

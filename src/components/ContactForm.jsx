@@ -114,8 +114,16 @@ const ContactForm = () => {
           <path d="M16 .997V10h-1V2.703L4.683 13l-.707-.708L14.291 1.997H6.975v-1H16z" />
         </svg>
       </button>
-      {isError ? (<p className="text-danger">{error.message}</p>) : null}
-      {isSuccess ? (<p className="text-success">Your Message Sent Successfully</p>) : null}
+      {isError ? 
+          (<div class="alert alert-danger d-flex align-items-center" role="alert">
+           {error.message}
+          </div>) 
+        : null}
+      {isSuccess ? 
+          (<div class="alert alert-success d-flex align-items-center" role="alert">
+          Your Message Sent Successfully
+        </div>) 
+        : null}
     </form>
   );
 };
