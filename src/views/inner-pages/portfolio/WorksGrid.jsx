@@ -14,7 +14,7 @@ const WorksGrid = () => {
   const [paginatedWorks, setPaginatedWorks] = useState([]);
 
   const { data: caseStudies } = useQuery({
-    queryKey: ['caseStudies'],
+    queryKey: ['caseStudies', page],
     queryFn : () => getCaseStudies(false, page),
   });
   
@@ -26,7 +26,7 @@ const WorksGrid = () => {
     if (caseStudies?.items) {
       setPaginatedWorks(prevWorks => [...prevWorks, ...caseStudies?.items]);
     }
-  },[caseStudies])
+  },[caseStudies, page])
 
   return (
     <div className="ptf-site-wrapper animsition ptf-is--works-grid">

@@ -22,7 +22,7 @@ const BlogGrid = () => {
     if (news?.items) {
       setPaginatedNews(prevNews => [...prevNews, ...news?.items]);
     }
-  },[news])
+  },[news, page])
 
   const handleShowMore = () => {
     setPage(prevPage => prevPage + 1);
@@ -150,11 +150,11 @@ const BlogGrid = () => {
 
                 {/* <!--Spacer--> */}
 
-                {(news?.count > 30 && news?.items.length > 0) && (<div className="text-center">
                   <div
                     className="ptf-spacer"
                     style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
                   ></div>
+                {(news?.count > 30 && news?.items.length > 0) && (<div className="text-center">
                   <div
                     className="ptf-animated-block"
                     data-aos="fade"

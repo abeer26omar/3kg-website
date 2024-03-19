@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { NavHashLink } from 'react-router-hash-link';
 
 const DropdownMenu = () => {
   return (
@@ -24,9 +23,13 @@ const DropdownMenu = () => {
           </NavLink>
         </li>
         <li className={`menu-item-has-children`}>
-          <NavHashLink smooth to={'/#brands'}>
+          <NavLink 
+            to={'/brands'}
+            className={({ isActive }) =>
+            isActive ? "sf-with-ul" : ""}
+            end>
             <span>{'Brands'}</span>
-          </NavHashLink>
+          </NavLink>
         </li>
         <li className={`menu-item-has-children`}>
           <NavLink 

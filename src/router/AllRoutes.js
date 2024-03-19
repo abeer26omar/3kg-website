@@ -4,6 +4,9 @@ import HomeDefault from "../views/all-home-version/HomeDefault";
 // About
 import AboutUs from "../views/inner-pages/about/AboutUs";
 
+// Partners
+import Partners from '../views/inner-pages/partners/Partners';
+
 // Blog
 import BlogGrid from "../views/inner-pages/blog/BlogGrid";
 import BlogMasonry from "../views/inner-pages/blog/BlogMasonry";
@@ -27,6 +30,9 @@ const AllRoutes = () => {
         <Route path="/" element={<HomeDefault />} />
         {/* About */}
         <Route path="/about-us" element={<AboutUs />} />
+
+        {/* brands */}
+        <Route path="/brands" element={<Partners />} />
 
         {/* Blog */}
         <Route path="/projects" element={<BlogMasonry />} />

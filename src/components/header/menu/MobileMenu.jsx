@@ -7,7 +7,6 @@ import {
   MenuItem,
   SidebarContent,
 } from "react-pro-sidebar";
-import { NavHashLink } from 'react-router-hash-link';
 
 const MobileMenu = () => {
   return (
@@ -23,9 +22,7 @@ const MobileMenu = () => {
                   <Link to={'/about-us'}>{'About us'}</Link>
                 </MenuItem>
                 <MenuItem>
-                    <NavHashLink smooth to={'/#brands'}>
-                        <span>{'Brands'}</span>
-                    </NavHashLink>
+                    <Link to={'/brands'}>{'Brands'}</Link>
                 </MenuItem>
                 <MenuItem>
                   <Link to={'/projects'}>{'Projects'}</Link>

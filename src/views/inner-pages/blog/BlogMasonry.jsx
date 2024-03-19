@@ -24,7 +24,7 @@ const BlogMasonry = () => {
     if (projects?.items) {
       setPaginatedProjects(prevProjects => [...prevProjects, ...projects?.items]);
     }
-  },[projects])
+  },[projects, page])
 
   return (
     <div className="ptf-site-wrapper animsition ptf-is--blog-grid">
@@ -93,11 +93,11 @@ const BlogMasonry = () => {
 
                 {/* <!--Spacer--> */}
 
-               {(projects?.count > 30 && projects?.items.length > 0) && (<div className="text-center">
                   <div
                     className="ptf-spacer"
                     style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
                   ></div>
+               {(projects?.count > 30 && projects?.items.length > 0) && (<div className="text-center">
                   <div
                     className="ptf-animated-block"
                     data-aos="fade"
