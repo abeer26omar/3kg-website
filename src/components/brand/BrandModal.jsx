@@ -16,11 +16,14 @@ const BrandModal = ({show, onHide, brand}) => {
               <div className="ptf-partner-box__image" style={{
                     'filter': 'grayscale(0%)'
               }}>
-                <img
-                  src={brand.logo}
-                  alt={brand.name}
-                  loading="lazy"
-                />
+                  <img
+                    src={brand.logo}
+                    alt={brand.name}
+                    loading="lazy"
+                    style={{
+                      height: '-webkit-fill-available'
+                    }}
+                  />
               </div>
               <h4 className='my-4'>{brand.name}</h4>
               <p className='text-center'>
