@@ -250,21 +250,34 @@ const HomeDefault = () => {
                 style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
               ></div>
               <div className="container-xxl">
-                <div className="row">
-                  <div className="col-12">
+              <div className="row align-items-center">
+                  <div className="col-lg-9 col-6">
                     {/* <!--Animated Block--> */}
                     <div
                       className="ptf-animated-block"
                       data-aos="fade"
                       data-aos-delay="0"
                     >
-                      <h2 className="h1 large-heading">Partners</h2>
+                      <h2 className="h1 large-heading d-inline-flex">
+                          Partners
+                      </h2>
                     </div>
-                    {/* <!--Spacer--> */}
-                    <div
-                      className="ptf-spacer"
-                      style={{ "--ptf-xxl": "7.5rem", "--ptf-md": "3.75rem" }}
-                    ></div>
+                  </div>
+                  <div className="col-lg-3 col-6 d-flex justify-content-end">
+                    {/* <!--Animated Block--> */}
+                    <Link
+                      className="
+                          ptf-link-with-arrow
+                          fz-18
+                          text-uppercase
+                          fw-semibold
+                          has-black-color
+                          d-inline-flex
+                        "
+                      to="/brands"
+                    >
+                      <span className="d-sm-block d-none">All Partners</span> <i className="lnil lnil-chevron-right"></i>
+                    </Link>
                   </div>
                 </div>
                 {/* End .row */}
