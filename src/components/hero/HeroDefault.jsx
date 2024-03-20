@@ -14,11 +14,10 @@ const HeroDefault = ({landingData}) => {
     <div className="row">
       <div className="col-xl-9">
         {/* <!--Animated Block--> */}
-        <div className="ptf-animated-block" data-aos="fade" data-aos-delay="0">
+        {/* <div className="ptf-animated-block" data-aos="fade" data-aos-delay="0">
           <img src={audiologo} alt="audio technology" width={'164px'}/>
           <div className="ptf-spacer" style={{ "--ptf-xxl": "0.625rem" }}></div>
-          {/* <h1 className="fz-230 fz-230--xxl fz-130--lg fz-60--md has-white-color">{heroContent.title}</h1> */}
-        </div>
+        </div> */}
         {/* <!--Spacer--> */}
         <div className="ptf-spacer" style={{ "--ptf-xxl": "1.625rem" }}></div>
         {/* <!--Animated Block--> */}
@@ -122,7 +121,7 @@ const HeroDefault = ({landingData}) => {
                   to="/about-us"
                   title="about audio techology"
                 >
-                  About us
+                  See More
                 </Link>
               </div>
             </div>

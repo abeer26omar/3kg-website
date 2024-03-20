@@ -250,7 +250,7 @@ const HomeDefault = () => {
                 style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
               ></div>
               <div className="container-xxl">
-              <div className="row align-items-center">
+                <div className="row align-items-center">
                   <div className="col-lg-9 col-6">
                     {/* <!--Animated Block--> */}
                     <div
@@ -280,6 +280,11 @@ const HomeDefault = () => {
                     </Link>
                   </div>
                 </div>
+                {/* <!--Spacer--> */}
+                <div
+                  className="ptf-spacer"
+                  style={{ "--ptf-xxl": "6rem", "--ptf-md": " 3.75rem" }}
+                ></div>
                 {/* End .row */}
                 <Brand />
                 <div className="row">

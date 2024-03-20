@@ -1,18 +1,15 @@
 import React, {useState} from "react";
 import { Helmet } from "react-helmet";
-import Award from "../../../components/award/Award";
 import Brand from "../../../components/brand/Brand";
-import Counter from "../../../components/counter/Counter";
 import CopyRight from "../../../components/footer/copyright/CopyRight";
 import Footer from "../../../components/footer/Footer";
 import HeaderDefault from "../../../components/header/HeaderDefault";
-import ImageGrid from "../../../components/image-grid/ImageGrid";
 import ServiceOne from "../../../components/service/ServiceOne";
-import Testimonial from "../../../components/testimonial/Testimonial";
 import imageMask from '../../../assets/img/about-us-main-image-layer-1.png';
 import { getAboutUs } from "../../../Util/http";
 import { useQuery } from '@tanstack/react-query';
 import DOMPurify from 'dompurify';
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
 
@@ -206,13 +203,6 @@ const AboutUs = () => {
                   </div>
                 </div>
                 {/* End .row */}
-
-                {/* <!--Spacer--> */}
-                {/* <div
-                  className="ptf-spacer"
-                  style={{ "--ptf-xxl": "7.5rem", "--ptf-md": "3.75rem" }}
-                ></div>
-                <ImageGrid />*/}
               </div> 
               {/* End .container-xxl */}
             </section>
@@ -227,21 +217,41 @@ const AboutUs = () => {
                 style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
               ></div>
               <div className="container-xxl">
-                <div className="row">
-                  <div className="col-12">
+              <div className="row align-items-center">
+                  <div className="col-lg-9 col-6">
+                    {/* <!--Animated Block--> */}
                     <div
                       className="ptf-animated-block"
                       data-aos="fade"
                       data-aos-delay="0"
                     >
-                      <h2 className="h1 large-heading">Partners</h2>
+                      <h2 className="h1 large-heading d-inline-flex">
+                          Partners
+                      </h2>
                     </div>
-                    <div
-                      className="ptf-spacer"
-                      style={{ "--ptf-xxl": "7.5rem", "--ptf-md": "3.75rem" }}
-                    ></div>
+                  </div>
+                  <div className="col-lg-3 col-6 d-flex justify-content-end">
+                    {/* <!--Animated Block--> */}
+                    <Link
+                      className="
+                          ptf-link-with-arrow
+                          fz-18
+                          text-uppercase
+                          fw-semibold
+                          has-black-color
+                          d-inline-flex
+                        "
+                      to="/brands"
+                    >
+                      <span className="d-sm-block d-none">All Partners</span> <i className="lnil lnil-chevron-right"></i>
+                    </Link>
                   </div>
                 </div>
+                {/* <!--Spacer--> */}
+                <div
+                  className="ptf-spacer"
+                  style={{ "--ptf-xxl": "6rem", "--ptf-md": " 3.75rem" }}
+                ></div>
                 <Brand />
                 {/* <div className="row">
                   <div className="col-12">

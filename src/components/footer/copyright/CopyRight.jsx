@@ -15,7 +15,7 @@ const CopyRight = () => {
       <div className="col-md-4 col-12 d-flex justify-content-center">
         <p className="mb-0" style={{
           color: '#000'
-        }}>Developed with LOVE by 
+        }}>Developed by
           <a href="https://threekg.com/" target="_blank" className="ms-2">
             <img src={threekg} alt="threekg-logo"/>
           </a>
