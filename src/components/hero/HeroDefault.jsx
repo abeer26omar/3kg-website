@@ -7,8 +7,8 @@ const HeroDefault = ({landingData}) => {
     title: "AudioTech",
     subTitle1: "Committed to excellence",
     subTitle2: '',
-    subTitleDescription1: landingData.title,
-    detailsDescription: landingData.description,
+    subTitleDescription1: landingData?.title,
+    detailsDescription: landingData?.description,
   };
   return (
     <div className="row">
@@ -51,7 +51,7 @@ const HeroDefault = ({landingData}) => {
           }}
         ></div>
         {/* <!--Animated Block--> */}
-        <div
+        {(landingData?.title && landingData?.title !== '') && (<div
           className="ptf-animated-block"
           data-aos="fade"
           data-aos-delay="200"
@@ -69,7 +69,7 @@ const HeroDefault = ({landingData}) => {
           >
             {heroContent.subTitleDescription1} <br />
           </p>
-        </div>
+        </div>)}
         {/* <!--Spacer--> */}
         <div
           className="ptf-spacer"
