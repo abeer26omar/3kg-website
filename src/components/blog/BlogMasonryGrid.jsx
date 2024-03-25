@@ -27,16 +27,6 @@ const BlogMasonryGrid = ({projects}) => {
                     </header>
                   </div>
                 </div>
-                <div className="ptf-post__content">
-                  <header className="ptf-post__header">
-                    <div className="ptf-post__meta">
-                      <span className="cat">{item?.category}</span>
-                    </div>
-                    <h3 className="ptf-post__title">
-                      <Link>{item?.title}</Link>
-                    </h3>
-                  </header>
-                </div>
               </article>
             </div>
            </div>

@@ -1,21 +1,6 @@
 import React from "react";
 import { Gallery, Item } from "react-photoswipe-gallery";
 
-const imageList = [
-  {
-    img: "assets/img/blog/single-post/content-image-1.png",
-    delayAnimation: "0",
-    imageOwner: "@element5digital",
-    link: "https://element5digital.com/",
-  },
-  {
-    img: "assets/img/blog/single-post/content-image-2.png",
-    delayAnimation: "100",
-    imageOwner: "@insideweather",
-    link: "https://insideweather.com/",
-  },
-];
-
 const ImageGridTwo = ({other_images}) => {
   return (
     <Gallery>
@@ -33,8 +18,7 @@ const ImageGridTwo = ({other_images}) => {
                 <Item
                   original={val}
                   thumbnail={val}
-                  width={416}
-                  height={335}
+                  
                 >
                   {({ ref, open }) => (
                     <img
@@ -43,13 +27,18 @@ const ImageGridTwo = ({other_images}) => {
                       role="button"
                       ref={ref}
                       onClick={open}
+                      style={{
+                        height: '509px',
+                        width: '100%',
+                        objectFit: 'cover',
+                      }}
                     />
                   )}
                 </Item>
               </div>
               {/* End  .ptf-simple-image */}
               <div className="ptf-simple-image-caption">
-                Image by{" Audio Tech"}
+                Image by Audio Technology
                 <a href={val.link} target="_blank" rel="noopener noreferrer">
                   {/* {val.imageOwner} */}
                 </a>

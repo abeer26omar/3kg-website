@@ -34,14 +34,14 @@ const Approach = () => {
                 "--ptf-title-color": "var(--ptf-accent-2)",
               }}
             >
-              <div className="ptf-approach-box__subtitle">{val.category}</div>
+              {(val?.category && val?.category !== '') && (<div className="ptf-approach-box__subtitle">{val?.category}</div>)}
               <h4 className="ptf-approach-box__title ptf-work__title">
-                <Link to={`/news-details/${val.id}`}>
-                  {val.title}
+                <Link to={`/news-details/${val?.id}`}>
+                  {val?.title}
                 </Link>
               </h4>
               <div className="ptf-approach-box__content">
-                <p>{val.brief}</p>
+                <p>{val?.brief}</p>
               </div>
             </div>
           </div>

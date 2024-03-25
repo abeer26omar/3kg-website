@@ -129,15 +129,16 @@ const AboutUs = () => {
                             className="lay2"
                             style={{
                               zIndex: "1",
+                              height: '716px'
                             }}
                             srcSet={aboutUs?.main_image}
                           />
-                          <img
+                          {/* <img
                             src={imageMask}
                             alt="layer"
                             loading="lazy"
                             style={{ zIndex: "2" }}
-                          />
+                          /> */}
                         </div>
                       </div>
                     </div>

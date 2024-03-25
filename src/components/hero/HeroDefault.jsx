@@ -43,13 +43,13 @@ const HeroDefault = ({landingData}) => {
           </p>
         </div>
         {/* <!--Spacer--> */}
-        <div
+        {/* <div
           className="ptf-spacer"
           style={{
             "--ptf-xxl": "11.375rem",
             "--ptf-md": "6.6875rem",
           }}
-        ></div>
+        ></div> */}
         {/* <!--Animated Block--> */}
         {(landingData?.title && landingData?.title !== '') && (<div
           className="ptf-animated-block"

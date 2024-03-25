@@ -44,7 +44,7 @@ const BlogGrid = () => {
               {/* <!--Spacer--> */}
               <div
                 className="ptf-spacer"
-                style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
+                style={{ "--ptf-xxl": "8rem", "--ptf-md": "4rem" }}
               ></div>
 
               <div className="container-xxl">
@@ -56,7 +56,7 @@ const BlogGrid = () => {
                       data-aos="fade"
                       data-aos-delay="0"
                     >
-                      <h1 className="large-heading">Blog</h1>
+                      <h1 className="large-heading">News</h1>
                     </div>
                   </div>
                   {/* End .col */}
