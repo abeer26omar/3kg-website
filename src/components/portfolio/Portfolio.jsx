@@ -54,7 +54,7 @@ const Portfolio = () => {
                 />
               </div>
               <div className="ptf-work__meta">
-                <div className="ptf-work__category">{item.category}</div>
+                {(item?.category && item?.category !== '') && (<div className="ptf-work__category">{item?.category}</div>)}
                 <h4 className="ptf-work__title">
                   <Link to={`/case-details/${item.id}`}>{item.title}</Link>
                 </h4>
