@@ -26,19 +26,21 @@ const Award = () => {
           data-aos-delay={(i * 100).toString()}
           key={i}
         >
-          <div className="ptf-rewards-item__date">{moment(val.timestamp).format('YYYY')}</div>
-          {(val?.logo && val?.logo === '') && (<div className="ptf-rewards-item__logo">
-            <img
-              src={`${val?.logo}`}
-              alt="brand"
-              loading="lazy"
-            />
-          </div>)}
+          <div className="ptf-rewards-item__date">
+            {(val?.logo && val?.logo === '') && (<div className="ptf-rewards-item__logo">
+              <img
+                src={`${val?.logo}`}
+                alt="brand"
+                loading="lazy"
+              />
+            </div>)}
+          </div>
           <div className="ptf-rewards-item__content">
               <div className="ptf-rewards-project">
                 <div className="ptf-rewards-project__content">
                   <h5>
-                    {val.title}
+                    {/* {val.title} */}
+                    {moment(val.timestamp).format('YYYY')}
                   </h5>
                   <span>{val.subtitle}</span>
                 </div>
