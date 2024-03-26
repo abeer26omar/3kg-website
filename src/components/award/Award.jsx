@@ -27,7 +27,7 @@ const Award = () => {
           key={i}
         >
           <div className="ptf-rewards-item__logo">
-          {(val?.logo && val?.logo === '') && (
+          {(val?.logo && val?.logo !== '') && (
               <img
                 src={`${val?.logo}`}
                 alt="brand"
