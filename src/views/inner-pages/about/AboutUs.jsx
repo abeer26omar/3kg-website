@@ -72,15 +72,18 @@ const AboutUs = () => {
                       data-aos-delay="100"
                     >
                       <p className="fz-30 fw-bold text-uppercase has-3-color">
-                        Digital solutions for <br />
-                        your business
+                        Outstanding system integrator and a leader in the field of current light systems,
+                        as well as integrated CCTV Systems
                       </p>
                     </div>
                     {/* <!--Spacer--> */}
                     <div
-                      className="ptf-spacer"
-                      style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
-                    ></div>
+                    className="ptf-spacer"
+                    style={{
+                        "--ptf-xxl": "4.375rem",
+                        "--ptf-md": "2.1875rem",
+                      }}
+                     ></div>
                     <div className="row">
                       <div className="col-xl-8">
                         <div style={{ maxWidth: "29.6875rem" }}>
