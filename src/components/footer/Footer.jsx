@@ -19,19 +19,21 @@ const Footer = () => {
       <div className="col-12 col-md-6">
         {/* <!--Animated Block--> */}
         <div className="ptf-animated-block" data-aos="fade" data-aos-delay="0">
-          <div
+          {/* <div
             className="ptf-footer-heading has-black-color"
             style={{ maxWidth: "37.5rem" }}
           >
             Boost Your Business Up To High Level
-          </div>
+          </div> */}
 
-          <div className="ptf-footer-heading has-black-color">
+          <div className="ptf-footer-heading has-black-color mb-5">
             <p
-              className="has-accent-1 text-decoration-underline"
+              className="text-decoration-underline"
               to="/contact"
-            >
-              Our NewsLetters
+              style={{
+                color: '#FF55803'
+              }}
+            >Subscribe to our Newsletter
             </p>
           </div>
           <NewsletterTwo />

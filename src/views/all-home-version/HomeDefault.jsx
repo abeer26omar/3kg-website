@@ -15,6 +15,8 @@ import ServiceOne from "../../components/service/ServiceOne";
 import Testimonial from "../../components/testimonial/Testimonial";
 import { getLangingData } from '../../Util/http';
 import quotes from '../../assets/img/root/quote.png'
+import HomeSLider from './HomeSlider';
+import OurSystems from "./OurSystems";
 
 const HomeDefault = () => {
 
@@ -79,6 +81,25 @@ const HomeDefault = () => {
             </section>
 
             {/*=============================================
+                Start Slider Section
+              ============================================== */}
+             <section>
+              {/* <!--Spacer--> */}
+              <div
+                className="ptf-spacer"
+                style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
+              ></div>
+              {/* container-xxl */}
+              <div className="">
+               <HomeSLider />
+              </div>
+              {/* <!--Spacer--> */}
+              {/* <div
+                className="ptf-spacer"
+                style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
+              ></div> */}
+            </section>
+            {/*=============================================
                 Start Service Section
               ============================================== */}
             <section>
@@ -89,7 +110,7 @@ const HomeDefault = () => {
               ></div>
               <div className="container-xxl">
                 <div className="row">
-                  <div className="col-lg-3">
+                  <div className="col-lg-12 text-center">
                     {/* <!--Animated Block--> */}
                     <div
                       className="ptf-animated-block"
@@ -102,11 +123,11 @@ const HomeDefault = () => {
                       {/* <!--Spacer--> */}
                       <div
                         className="ptf-spacer"
-                        style={{ "--ptf-xxl": "2.5rem" }}
+                        style={{ "--ptf-xxl": "6rem" }}
                       ></div>
-                      <p className="fz-18">
+                      {/* <p className="fz-18">
                         {serviceDescription}
-                      </p>
+                      </p> */}
                     </div>
                     {/* <!--Spacer--> */}
                     <div
@@ -117,8 +138,59 @@ const HomeDefault = () => {
                       }}
                     ></div>
                   </div>
-                  <div className="col-lg-8 offset-lg-1">
+                  <div className="col-lg-12">
                     <ServiceOne getServicevalues={getServicevalues} />
+                  </div>
+                </div>
+              </div>
+              {/* <!--Spacer--> */}
+              <div
+                className="ptf-spacer"
+                style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
+              ></div>
+            </section>
+
+            {/*=============================================
+                Start Systems Section
+              ============================================== */}
+            <section>
+              {/* <!--Spacer--> */}
+              {/* <div
+                className="ptf-spacer"
+                style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
+              ></div> */}
+              <div className="container-xxl">
+                <div className="row">
+                  <div className="col-lg-12 text-center">
+                    {/* <!--Animated Block--> */}
+                    <div
+                      className="ptf-animated-block"
+                      data-aos="fade"
+                      data-aos-delay="0"
+                    >
+                      <h2 className="h1 large-heading">
+                         {'Our Systems'} <br />
+                      </h2>
+                      {/* <!--Spacer--> */}
+                      <div
+                        className="ptf-spacer"
+                        style={{ "--ptf-xxl": "6rem" }}
+                      ></div>
+                      {/* <p className="fz-18">
+                        {serviceDescription}
+                      </p> */}
+                    </div>
+                    {/* <!--Spacer--> */}
+                    <div
+                      className="ptf-spacer"
+                      style={{
+                        "--ptf-lg": "4.375rem",
+                        "--ptf-md": "2.1875rem",
+                      }}
+                    ></div>
+                  </div>
+                  <div className="col-lg-12">
+                    <OurSystems />
                   </div>
                 </div>
               </div>

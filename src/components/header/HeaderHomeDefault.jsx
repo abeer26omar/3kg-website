@@ -67,7 +67,7 @@ const HeaderHomeDefault = () => {
                     href="https://audioteceg.com/"
                     target="_blank"
                     className="py-3 px-4 ptf-btn ptf-btn--primary">
-                    Retail
+                    Online Store
                   </a>
                 
               </div>

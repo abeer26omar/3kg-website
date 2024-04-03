@@ -35,7 +35,7 @@ const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contact_form">
       <div className="ptf-form-group">
-        <label data-number="01">What's your name?</label>
+        <label data-number="01">Full Name</label>
         <input
           type="text"
           name="name"
@@ -48,7 +48,7 @@ const ContactForm = () => {
       </div>
       {/* End .ptf-form-group */}
       <div className="ptf-form-group">
-        <label data-number="02">What's your email address?</label>
+        <label data-number="02">Email Address</label>
         <input
           name="email"
           type="text"
@@ -61,7 +61,7 @@ const ContactForm = () => {
       </div>
 
       <div className="ptf-form-group">
-        <label data-number="03">What's your phone number?</label>
+        <label data-number="03">Phone Number</label>
         <input
           type="number"
           name="mobile"
@@ -74,7 +74,7 @@ const ContactForm = () => {
       </div>
 
       <div className="ptf-form-group">
-        <label data-number="04">What's the name of your company?</label>
+        <label data-number="04">Company</label>
         <input
           type="text"
           name="company"
@@ -88,7 +88,7 @@ const ContactForm = () => {
       {/* End .ptf-form-group */}
 
       <div className="ptf-form-group">
-        <label data-number="05">Tell us about your project goals.</label>
+        <label data-number="05">Project Goals</label>
         <textarea
           type="text"
           name="message"

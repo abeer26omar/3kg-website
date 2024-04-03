@@ -72,8 +72,7 @@ const AboutUs = () => {
                       data-aos-delay="100"
                     >
                       <p className="fz-30 fw-bold text-uppercase has-3-color">
-                        Outstanding system integrator and a leader in the field of current light systems,
-                        as well as integrated CCTV Systems
+                      SYSTEM INTEGRATOR AND A LEADER IN THE FIELD OF LIGHT CURRENT SYSTEMS, AS WELL AS INTEGRATED CCTV SYSTEMS
                       </p>
                     </div>
                     {/* <!--Spacer--> */}
@@ -124,7 +123,7 @@ const AboutUs = () => {
                     >
                       <div className="text-center">
                         {/* <!--Mask Image--> */}
-                        <div className="ptf-mask-image">
+                        <div className="">
                           <img
                             src={aboutUs?.main_image}
                             alt="layer"

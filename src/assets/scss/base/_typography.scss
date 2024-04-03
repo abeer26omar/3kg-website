@@ -376,6 +376,21 @@ select {
   }
 }
 
+.contact_form {
+  input[type="text"],
+  input[type="date"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="number"],
+  textarea {
+    min-height: 2.5rem;
+    padding: 0 px2rem(10px) 0;
+
+    border: 1px solid var(--ptf-color-14);
+  }
+}
 select {
   background-image: url("data:image/svg+xml;utf8,<svg fill='%232d2d2d' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
   background-repeat: no-repeat;
