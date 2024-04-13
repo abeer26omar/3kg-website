@@ -10,6 +10,9 @@ import { getAboutUs } from "../../../Util/http";
 import { useQuery } from '@tanstack/react-query';
 import DOMPurify from 'dompurify';
 import { Link } from "react-router-dom";
+import OurValues from "./OurValues";
+import OurMission from "./OurMission";
+import OurVision from "./OurVision";
 
 const AboutUs = () => {
 
@@ -173,7 +176,7 @@ const AboutUs = () => {
               ></div>
               <div className="container-xxl">
                 <div className="row">
-                  <div className="col-lg-3">
+                  <div className="col-lg-12 text-center">
                     {/* <!--Animated Block--> */}
                     <div
                       className="ptf-animated-block"
@@ -186,11 +189,11 @@ const AboutUs = () => {
                       {/* <!--Spacer--> */}
                       <div
                         className="ptf-spacer"
-                        style={{ "--ptf-xxl": "2.5rem" }}
+                        style={{ "--ptf-xxl": "6rem" }}
                       ></div>
-                      <p className="fz-18">
+                      {/* <p className="fz-18">
                         {serviceDescription}
-                      </p>
+                      </p> */}
                     </div>
                     {/* <!--Spacer--> */}
                     <div
@@ -201,7 +204,7 @@ const AboutUs = () => {
                       }}
                     ></div>
                   </div>
-                  <div className="col-lg-8 offset-lg-1">
+                  <div className="col-lg-12">
                     <ServiceOne getServicevalues={getServicevalues}/>
                   </div>
                 </div>
@@ -212,7 +215,7 @@ const AboutUs = () => {
             {/* End service */}
 
             {/*=============================================
-                Start Brand and Counterup Section
+                Start Brand Section
               ============================================== */}
             <section>
               <div
@@ -256,21 +259,6 @@ const AboutUs = () => {
                   style={{ "--ptf-xxl": "6rem", "--ptf-md": " 3.75rem" }}
                 ></div>
                 <Brand />
-                {/* <div className="row">
-                  <div className="col-12">
-                    <div
-                      className="ptf-spacer"
-                      style={{ "--ptf-xxl": "8.75rem", "--ptf-md": "4.375rem" }}
-                    ></div>
-                    <div className="ptf-divider"></div>
-                    <div
-                      className="ptf-spacer"
-                      style={{ "--ptf-xxl": "6.25rem", "--ptf-md": "3.125rem" }}
-                    ></div>
-                  </div>
-                </div>
-
-                <Counter /> */}
               </div>
               {/* <!--Spacer--> */}
               <div
@@ -280,88 +268,90 @@ const AboutUs = () => {
             </section>
 
             {/*=============================================
-                Start Jaralax Testimonial Section
+                Start our values Section
               ============================================== */}
-            {/* <section
-              className="jarallax jarallax-img"
-              style={{
-                backgroundImage: `url(${
-                  process.env.PUBLIC_URL +
-                  "assets/img/about-us-testimonial-background.png"
-                })`,
-              }}
-            >
-              <div
+            <section>
+              {/* <!--Spacer--> */}
+              {/* <div
                 className="ptf-spacer"
-                style={{ "--ptf-xxl": "12.5rem", "--ptf-md": "6.25rem" }}
-              ></div>
+                style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
+              ></div> */}
               <div className="container-xxl">
                 <div className="row">
-                  <div className="col-xl-4">
-                    <div
-                      className="ptf-animated-block"
-                      data-aos="fade"
-                      data-aos-delay="0"
-                    >
-                      <img
-                        src="assets/img/root/quote.png"
-                        alt=""
-                        loading="lazy"
-                      />
-                    </div>
-                    <div
-                      className="ptf-spacer"
-                      style={{ "--ptf-xl": "3.75rem" }}
-                    ></div>
-                  </div>
-                  <div className="col-xl-8">
-                    <Testimonial />
-                  </div>
-                </div>
-              </div>
-              <div
-                className="ptf-spacer"
-                style={{ "--ptf-xxl": "12.5rem", "--ptf-md": "6.25rem" }}
-              ></div>
-            </section> */}
-
-            {/*=============================================
-                Start Award Section
-              ============================================== */}
-            {/* <section>
-              <div
-                className="ptf-spacer"
-                style={{ "--ptf-xxl": "11.875rem", "--ptf-md": "5.9375rem" }}
-              ></div>
-              <div className="container-xxl">
-                <div className="row">
-                  <div className="col-lg-4">
+                  <div className="col-lg-12">
+                    {/* <!--Animated Block--> */}
                     <div
                       className="ptf-animated-block"
                       data-aos="fade"
                       data-aos-delay="0"
                     >
                       <h2 className="h1 large-heading">
-                        Our
-                        <br />
-                        Awards
+                        Our Values <br />
                       </h2>
+                      {/* <!--Spacer--> */}
+                      <div
+                        className="ptf-spacer"
+                        style={{ "--ptf-xxl": "6rem" }}
+                      ></div>
                     </div>
+                    {/* <!--Spacer--> */}
                     <div
                       className="ptf-spacer"
-                      style={{ "--ptf-lg": "3.75rem" }}
+                      style={{
+                        "--ptf-lg": "4.375rem",
+                        "--ptf-md": "2.1875rem",
+                      }}
                     ></div>
                   </div>
-                  <div className="col-lg-8">
-                    <Award />
+                  <div className="col-lg-12">
+                    <OurValues />
                   </div>
                 </div>
               </div>
+              {/* <!--Spacer--> */}
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
               ></div>
-            </section> */}
+            </section>
+
+            {/*=============================================
+                Start our mission Section
+              ============================================== */}
+            <section>
+              {/* <!--Spacer--> */}
+              {/* <div
+                className="ptf-spacer"
+                style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
+              ></div> */}
+              <div className="container-xxl">
+                <OurMission mission={aboutUs?.mission}/>
+              </div>
+              {/* <!--Spacer--> */}
+              <div
+                className="ptf-spacer"
+                style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
+              ></div>
+            </section>
+
+            {/*=============================================
+                Start our mission Section
+              ============================================== */}
+            <section>
+              {/* <!--Spacer--> */}
+              {/* <div
+                className="ptf-spacer"
+                style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
+              ></div> */}
+              <div className="container-xxl">
+                <OurVision vision={aboutUs?.vision}/>
+              </div>
+              {/* <!--Spacer--> */}
+              <div
+                className="ptf-spacer"
+                style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
+              ></div>
+            </section>
           </div>
         </div>
         {/* End ptf-main */}

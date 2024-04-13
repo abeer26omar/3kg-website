@@ -31,7 +31,7 @@ const Footer = () => {
               className="text-decoration-underline"
               to="/contact"
               style={{
-                color: '#FF55803'
+                color: '#FF5803'
               }}
             >Subscribe to our Newsletter
             </p>
