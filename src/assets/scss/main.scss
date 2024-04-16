@@ -20,8 +20,8 @@
 
 // fonts
 // @import url("https://fonts.googleapis.com/css2?family=Amiri&amp;display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
 @import url("../fonts/CerebriSans/style.css");
 
 // icons
@@ -55,6 +55,7 @@
 @import "pages/blog";
 @import "pages/portfolio";
 @import "pages/single-post";
+@import "pages/contact";
 
 /* 05. Partials */
 @import "partials/about-author";
