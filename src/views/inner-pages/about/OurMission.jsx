@@ -1,10 +1,9 @@
 import DOMPurify from 'dompurify';
-import img from '../../../assets/img/home/default/post-1.png';
 
-const OurMission = ({mission}) => {
+const OurMission = ({mission, image}) => {
     return (
         <>
-            <div className="row">
+            <div className="row justify-content-between g-3">
                 <div className="col-lg-6">
                     {/* <!--Animated Block--> */}
                     <div
@@ -18,7 +17,7 @@ const OurMission = ({mission}) => {
                       {/* <!--Spacer--> */}
                       <div
                         className="ptf-spacer"
-                        style={{ "--ptf-xxl": "6rem" }}
+                        style={{ "--ptf-xxl": "3rem" }}
                       ></div>
                       <div className="fz-18" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(mission) }}></div>
                     </div>
@@ -33,7 +32,7 @@ const OurMission = ({mission}) => {
                   </div>
                   <div className="col-lg-6">
                     <img
-                        src={img}
+                        src={image}
                         alt="mission"
                         loading="lazy"
                     />

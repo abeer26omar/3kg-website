@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { getHomeServices } from '../../Util/http';
+import { getHomeSystem } from '../../Util/http';
 import { useQuery } from '@tanstack/react-query';
 
 const serviceContent = [
@@ -35,20 +35,21 @@ const serviceContent = [
 
 const ServiceOne = ({getServicevalues}) => {
 
-  const { data: ourServices } = useQuery({
-    queryKey: ['ourServices'],
-    queryFn: () => getHomeServices()
+  const { data: ourSystems } = useQuery({
+    queryKey: ['ourSystems'],
+    queryFn: () => getHomeSystem()
   });
-  useEffect(()=>{
-    if(getServicevalues){
-      getServicevalues(ourServices?.title, ourServices?.description)
-    }
+  
+  // useEffect(()=>{
+  //   if(getServicevalues){
+  //     getServicevalues(ourServices?.title, ourServices?.description)
+  //   }
 
-  },[ourServices]);
+  // },[ourServices]);
 
   return (
     <>
-      {ourServices && ourServices?.items.map((val, i) => (
+      {ourSystems && ourSystems?.map((val, i) => (
         <div
           className="ptf-animated-block"
           data-aos="fade"

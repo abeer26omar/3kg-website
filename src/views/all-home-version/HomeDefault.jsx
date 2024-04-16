@@ -16,12 +16,12 @@ import Testimonial from "../../components/testimonial/Testimonial";
 import { getLangingData } from '../../Util/http';
 import quotes from '../../assets/img/root/quote.png'
 import HomeSLider from './HomeSlider';
-import OurSystems from "./OurSystems";
+import OurServices from "./OurServices";
 
 const HomeDefault = () => {
 
-  const [serviceTitle, setServiceTitle] = useState('');
-  const [serviceDescription, setServiceDescription] = useState('');
+  // const [serviceTitle, setServiceTitle] = useState('');
+  // const [serviceDescription, setServiceDescription] = useState('');
   const [quotesBg, setQuotesBg] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -30,10 +30,10 @@ const HomeDefault = () => {
     queryFn: getLangingData
   });
 
-  const getServicevalues = (title, description) => {
-    setServiceDescription(description);
-    setServiceTitle(title)
-  }
+  // const getServicevalues = (title, description) => {
+  //   setServiceDescription(description);
+  //   setServiceTitle(title)
+  // }
 
   const getQuotesBg = (images) => {
     setQuotesBg([]);
@@ -100,7 +100,7 @@ const HomeDefault = () => {
               ></div> */}
             </section>
             {/*=============================================
-                Start Service Section
+                Start Systems Section
               ============================================== */}
             <section>
               {/* <!--Spacer--> */}
@@ -118,7 +118,7 @@ const HomeDefault = () => {
                       data-aos-delay="0"
                     >
                       <h2 className="h1 large-heading">
-                         {serviceTitle} <br />
+                         Our Systems <br />
                       </h2>
                       {/* <!--Spacer--> */}
                       <div
@@ -139,7 +139,7 @@ const HomeDefault = () => {
                     ></div>
                   </div>
                   <div className="col-lg-12">
-                    <ServiceOne getServicevalues={getServicevalues} />
+                    <ServiceOne />
                   </div>
                 </div>
               </div>
@@ -151,7 +151,7 @@ const HomeDefault = () => {
             </section>
 
             {/*=============================================
-                Start Systems Section
+                Start Service Section
               ============================================== */}
             <section>
               {/* <!--Spacer--> */}
@@ -169,7 +169,7 @@ const HomeDefault = () => {
                       data-aos-delay="0"
                     >
                       <h2 className="h1 large-heading">
-                         {'Our Systems'} <br />
+                         {'Our Services'} <br />
                       </h2>
                       {/* <!--Spacer--> */}
                       <div
@@ -190,7 +190,7 @@ const HomeDefault = () => {
                     ></div>
                   </div>
                   <div className="col-lg-12">
-                    <OurSystems />
+                    <OurServices />
                   </div>
                 </div>
               </div>

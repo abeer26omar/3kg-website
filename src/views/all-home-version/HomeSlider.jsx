@@ -1,14 +1,14 @@
 import React from "react";
 import Slider from "react-slick";
-import { Link } from "react-router-dom";
-import img_1 from '../../assets/img/image-0085.jpg';
-import img_2 from '../../assets/img/image-0084.jpg';
-import img_3 from '../../assets/img/image-0083.jpg';
+import { getHomeSlider } from "../../Util/http";
+import { useQuery } from '@tanstack/react-query';
 
-const imageSlider = [
-    img_1, img_2, img_3
-]
-const HomeSLider = ({news}) => {
+const HomeSLider = () => {
+
+  const { data: slider } = useQuery({
+    queryKey: ['projects-slider'],
+    queryFn: () => getHomeSlider()
+  });
   const settings = {
     dots: true,
     arrow: false,
@@ -30,7 +30,7 @@ const HomeSLider = ({news}) => {
     <>
       <div className="swiper-slide grid-slider">
         <Slider {...settings} className="arrow-none">
-          {imageSlider.map((val, i) => (
+          {slider?.map((val, i) => (
             <div className="ptf-news-slide" key={i}>
               <div className="ptf-news-slide__media">
                 <img

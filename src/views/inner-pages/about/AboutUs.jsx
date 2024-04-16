@@ -88,7 +88,7 @@ const AboutUs = () => {
                      ></div>
                     <div className="row">
                       <div className="col-xl-8">
-                        <div style={{ maxWidth: "29.6875rem" }}>
+                        <div className="max_width">
                           {/* <!--Animated Block--> */}
                           <div
                             className="ptf-animated-block"
@@ -184,7 +184,7 @@ const AboutUs = () => {
                       data-aos-delay="0"
                     >
                       <h2 className="h1 large-heading">
-                        {serviceTitle}
+                        Our Systems
                       </h2>
                       {/* <!--Spacer--> */}
                       <div
@@ -325,7 +325,7 @@ const AboutUs = () => {
                 style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
               ></div> */}
               <div className="container-xxl">
-                <OurMission mission={aboutUs?.mission}/>
+                <OurMission mission={aboutUs?.mission} image={aboutUs?.mission_image}/>
               </div>
               {/* <!--Spacer--> */}
               <div
@@ -344,7 +344,7 @@ const AboutUs = () => {
                 style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
               ></div> */}
               <div className="container-xxl">
-                <OurVision vision={aboutUs?.vision}/>
+                <OurVision vision={aboutUs?.vision} image={aboutUs?.vision_image}/>
               </div>
               {/* <!--Spacer--> */}
               <div

@@ -25,11 +25,33 @@ export const subscribeNewsLetter = async (email) => {
     return response.data;
 }
 
+export const getHomeSystem = async () => {
+
+    const config = {
+        method: 'GET',
+        url: `${process.env.REACT_APP_API_URL}/api/system`,
+    };
+
+    const response = await axios(config)
+    return response.data;
+}
+
 export const getHomeServices = async () => {
 
     const config = {
         method: 'GET',
         url: `${process.env.REACT_APP_API_URL}/api/service`,
+    };
+
+    const response = await axios(config)
+    return response.data;
+}
+
+export const getHomeSlider = async () => {
+
+    const config = {
+        method: 'GET',
+        url: `${process.env.REACT_APP_API_URL}/api/project-slide`,
     };
 
     const response = await axios(config)
@@ -140,6 +162,17 @@ export const getAboutUs = async () => {
     const config = {
         method: 'GET',
         url: `${process.env.REACT_APP_API_URL}/api/about-us`,
+    };
+
+    const response = await axios(config)
+    return response.data;
+}
+
+export const getValues = async () => {
+
+    const config = {
+        method: 'GET',
+        url: `${process.env.REACT_APP_API_URL}/api/values`,
     };
 
     const response = await axios(config)

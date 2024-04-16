@@ -9,7 +9,7 @@ const ContactForm = () => {
   // for validation
   const validationSchema = Yup.object().shape({
     name: Yup.string().required("Name is required"),
-    company: Yup.string().required("Company name is required"),
+    // company: Yup.string().required("Company name is required"),
     message: Yup.string().required("Please, write your project goal."),
     email: Yup.string()
       .required("Email is required")
@@ -73,7 +73,9 @@ const ContactForm = () => {
         )}
       </div>
 
-      <div className="ptf-form-group">
+      <div className="ptf-form-group" style={{
+        display: 'none'
+      }}>
         <label data-number="04">Company</label>
         <input
           type="text"
@@ -88,7 +90,7 @@ const ContactForm = () => {
       {/* End .ptf-form-group */}
 
       <div className="ptf-form-group">
-        <label data-number="05">Project Goals</label>
+        <label data-number="05">Message</label>
         <textarea
           type="text"
           name="message"
