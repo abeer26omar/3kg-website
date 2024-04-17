@@ -35,10 +35,11 @@ const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contact_form">
       <div className="ptf-form-group">
-        <label data-number="01">Full Name</label>
+        {/* <label data-number="01">Full Name</label> */}
         <input
           type="text"
           name="name"
+          placeholder="Full Name"
           {...register("name")}
           className={`${errors.name ? "is-invalid" : ""} rounded`}
         />
@@ -48,10 +49,11 @@ const ContactForm = () => {
       </div>
       {/* End .ptf-form-group */}
       <div className="ptf-form-group">
-        <label data-number="02">Email Address</label>
+        {/* <label data-number="02">Email Address</label> */}
         <input
           name="email"
           type="text"
+          placeholder="Email"
           {...register("email")}
           className={` ${errors.email ? "is-invalid" : ""} rounded`}
         />
@@ -61,10 +63,11 @@ const ContactForm = () => {
       </div>
 
       <div className="ptf-form-group">
-        <label data-number="03">Phone Number</label>
+        {/* <label data-number="03">Phone Number</label> */}
         <input
           type="number"
           name="mobile"
+          placeholder="Phone Number"
           {...register("mobile")}
           className={`${errors.mobile ? "is-invalid" : ""} rounded`}
         />
@@ -93,10 +96,11 @@ const ContactForm = () => {
       {/* End .ptf-form-group */}
 
       <div className="ptf-form-group">
-        <label data-number="04">Message</label>
+        {/* <label data-number="04">Message</label> */}
         <textarea
           type="text"
           name="message"
+          placeholder="Message"
           {...register("message")}
           className={`${errors.message ? "is-invalid" : ""} rounded`}
         />

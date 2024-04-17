@@ -98,7 +98,7 @@ const Contact = () => {
                     data-aos-delay="300"
                   >
                     <h5 className="fz-14 text-uppercase has-3-color fw-normal">
-                      Tell us about your goals.
+                      Contact Us
                     </h5>
                     <div
                       className="ptf-spacer"
