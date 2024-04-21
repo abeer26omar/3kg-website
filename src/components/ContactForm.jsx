@@ -114,7 +114,7 @@ const ContactForm = () => {
       {/* <div className="ptf-spacer" style={{ "--ptf-xxl": "1.625rem" }}></div> */}
 
       <button className="ptf-submit-button">
-        submit
+        SUBMIT
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"

@@ -80,7 +80,7 @@ const Brand = () => {
                         src={item.logo}
                         style={{
                           "max-height": "85px",
-                          "max-width": "176px",
+                          "max-width": "100px",
                         }}
                         alt={item.name}
                         loading="lazy"

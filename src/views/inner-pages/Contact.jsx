@@ -55,7 +55,7 @@ const Contact = () => {
                     data-aos-delay="0"
                   >
                     <h1 className="large-heading">
-                      Contact Us
+                      Head Office
                       <br />
                     </h1>
                     {/* <!--Spacer--> */}
@@ -76,7 +76,7 @@ const Contact = () => {
             {/* <!--Spacer--> */}
             <div
               className="ptf-spacer"
-              style={{ "--ptf-xxl": "6.25rem", "--ptf-md": "3.125rem" }}
+              style={{ "--ptf-xxl": "2.25rem", "--ptf-md": "1.125rem" }}
             ></div>
           </section>
           {/* End section contact header */}
@@ -97,14 +97,6 @@ const Contact = () => {
                     data-aos="fade"
                     data-aos-delay="300"
                   >
-                    <h5 className="fz-14 text-uppercase has-3-color fw-normal">
-                      Contact Us
-                    </h5>
-                    <div
-                      className="ptf-spacer"
-                      style={{ "--ptf-xxl": "3.125rem" }}
-                    ></div>
-                    <ContactForm />
                     <div style={{ borderRadius: "12px", overflow: "hidden" }}>
                       <LoadScript googleMapsApiKey="AIzaSyBmsTyEYsB5dCx2mclU1-T2s_gL9yLfwKs">
                         <GoogleMap
@@ -134,7 +126,28 @@ const Contact = () => {
             </div>
             <div
               className="ptf-spacer"
-              style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
+              style={{ "--ptf-xxl": "4rem", "--ptf-md": "2rem" }}
+            ></div>
+          </section>
+
+          <section>
+            <div className="container-xxl">
+              <div className="row">
+                <div className="col-lg-12">
+                  <h4 className="fz-14 text-uppercase has-3-color  fw-bold">
+                    Contact Us
+                  </h4>
+                  <div
+                    className="ptf-spacer"
+                    style={{ "--ptf-xxl": "3.125rem" }}
+                  ></div>
+                  <ContactForm />
+                </div>
+              </div>
+            </div>
+            <div
+              className="ptf-spacer"
+              style={{ "--ptf-xxl": "2.25rem", "--ptf-md": "1.125rem" }}
             ></div>
           </section>
         </div>
