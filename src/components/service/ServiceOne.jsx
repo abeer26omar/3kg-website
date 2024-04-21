@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { getHomeSystem } from '../../Util/http';
-import { useQuery } from '@tanstack/react-query';
+import { getHomeSystem } from "../../Util/http";
+import { useQuery } from "@tanstack/react-query";
 
 const serviceContent = [
   {
@@ -33,13 +33,12 @@ const serviceContent = [
   },
 ];
 
-const ServiceOne = ({getServicevalues}) => {
-
+const ServiceOne = ({ getServicevalues }) => {
   const { data: ourSystems } = useQuery({
-    queryKey: ['ourSystems'],
-    queryFn: () => getHomeSystem()
+    queryKey: ["ourSystems"],
+    queryFn: () => getHomeSystem(),
   });
-  
+
   // useEffect(()=>{
   //   if(getServicevalues){
   //     getServicevalues(ourServices?.title, ourServices?.description)
@@ -49,31 +48,50 @@ const ServiceOne = ({getServicevalues}) => {
 
   return (
     <>
-      {ourSystems && ourSystems?.map((val, i) => (
-        <div
-          className="ptf-animated-block"
-          data-aos="fade"
-          data-aos-delay="0"
-          key={i}
-        >
-          {/* <!--Services Box--> */}
-          <div className="ptf-service-box gap-2">
-            <div className="">
-              {/* <i className={val.icon}></i> */}
-              <img src={val.icon} alt={val.title} loading="lazy"/>
+      {/* {ourSystems &&
+        ourSystems?.map((val, i) => (
+          <div
+            className="ptf-animated-block"
+            data-aos="fade"
+            data-aos-delay="0"
+            key={i}
+          >
+   
+            <div className="ptf-service-box gap-2">
+              <div className="">
+  
+                <img src={val.icon} alt={val.title} loading="lazy" />
+              </div>
+              <h5 className="ptf-service-box__title">
+                {val.title} <br />
+              </h5>
+              <div className="ptf-service-box__content">
+                <p>{val.description}</p>
+              </div>
+
             </div>
-            <h5 className="ptf-service-box__title">
-              {val.title} <br />
-            </h5>
-            <div className="ptf-service-box__content">
-              <p>{val.description}</p>
-            </div>
-            {/* <div className="ptf-service-box__arrow">
-              <i className="lnil lnil-chevron-right"></i>
-            </div> */}
           </div>
-        </div>
-      ))}
+        ))} */}
+
+      <div className="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 g-4">
+        {ourSystems &&
+          ourSystems?.map((item, index) => {
+            return (
+              <div
+                className="col d-flex flex-column justify-content-center align-items-center text-center system"
+                key={index}
+              >
+                <div className="icon_box mb-3">
+                  <div className="inner_box">
+                    <img src={item.icon} alt={item.title} loading="lazy" />
+                  </div>
+                </div>
+                <h2 className="mb-5">{item.title}</h2>
+                <p>{item.description}</p>
+              </div>
+            );
+          })}
+      </div>
     </>
   );
 };
