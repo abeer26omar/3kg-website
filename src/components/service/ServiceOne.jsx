@@ -86,8 +86,10 @@ const ServiceOne = ({ getServicevalues }) => {
                     <img src={item.icon} alt={item.title} loading="lazy" />
                   </div>
                 </div>
-                <h2 className="mb-5">{item.title}</h2>
-                <p>{item.description}</p>
+                <h2>{item.title}</h2>
+                <p className="mt-5" style={{ minHeight: "210px" }}>
+                  {item.description}
+                </p>
               </div>
             );
           })}
