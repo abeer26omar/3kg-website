@@ -73,7 +73,7 @@ const ServiceOne = ({ getServicevalues }) => {
           </div>
         ))} */}
 
-      <div className="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 g-4">
+      <div className="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 g-4 justify-content-center">
         {ourSystems &&
           ourSystems?.map((item, index) => {
             return (

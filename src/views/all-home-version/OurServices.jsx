@@ -8,7 +8,7 @@ const OurServices = () => {
   });
 
   return (
-    <div className="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 g-4">
+    <div className="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 g-4 justify-content-center">
       {ourServices?.map((item, index) => {
         return (
           <div
