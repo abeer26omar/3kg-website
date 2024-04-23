@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from "@tanstack/react-query";
 import Award from "../../components/award/Award";
 import Brand from "../../components/brand/Brand";
 import Counter from "../../components/counter/Counter";
@@ -13,21 +13,20 @@ import Portfolio from "../../components/portfolio/Portfolio";
 import Approach from "../../components/service/Approach";
 import ServiceOne from "../../components/service/ServiceOne";
 import Testimonial from "../../components/testimonial/Testimonial";
-import { getLangingData } from '../../Util/http';
-import quotes from '../../assets/img/root/quote.png'
-import HomeSLider from './HomeSlider';
+import { getLangingData } from "../../Util/http";
+import quotes from "../../assets/img/root/quote.png";
+import HomeSLider from "./HomeSlider";
 import OurServices from "./OurServices";
 
 const HomeDefault = () => {
-
   // const [serviceTitle, setServiceTitle] = useState('');
   // const [serviceDescription, setServiceDescription] = useState('');
   const [quotesBg, setQuotesBg] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const { data: landingData } = useQuery({
-    queryKey: ['landingData'],
-    queryFn: getLangingData
+    queryKey: ["landingData"],
+    queryFn: getLangingData,
   });
 
   // const getServicevalues = (title, description) => {
@@ -37,14 +36,14 @@ const HomeDefault = () => {
 
   const getQuotesBg = (images) => {
     setQuotesBg([]);
-    images?.items.map(item=>{
+    images?.items.map((item) => {
       setQuotesBg((prevQuotesBg) => [...prevQuotesBg, item.image]);
-    })
-  }
+    });
+  };
 
   const getCurrentSlide = (nextSlide) => {
-    setCurrentSlide(nextSlide)
-  }
+    setCurrentSlide(nextSlide);
+  };
 
   return (
     <div className="ptf-site-wrapper animsition  ptf-is--home-default x-home">
@@ -62,16 +61,19 @@ const HomeDefault = () => {
             {/*=============================================
                 Start Hero Section
               ============================================== */}
-            <section className="has-accent-5-background" style={{
-              backgroundImage: `url(${landingData && landingData?.image})`
-                }}>
+            <section
+              className="has-accent-5-background"
+              style={{
+                backgroundImage: `url(${landingData && landingData?.image})`,
+              }}
+            >
               {/* <!--Spacer--> */}
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "15rem" }}
               ></div>
               <div className="container-xxl">
-                {landingData && (<HeroDefault landingData={landingData}/>)}
+                {landingData && <HeroDefault landingData={landingData} />}
               </div>
               {/* <!--Spacer--> */}
               <div
@@ -83,7 +85,7 @@ const HomeDefault = () => {
             {/*=============================================
                 Start Slider Section
               ============================================== */}
-             <section>
+            <section>
               {/* <!--Spacer--> */}
               <div
                 className="ptf-spacer"
@@ -91,7 +93,7 @@ const HomeDefault = () => {
               ></div>
               {/* container-xxl */}
               <div className="">
-               <HomeSLider />
+                <HomeSLider />
               </div>
               {/* <!--Spacer--> */}
               {/* <div
@@ -118,7 +120,7 @@ const HomeDefault = () => {
                       data-aos-delay="0"
                     >
                       <h2 className="h1 large-heading">
-                         Our Systems <br />
+                        Our Systems <br />
                       </h2>
                       {/* <!--Spacer--> */}
                       <div
@@ -169,7 +171,7 @@ const HomeDefault = () => {
                       data-aos-delay="0"
                     >
                       <h2 className="h1 large-heading">
-                         {'Our Services'} <br />
+                        {"Our Services"} <br />
                       </h2>
                       {/* <!--Spacer--> */}
                       <div
@@ -215,7 +217,7 @@ const HomeDefault = () => {
                       data-aos-delay="0"
                     >
                       <h2 className="h1 large-heading d-inline-flex">
-                          Case Studies
+                        Case Studies
                       </h2>
                     </div>
                   </div>
@@ -232,7 +234,10 @@ const HomeDefault = () => {
                         "
                       to="/case-studies"
                     >
-                      <span className="d-sm-block d-none">All Case studies</span> <i className="lnil lnil-chevron-right"></i>
+                      <span className="d-sm-block d-none">
+                        All Case studies
+                      </span>{" "}
+                      <i className="lnil lnil-chevron-right"></i>
                     </Link>
                   </div>
                 </div>
@@ -293,11 +298,12 @@ const HomeDefault = () => {
                         "
                       to="/news"
                     >
-                    <span className="d-sm-block d-none">All News</span><i className="lnil lnil-chevron-right"></i>
+                      <span className="d-sm-block d-none">All News</span>
+                      <i className="lnil lnil-chevron-right"></i>
                     </Link>
                   </div>
                 </div>
-                
+
                 {/* <!--Spacer--> */}
                 <div
                   className="ptf-spacer"
@@ -331,7 +337,7 @@ const HomeDefault = () => {
                       data-aos-delay="0"
                     >
                       <h2 className="h1 large-heading d-inline-flex">
-                          Partners
+                        Partners
                       </h2>
                     </div>
                   </div>
@@ -348,7 +354,8 @@ const HomeDefault = () => {
                         "
                       to="/brands"
                     >
-                      <span className="d-sm-block d-none">All Partners</span> <i className="lnil lnil-chevron-right"></i>
+                      <span className="d-sm-block d-none">All Partners</span>{" "}
+                      <i className="lnil lnil-chevron-right"></i>
                     </Link>
                   </div>
                 </div>
@@ -377,7 +384,9 @@ const HomeDefault = () => {
                       data-aos="fade"
                       data-aos-delay="0"
                     >
-                      <h2 className="h1 large-heading">Audio Technology in Numbers</h2>
+                      <h2 className="h1 large-heading">
+                        Audio Technology in Numbers
+                      </h2>
                     </div>
                     {/* <!--Spacer--> */}
                     <div
@@ -404,14 +413,12 @@ const HomeDefault = () => {
                   "assets/img/about-us-testimonial-background.png"
                 })
               ============================================== */}
-            <section
+            {/* <section
               className="jarallax jarallax-img"
               style={{
                 backgroundImage: `url(${quotesBg[currentSlide]})`,
-                // filter: 'grayscale(60%)'
               }}
             >
-              {/* <!--Spacer--> */}
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "12.5rem", "--ptf-md": "6.25rem" }}
@@ -419,35 +426,33 @@ const HomeDefault = () => {
               <div className="container-xxl">
                 <div className="row">
                   <div className="col-xl-4">
-                    {/* <!--Animated Block--> */}
                     <div
                       className="ptf-animated-block"
                       data-aos="fade"
                       data-aos-delay="0"
                     >
-                      <img
-                        src={quotes}
-                        alt="quote"
-                        loading="lazy"
-                      />
+                      <img src={quotes} alt="quote" loading="lazy" />
                     </div>
-                    {/* <!--Spacer--> */}
+
                     <div
                       className="ptf-spacer"
                       style={{ "--ptf-xl": "3.75rem" }}
                     ></div>
                   </div>
                   <div className="col-xl-8">
-                    <Testimonial getQuotesBg={getQuotesBg} getCurrentSlide={getCurrentSlide} />
+                    <Testimonial
+                      getQuotesBg={getQuotesBg}
+                      getCurrentSlide={getCurrentSlide}
+                    />
                   </div>
                 </div>
               </div>
-              {/* <!--Spacer--> */}
+
               <div
                 className="ptf-spacer"
                 style={{ "--ptf-xxl": "12.5rem", "--ptf-md": "6.25rem" }}
               ></div>
-            </section>
+            </section> */}
 
             {/*=============================================
                 Start Award Section
@@ -456,7 +461,7 @@ const HomeDefault = () => {
               {/* <!--Spacer--> */}
               <div
                 className="ptf-spacer"
-                style={{ "--ptf-xxl": "11.875rem", "--ptf-md": "5.9375rem" }}
+                style={{ "--ptf-xxl": "7.875rem", "--ptf-md": "5.9375rem" }}
               ></div>
               <div className="container-xxl">
                 <div className="row">
@@ -468,7 +473,7 @@ const HomeDefault = () => {
                       data-aos-delay="0"
                     >
                       <h2 className="h1 large-heading">
-                        Our  <br className="d-sm-block d-none"/> Awards
+                        Our <br className="d-sm-block d-none" /> Awards
                       </h2>
                     </div>
                     {/* <!--Spacer--> */}
@@ -495,7 +500,6 @@ const HomeDefault = () => {
                 style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
               ></div>
             </section>
-
           </div>
         </div>
         {/* End .ptf-main */}
