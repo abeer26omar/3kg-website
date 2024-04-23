@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const BlogMasonryGrid = ({projects}) => {
+const BlogMasonryGrid = ({ projects }) => {
   return (
     <>
-        {projects && projects.map((item, i) => (
-           <div className="col-lg-4 col-md-6 col-12 h-100" key={i}>
+      {projects &&
+        projects.map((item, i) => (
+          <div className="col-lg-4 col-md-6 col-12 h-100" key={i}>
             <div className="grid-item">
               <article className="ptf-post ptf-post--style-2">
                 <div className="ptf-post__media">
@@ -14,8 +15,8 @@ const BlogMasonryGrid = ({projects}) => {
                     alt={item?.title}
                     loading="lazy"
                     style={{
-                      height: '336px',
-                      objectFit: 'cover',
+                      height: "336px",
+                      objectFit: "cover",
                     }}
                   />
                   <div className="ptf-post__media__content">
@@ -29,7 +30,7 @@ const BlogMasonryGrid = ({projects}) => {
                 </div>
               </article>
             </div>
-           </div>
+          </div>
         ))}
     </>
   );

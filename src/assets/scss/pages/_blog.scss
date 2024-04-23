@@ -36,7 +36,8 @@
     img {
       width: 100%;
 
-      transition: transform calc(var(--ptf-transition-duration) * 3)
+      transition:
+        transform calc(var(--ptf-transition-duration) * 3)
           var(--ptf-transition-easing),
         filter var(--ptf-transition-duration) var(--ptf-transition-easing);
 
@@ -88,27 +89,37 @@
   .ptf-post__media {
     position: relative;
 
-    @include mq("large") {
-      &__content {
-        display: none;
-      }
-    }
-    @include mq("large", min) {
-      &__content {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: 2;
+    // @include mq("large") {
+    //   &__content {
+    //     display: none;
+    //   }
+    // }
+    // @include mq("large", min) {
+    //   &__content {
+    //     position: absolute;
+    //     right: 0;
+    //     bottom: 0;
+    //     left: 0;
+    //     z-index: 2;
 
-        .ptf-post__meta,
-        .ptf-post__title {
-          color: var(--ptf-color-white);
-        }
-      }
-    }
+    //     .ptf-post__meta,
+    //     .ptf-post__title {
+    //       color: var(--ptf-color-white);
+    //     }
+    //   }
+    // }
 
     &__content {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+
+      .ptf-post__meta,
+      .ptf-post__title {
+        color: var(--ptf-color-white);
+      }
       padding: px2rem(20px) px2rem(24px);
     }
 
