@@ -36,7 +36,7 @@ const PartnersBlog = ({ partners }) => {
                     loading="lazy"
                     style={{
                       "max-height": "85px",
-                      "max-width": "100px",
+                      "max-width": "120px",
                     }}
                   />
                 </div>
