@@ -1,21 +1,22 @@
 import React from "react";
 import Slider from "react-slick";
 import { getHomeSlider } from "../../Util/http";
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from "@tanstack/react-query";
 
 const HomeSLider = () => {
-
   const { data: slider } = useQuery({
-    queryKey: ['projects-slider'],
-    queryFn: () => getHomeSlider()
+    queryKey: ["projects-slider"],
+    queryFn: () => getHomeSlider(),
   });
   const settings = {
     dots: true,
     arrow: false,
     infinite: true,
-    speed: 900,
+    autoplay: true,
+    autoplaySpeed: 1700,
     slidesToShow: 1,
     slidesToScroll: 1,
+    pauseOnHover: false,
     responsive: [
       {
         breakpoint: 767,
@@ -33,11 +34,7 @@ const HomeSLider = () => {
           {slider?.map((val, i) => (
             <div className="ptf-news-slide" key={i}>
               <div className="ptf-news-slide__media">
-                <img
-                  src={val}
-                  alt="val.title"
-                  loading="lazy"
-                />
+                <img src={val} alt="val.title" loading="lazy" />
               </div>
               {/* <div className="ptf-news-slide__content">
                 {(val?.category && val?.category !== '') && (<div className="ptf-news-slide__meta">

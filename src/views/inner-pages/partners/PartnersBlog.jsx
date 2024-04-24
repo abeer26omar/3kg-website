@@ -35,8 +35,8 @@ const PartnersBlog = ({ partners }) => {
                     alt={item.name}
                     loading="lazy"
                     style={{
-                      "max-height": "85px",
-                      "max-width": "120px",
+                      maxHeight: "85px",
+                      maxWidth: "120px",
                     }}
                   />
                 </div>

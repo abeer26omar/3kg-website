@@ -79,8 +79,8 @@ const Brand = () => {
                       <img
                         src={item.logo}
                         style={{
-                          "max-height": "85px",
-                          "max-width": "100px",
+                          maxHeight: "85px",
+                          maxWidth: "100px",
                         }}
                         alt={item.name}
                         loading="lazy"
