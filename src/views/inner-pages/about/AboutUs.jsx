@@ -72,7 +72,7 @@ const AboutUs = () => {
                       data-aos="fade"
                       data-aos-delay="100"
                     >
-                      <p className="fz-30 fw-bold text-uppercase has-3-color">
+                      <p className="fz-30 fw-bold has-3-color">
                         System Integrator and a leader in the field of Light
                         Current Systems, as well as integrated CCTV Systems
                       </p>
