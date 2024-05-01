@@ -1,34 +1,32 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import Brand from "../../../components/brand/Brand";
 import CopyRight from "../../../components/footer/copyright/CopyRight";
 import Footer from "../../../components/footer/Footer";
 import HeaderDefault from "../../../components/header/HeaderDefault";
 import ServiceOne from "../../../components/service/ServiceOne";
-import imageMask from '../../../assets/img/about-us-main-image-layer-1.png';
+import imageMask from "../../../assets/img/about-us-main-image-layer-1.png";
 import { getAboutUs } from "../../../Util/http";
-import { useQuery } from '@tanstack/react-query';
-import DOMPurify from 'dompurify';
+import { useQuery } from "@tanstack/react-query";
+import DOMPurify from "dompurify";
 import { Link } from "react-router-dom";
 import OurValues from "./OurValues";
 import OurMission from "./OurMission";
 import OurVision from "./OurVision";
 
 const AboutUs = () => {
-
-  const [serviceTitle, setServiceTitle] = useState('');
-  const [serviceDescription, setServiceDescription] = useState('');
+  const [serviceTitle, setServiceTitle] = useState("");
+  const [serviceDescription, setServiceDescription] = useState("");
 
   const { data: aboutUs } = useQuery({
-    queryKey: ['aboutUs'],
-    queryFn: getAboutUs
+    queryKey: ["aboutUs"],
+    queryFn: getAboutUs,
   });
-
 
   const getServicevalues = (title, description) => {
     setServiceDescription(description);
-    setServiceTitle(title)
-  }
+    setServiceTitle(title);
+  };
 
   return (
     <div className="ptf-site-wrapper animsition  ptf-is--about-us">
@@ -75,17 +73,18 @@ const AboutUs = () => {
                       data-aos-delay="100"
                     >
                       <p className="fz-30 fw-bold text-uppercase has-3-color">
-                      SYSTEM INTEGRATOR AND A LEADER IN THE FIELD OF LIGHT CURRENT SYSTEMS, AS WELL AS INTEGRATED CCTV SYSTEMS
+                        System Integrator and a leader in the field of Light
+                        Current Systems, as well as integrated CCTV Systems
                       </p>
                     </div>
                     {/* <!--Spacer--> */}
                     <div
-                    className="ptf-spacer"
-                    style={{
+                      className="ptf-spacer"
+                      style={{
                         "--ptf-xxl": "4.375rem",
                         "--ptf-md": "2.1875rem",
                       }}
-                     ></div>
+                    ></div>
                     <div className="row">
                       <div className="col-xl-8">
                         <div className="max_width">
@@ -106,7 +105,11 @@ const AboutUs = () => {
                                 "--ptf-md": "2.1875rem",
                               }}
                             ></div>
-                            <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(aboutUs?.content) }}></div>
+                            <div
+                              dangerouslySetInnerHTML={{
+                                __html: DOMPurify.sanitize(aboutUs?.content),
+                              }}
+                            ></div>
                           </div>
                         </div>
                       </div>
@@ -134,7 +137,7 @@ const AboutUs = () => {
                             className="lay2"
                             style={{
                               zIndex: "1",
-                              height: '716px'
+                              height: "716px",
                             }}
                             srcSet={aboutUs?.main_image}
                           />
@@ -183,9 +186,7 @@ const AboutUs = () => {
                       data-aos="fade"
                       data-aos-delay="0"
                     >
-                      <h2 className="h1 large-heading">
-                        Our Systems
-                      </h2>
+                      <h2 className="h1 large-heading">Solutions</h2>
                       {/* <!--Spacer--> */}
                       <div
                         className="ptf-spacer"
@@ -205,11 +206,11 @@ const AboutUs = () => {
                     ></div>
                   </div>
                   <div className="col-lg-12">
-                    <ServiceOne getServicevalues={getServicevalues}/>
+                    <ServiceOne getServicevalues={getServicevalues} />
                   </div>
                 </div>
                 {/* End .row */}
-              </div> 
+              </div>
               {/* End .container-xxl */}
             </section>
             {/* End service */}
@@ -223,7 +224,7 @@ const AboutUs = () => {
                 style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
               ></div>
               <div className="container-xxl">
-              <div className="row align-items-center">
+                <div className="row align-items-center">
                   <div className="col-lg-9 col-6">
                     {/* <!--Animated Block--> */}
                     <div
@@ -232,7 +233,7 @@ const AboutUs = () => {
                       data-aos-delay="0"
                     >
                       <h2 className="h1 large-heading d-inline-flex">
-                          Partners
+                        Partners
                       </h2>
                     </div>
                   </div>
@@ -249,7 +250,8 @@ const AboutUs = () => {
                         "
                       to="/brands"
                     >
-                      <span className="d-sm-block d-none">All Partners</span> <i className="lnil lnil-chevron-right"></i>
+                      <span className="d-sm-block d-none">All Partners</span>{" "}
+                      <i className="lnil lnil-chevron-right"></i>
                     </Link>
                   </div>
                 </div>
@@ -325,7 +327,10 @@ const AboutUs = () => {
                 style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
               ></div> */}
               <div className="container-xxl">
-                <OurMission mission={aboutUs?.mission} image={aboutUs?.mission_image}/>
+                <OurMission
+                  mission={aboutUs?.mission}
+                  image={aboutUs?.mission_image}
+                />
               </div>
               {/* <!--Spacer--> */}
               <div
@@ -344,7 +349,10 @@ const AboutUs = () => {
                 style={{ "--ptf-xxl": "10rem", "--ptf-md": "5rem" }}
               ></div> */}
               <div className="container-xxl">
-                <OurVision vision={aboutUs?.vision} image={aboutUs?.vision_image}/>
+                <OurVision
+                  vision={aboutUs?.vision}
+                  image={aboutUs?.vision_image}
+                />
               </div>
               {/* <!--Spacer--> */}
               <div

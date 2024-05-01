@@ -59,7 +59,7 @@ const HeroAgency = () => {
                   to="/service"
                   style={{ marginLeft: "2rem" }}
                 >
-                  Our Services
+                  Services
                 </Link>
               </div>
             </div>

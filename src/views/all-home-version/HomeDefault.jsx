@@ -120,7 +120,7 @@ const HomeDefault = () => {
                       data-aos-delay="0"
                     >
                       <h2 className="h1 large-heading">
-                        Our Systems <br />
+                        Solutions <br />
                       </h2>
                       {/* <!--Spacer--> */}
                       <div
@@ -171,7 +171,7 @@ const HomeDefault = () => {
                       data-aos-delay="0"
                     >
                       <h2 className="h1 large-heading">
-                        {"Our Services"} <br />
+                        {"Services"} <br />
                       </h2>
                       {/* <!--Spacer--> */}
                       <div
@@ -472,9 +472,7 @@ const HomeDefault = () => {
                       data-aos="fade"
                       data-aos-delay="0"
                     >
-                      <h2 className="h1 large-heading">
-                        Our <br className="d-sm-block d-none" /> Awards
-                      </h2>
+                      <h2 className="h1 large-heading">Awards</h2>
                     </div>
                     {/* <!--Spacer--> */}
                     <div
